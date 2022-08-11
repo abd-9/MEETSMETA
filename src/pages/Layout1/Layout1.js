@@ -1,5 +1,8 @@
 import React, { Suspense, useState } from "react";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 import { Col, Container, Row } from "reactstrap";
+import { Actions } from "../../store/actions";
 
 // Importing Section
 const Navbar = React.lazy(() => import("../../component/Navbar/NavBar"));
@@ -63,4 +66,17 @@ const Layout1 = (props) => {
     </React.Fragment>
   );
 };
-export default Layout1;
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    {
+      ...Actions,
+    },
+    dispatch,
+  );
+}
+function mapStateToProps({ Settings }) {
+  return { Settings };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Layout1);
