@@ -88,3 +88,16 @@
   //     }
   //   }
 }
+
+.custom-input {
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    // border: none;
+    border-color: gray;
+    box-shadow: none;
+  }
+  font-weight: 500;
+  font-size: medium;
+}

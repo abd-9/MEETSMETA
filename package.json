@@ -11,6 +11,7 @@
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.1",
+    "@uiw/react-color": "^1.1.0",
     "axios": "^0.27.2",
     "bootstrap": "^4.6.0",
     "feather-icons-react": "^0.4.3",

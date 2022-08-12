@@ -1,4 +1,4 @@
-const serverUrl = "";
+const serverUrl = "https://meetstest.free.beeceptor.com";
 
 //process.env.REACT_APP_SERVER_URL;
 export const baseUrl = serverUrl;
@@ -6,7 +6,7 @@ export const baseUrl = serverUrl;
 export const api = {
   RE_ORDER: baseUrl + "reOrder",
 
-  NATIONALITIS_LIST_API: baseUrl + "Lookups/NationalityList",
+  THEME_API: baseUrl + "/my/api/theme",
 };
 
 export const FormatApi = (api = "", ...res) => {

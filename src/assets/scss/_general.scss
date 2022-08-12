@@ -3,10 +3,12 @@
 //
 
 #root {
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-items: center;
+  background: #f4f4f4;
+}
+html {
   background: #f4f4f4;
 }
 .MuiTypography-root {

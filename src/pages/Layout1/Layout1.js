@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { Col, Container, Row } from "reactstrap";
@@ -11,6 +11,7 @@ import {
   StatusIcon,
 } from "../../component/Shared/icons";
 import SettingsIcon from "@mui/icons-material/Settings";
+import { GetTheme, SetThemeColors } from "../../helper";
 // Importing Section
 const Navbar = React.lazy(() => import("../../component/Navbar/NavBar"));
 
@@ -18,7 +19,17 @@ const Sidebar = React.lazy(() => import("../../component/Sidebar"));
 const MainSection = React.lazy(() => import("../../component/MainSection"));
 const Feature = React.lazy(() => import("../../component/Feature"));
 
-const Layout1 = (props) => {
+const Layout1 = ({ Settings, FetchUserThemeSettings }) => {
+  useEffect(() => {
+    SetThemeColors(Settings.theme);
+    return () => {};
+  }, [Settings.theme]);
+
+  useEffect(() => {
+    if (GetTheme()) FetchUserThemeSettings();
+    return () => {};
+  }, []);
+
   const [state, setState] = useState({
     navItems: [
       {
@@ -89,7 +100,9 @@ const Layout1 = (props) => {
             <Col xs={3} className='pr-0'>
               <Sidebar list={state.navItems} />
             </Col>
-            <Col xs className='pl-0 main-section-container overflow-hidden'>
+            <Col
+              xs
+              className='p-0 main-section-container position-relative overflow-hidden'>
               <MainSection />
             </Col>
           </Row>

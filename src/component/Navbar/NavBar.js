@@ -24,7 +24,7 @@ const NavbarPage = (props) => {
         <Container className='  '>
           <Row className='flexBetween w-100'>
             <Col xs>
-              <img style={{ width: "320px" }} src={logo}></img>
+              <img style={{ width: "270px" }} src={logo}></img>
             </Col>
             <Col xs={6} className='flexEnd'>
               <div className='h6 fw-500 mx-3 mb-0 font-weight-bold'>

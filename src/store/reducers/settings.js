@@ -5,17 +5,21 @@ import * as SettingsActions from "../actions/settingsActions";
  * Representation of the user state.
  */
 const initialState = {
-  notifications: {},
-  sidebar: {},
+  theme: {
+    menuColor: "#27e0ef",
+    menuTextColor: "#fff",
+    titleColor: "#ccc",
+    menuSecondColor: "#007d88",
+  },
   isLoading: true,
-  isOpen: false,
 };
 
 export const SettingsReducer = function (state = initialState, action) {
   switch (action.type) {
-    case SettingsActions.STORE_USER_SETTINGS: {
+    case SettingsActions.STORE_USER_THEME_SETTINGS: {
       return {
         ...state,
+        theme: action.payload,
         isLoading: false,
       };
     }

@@ -18,6 +18,7 @@ export function SearchIcon(props) {
             transform='translate(98 318.208)'
             stroke='#d3d3d3'
             strokeLinecap='round'
+            fill='#ffff'
             strokeWidth='3'
           />
           <line
@@ -239,6 +240,7 @@ export function HomeIcon({ width, height, ...res }) {
           id='Ellipse_2'
           data-name='Ellipse 2'
           transform='translate(-0.416 -0.417)'
+          fill='#ffff'
           stroke='#707070'
           strokeWidth='1'>
           <circle cx='21.5' cy='21.5' r='21.5' stroke='none' />

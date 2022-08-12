@@ -12,5 +12,91 @@
     margin-left: -60px;
     position: relative;
     z-index: 10;
+    height: 100%;
+  }
+  .main-section-footer {
+    position: absolute;
+    bottom: 0px;
+    border-radius: 30px;
+    z-index: 9;
+    background-color: gray;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 30%;
+    right: 0px;
+  }
+
+  .color-picker-button {
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+    #perviewer {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0%;
+      border-radius: 5px;
+      left: 0;
+      z-index: 1;
+      background-color: red;
+    }
+    #perviewer2 {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0%;
+      border-radius: 5px;
+      left: 50%;
+      z-index: 2;
+      background-color: white;
+    }
+    #text {
+      transition: all 0.3s ease-in;
+      transform: translate(50%);
+      color: #9b9b9b;
+      font-weight: 500;
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+    #perviewer-button {
+      position: relative;
+      padding: 0.5em;
+      border-radius: 5px;
+
+      &:hover {
+        box-shadow: none;
+        transform: none;
+      }
+    }
+  }
+  .general-theme-section {
+    .color-picker {
+      transition: all 0.2s linear;
+      position: absolute !important;
+      z-index: 100;
+    }
+    #tab-container {
+      background-color: #f2f2f2;
+      border-radius: 20px;
+      min-height: calc(100% - 64px);
+      width: calc(100% - 64px);
+      padding: 2em 2em;
+      position: relative;
+    }
+    #tab {
+      position: absolute;
+      top: -2.2em;
+      left: 1em;
+      display: flex;
+      padding: 0.4em 1.8em;
+      justify-items: center;
+      justify-content: center;
+      border-radius: 5px 5px 0px 0px;
+      font-weight: 500;
+      z-index: -1;
+      background: #e7e7e7;
+    }
   }
 }
