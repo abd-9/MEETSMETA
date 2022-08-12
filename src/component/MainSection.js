@@ -1,15 +1,18 @@
 import React, { Component } from "react";
+import { Route, Router, Switch } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
 
-// Import Background Image
-import { Link } from "react-router-dom";
-
+import Theme from "../component/Theme";
+const Contact = React.lazy(() => import("../component/Contact"));
+const Footer = React.lazy(() => import("../component/Footer/Footer"));
 export default class Services extends Component {
   render() {
     return (
-      <React.Fragment>
-        <h1>here the route</h1>
-      </React.Fragment>
+      <Container>
+        <Switch>
+          <Route path={"/setting/theme"} component={Theme} key={"theme"} />
+        </Switch>
+      </Container>
     );
   }
 }

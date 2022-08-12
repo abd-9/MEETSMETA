@@ -10,6 +10,7 @@ import { ToastContainer } from "react-toastify";
 
 //import style
 import "./assets/css/pe-icon-7.css";
+import "./app.css";
 
 import "./assets/scss/themes.scss";
 import { Suspense } from "react";

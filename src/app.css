@@ -1,0 +1,67 @@
+.fz-xl {
+  font-size: clamp(0.875rem, 0.8184rem + 0.2516vw, 1.125rem) !important;
+}
+.fz-xxl {
+  font-size: clamp(1rem, 0.9434rem + 0.2516vw, 1.25rem) !important;
+}
+.fz-xxxl {
+  font-size: clamp(1.25rem, 1.1934rem + 0.2516vw, 1.5rem) !important;
+}
+.fz-4xl {
+  font-size: clamp(1.375rem, 1.3184rem + 0.2516vw, 1.625rem) !important;
+}
+.fz-5xl {
+  font-size: clamp(1.625rem, 1.5684rem + 0.2516vw, 1.875rem) !important;
+}
+.fz-6xl {
+  font-size: clamp(1.875rem, 1.592rem + 1.2579vw, 3.125rem) !important;
+}
+
+.flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+.flexBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+}
+.flexEnd {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  align-content: center;
+}
+.flexStart {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  align-content: center;
+}
+
+.fw-500 {
+  font-weight: 500 !important;
+}
+
+.fz-sm {
+  font-size: clamp(0.88rem, 0.674rem + 0.0624vw, 0.75rem) !important;
+  line-height: 1.4em;
+}
+.fz-m {
+  font-size: clamp(0.79rem, 0.7217rem + 0.1258vw, 0.875rem) !important;
+}
+@media (min-width: 200px) and (max-width: 768px) {
+  .fz-m {
+    font-size: 0.9em !important;
+  }
+}
+
+.fz-lg {
+  font-size: clamp(0.875rem, 0.8467rem + 0.1258vw, 1rem) !important;
+}
+.fw-normal {
+  font-weight: normal !important;
+}

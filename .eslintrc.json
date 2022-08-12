@@ -14,7 +14,7 @@
   "plugins": ["react"],
   "rules": {
     "no-unused-vars": "off",
-
+    "react/prop-types": 0,
     "no-undefined": "error"
   }
 }

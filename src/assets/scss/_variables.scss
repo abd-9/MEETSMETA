@@ -37,4 +37,18 @@ $shadow: 2px 2px 12px -2px rgba($black, 0.08);
 
 // Font
 $font-primary: "Montserrat", sans-serif;
-$font-secondary: "Rubik", sans-serif;
+$font-secondary: "Montserrat", sans-serif;
+
+$font-family-sans-serif: "Montserrat", "Segoe UI", Roboto, "Helvetica Neue",
+  Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace: "Montserrat", "Segoe UI", Roboto, "Helvetica Neue",
+  Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-base: "Montserrat", "Segoe UI", Roboto, "Helvetica Neue", Arial,
+  "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+:root {
+  --font-family-sans-serif: "Montserrat", "Segoe UI";
+  --font-family-monospace: "Montserrat", "Segoe UI";
+}

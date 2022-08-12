@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import { Navbar, Container, Collapse } from "reactstrap";
+import { Navbar, Container, Collapse, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 
 // Import Logo
 
 //import icon
 import FeatherIcon from "feather-icons-react";
+import { OverviewIcon } from "../Shared/icons";
+import logo from "../Shared/icons/logo.png";
+import userimage from "../Shared/icons/user.png";
 
 const NavbarPage = (props) => {
   const [state, setState] = useState({ isOpenMenu: false });
@@ -15,37 +18,23 @@ const NavbarPage = (props) => {
       <Navbar
         expand='md'
         // fixed={props.top === true ? "top" : ""}
-        style={{ height: "5rem", backgroundColor: "red" }}
-        className='  align-items-center w-100   '
+        style={{}}
+        className='  align-items-center mb-2 w-100   '
         id='navbar'>
-        <Container>
-          <Collapse
-            id='navbarCollapse'
-            isOpen={true}
-            className=' navbar-collapse'>
-            <ul className='list-inline ml-auto menu-social-icon mb-0 py-2 py-lg-0'>
-              <li className='list-inline-item ml-0'>
-                <Link to='#' className='menu-social-link'>
-                  <FeatherIcon icon='facebook' className='icon-xs sw_1-5' />
-                </Link>
-              </li>
-              <li className='list-inline-item'>
-                <Link to='#' className='menu-social-link'>
-                  <FeatherIcon icon='twitter' className='icon-xs sw_1-5' />
-                </Link>
-              </li>
-              <li className='list-inline-item'>
-                <Link to='#' className='menu-social-link'>
-                  <FeatherIcon icon='instagram' className='icon-xs sw_1-5' />
-                </Link>
-              </li>
-              <li className='list-inline-item mr-0'>
-                <Link to='#' className='menu-social-link '>
-                  <FeatherIcon icon='linkedin' className='icon-xs sw_1-5' />
-                </Link>
-              </li>
-            </ul>
-          </Collapse>
+        <Container className='  '>
+          <Row className='flexBetween w-100'>
+            <Col xs>
+              <img style={{ width: "320px" }} src={logo}></img>
+            </Col>
+            <Col xs={6} className='flexEnd'>
+              <div className='h6 fw-500 mx-3 mb-0 font-weight-bold'>
+                Company name L.L.C
+              </div>
+              <div>
+                <img style={{ height: "39px" }} src={userimage}></img>
+              </div>
+            </Col>
+          </Row>
         </Container>
       </Navbar>
     </React.Fragment>

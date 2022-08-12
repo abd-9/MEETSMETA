@@ -60,49 +60,7 @@ class Footer extends Component {
           className='footer'
           // style={{ backgroundImage: "url(" + footer_image + ")" }}
         >
-          <Container>
-            <Row>
-              <Col lg={4}>
-                <div className='mb-5'>
-                  <Link to='#'>
-                    <img src={logolight} alt='' className='' height='35' />
-                  </Link>
-                  <p className='text-white-50 my-4'>
-                    Cras ultricies mi eu turpis sit hendrerit fringilla
-                    vestibulum ante ipsum primis in faucibus ultrices posuere
-                    cubilia.
-                  </p>
-                  <Link to='#' className='text-white-70'>
-                    <FeatherIcon className='icon mr-1' icon='instagram' /> Join
-                    Us In Instagram
-                  </Link>
-                </div>
-              </Col>
-              <Col lg={7} className='offset-lg-1'>
-                <Row>
-                  {/* Render Footer Link */}
-                  {this.state.links.map((item, key) => (
-                    <Col md={4} key={key}>
-                      <h4 className='text-white f-22 font-weight-normal mb-3'>
-                        {item.title}
-                      </h4>
-                      <ul className='list-unstyled footer-sub-menu'>
-                        {item.child.map((linkItem, key) => (
-                          <li key={key}>
-                            <Link className='footer-link' to={linkItem.link}>
-                              {linkItem.title}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </Col>
-                  ))}
-                </Row>
-              </Col>
-            </Row>
-            {/* Render Footer Link End */}
-            <FooterLink />
-          </Container>
+          <Container>footer</Container>
         </footer>
         {/* Footer End */}
       </React.Fragment>

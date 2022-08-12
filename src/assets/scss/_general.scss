@@ -2,13 +2,23 @@
 // general.scss
 //
 
+#root {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  background: #f4f4f4;
+}
+.MuiTypography-root {
+  font-family: $font-primary !important;
+}
 a {
   text-decoration: none !important;
   outline: none;
   color: $primary;
 }
 body {
-  font-family: $font-primary;
+  font-family: $font-primary !important;
   color: $dark;
   background: $white;
 }
@@ -22,11 +32,15 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $font-secondary;
+  font-family: $font-primary;
 }
 
 @media (min-width: 1400px) {
   .container {
     max-width: 85vw;
   }
+}
+
+body {
+  overflow-y: overlay;
 }

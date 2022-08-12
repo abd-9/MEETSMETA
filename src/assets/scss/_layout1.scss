@@ -1,0 +1,11 @@
+#layout1 {
+  height: 96vh;
+  display: flex;
+  flex-direction: column;
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+
+  #main-container {
+    flex-grow: 1;
+  }
+}

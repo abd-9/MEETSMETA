@@ -3,27 +3,59 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { Col, Container, Row } from "reactstrap";
 import { Actions } from "../../store/actions";
-
+import {
+  CollectionIcon,
+  OverviewIcon,
+  ProfileIcon,
+  SettingIcon,
+  StatusIcon,
+} from "../../component/Shared/icons";
+import SettingsIcon from "@mui/icons-material/Settings";
 // Importing Section
 const Navbar = React.lazy(() => import("../../component/Navbar/NavBar"));
 
 const Sidebar = React.lazy(() => import("../../component/Sidebar"));
 const MainSection = React.lazy(() => import("../../component/MainSection"));
 const Feature = React.lazy(() => import("../../component/Feature"));
-const Clients = React.lazy(() => import("../../component/Clients"));
-const Contact = React.lazy(() => import("../../component/Contact"));
-const Footer = React.lazy(() => import("../../component/Footer/Footer"));
 
 const Layout1 = (props) => {
   const [state, setState] = useState({
     navItems: [
-      { id: 1, idnm: "home", navheading: "Home" },
-      { id: 2, idnm: "about", navheading: "About Us" },
-      { id: 3, idnm: "services", navheading: "Services" },
-      { id: 4, idnm: "features", navheading: "Features" },
-      { id: 5, idnm: "project", navheading: "Project" },
-      { id: 6, idnm: "clients", navheading: "Clients" },
-      { id: 7, idnm: "contact", navheading: "Contact Us" },
+      {
+        id: 1,
+        route: "/home",
+        label: "Collection",
+        component: Feature,
+        icon: CollectionIcon,
+      },
+      {
+        id: 2,
+        route: "/overview",
+        label: "Overview",
+        component: Feature,
+        icon: OverviewIcon,
+      },
+      {
+        id: 4,
+        route: "/status",
+        label: "Status",
+        component: Feature,
+        icon: StatusIcon,
+      },
+      {
+        id: 5,
+        route: "setting",
+        label: "Setting",
+        component: Feature,
+        icon: SettingIcon,
+      },
+      {
+        id: 7,
+        route: "/profile",
+        label: "Profile",
+        component: Feature,
+        icon: ProfileIcon,
+      },
     ],
     pos: document.documentElement.scrollTop,
     imglight: false,
@@ -47,20 +79,22 @@ const Layout1 = (props) => {
   return (
     <React.Fragment>
       <Suspense fallback={PreLoader}>
-        <Container>
+        <Container id='layout1'>
           <Row>
-            <Navbar />
-          </Row>
-          <Row>
-            <Col xs={4}>
-              <Sidebar />
+            <Col>
+              <Navbar />
             </Col>
-            <Col xs>
+          </Row>
+          <Row id='main-container'>
+            <Col xs={3} className='pr-0'>
+              <Sidebar list={state.navItems} />
+            </Col>
+            <Col xs className='pl-0 main-section-container overflow-hidden'>
               <MainSection />
             </Col>
           </Row>
 
-          <Footer />
+          {/* <Footer /> */}
         </Container>
       </Suspense>
     </React.Fragment>

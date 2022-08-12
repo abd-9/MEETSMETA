@@ -1,0 +1,16 @@
+#main-container {
+  .main-section-container {
+    -webkit-box-shadow: -6px 6px 8px -1px rgba(0, 0, 0, 0.24);
+    box-shadow: -6px 6px 8px -1px rgba(0, 0, 0, 0.24);
+    border-radius: 30px;
+    background: #fff;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    // width: 120%;
+    padding-left: 60px !important;
+    padding: 10px;
+    margin-left: -60px;
+    position: relative;
+    z-index: 10;
+  }
+}
