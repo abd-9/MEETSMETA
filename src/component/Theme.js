@@ -57,6 +57,7 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
                       onChange={(e) => {
                         setData({ companyName: e.target.value });
                       }}
+                      value={data.companyName}
                       size='small'
                       className='custom-input'
                       placeholder='Company Name LLC'></Input>

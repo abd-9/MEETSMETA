@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Navbar, Container, Collapse, Row, Col } from "reactstrap";
-import { Link } from "react-router-dom";
-
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 // Import Logo
 
 //import icon
@@ -9,8 +9,9 @@ import FeatherIcon from "feather-icons-react";
 import { OverviewIcon } from "../Shared/icons";
 import logo from "../Shared/icons/logo.png";
 import userimage from "../Shared/icons/user.png";
+import { Actions } from "../../store/actions";
 
-const NavbarPage = (props) => {
+const NavbarPage = ({ Settings }) => {
   const [state, setState] = useState({ isOpenMenu: false });
 
   return (
@@ -28,7 +29,7 @@ const NavbarPage = (props) => {
             </Col>
             <Col xs={6} className='flexEnd'>
               <div className='h6 fw-500 mx-3 mb-0 font-weight-bold'>
-                Company name L.L.C
+                {Settings.theme.companyName || "Company name L.L.C"}
               </div>
               <div>
                 <img style={{ height: "39px" }} src={userimage}></img>
@@ -41,4 +42,16 @@ const NavbarPage = (props) => {
   );
 };
 // }
-export default NavbarPage;
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    {
+      ...Actions,
+    },
+    dispatch,
+  );
+}
+function mapStateToProps({ Settings }) {
+  return { Settings };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavbarPage);
