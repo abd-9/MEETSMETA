@@ -13,7 +13,7 @@ import Divider from "@mui/material/Divider";
 // Import Background Image
 import CircleIcon from "@mui/icons-material/Circle";
 //import icon
-import SearchInput from "./Shared/Input";
+import SearchInput from "./Shared/Input/Input";
 
 const Sidebar = ({ list }) => {
   const [open, setOpen] = React.useState(false);

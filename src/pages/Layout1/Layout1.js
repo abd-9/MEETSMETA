@@ -62,7 +62,7 @@ const Layout1 = ({ Settings, FetchUserThemeSettings }) => {
       },
       {
         id: 7,
-        route: "/profile",
+        route: "/profile/view",
         label: "Profile",
         component: Feature,
         icon: ProfileIcon,
@@ -75,12 +75,12 @@ const Layout1 = ({ Settings, FetchUserThemeSettings }) => {
 
   const PreLoader = () => {
     return (
-      <div id='preloader'>
-        <div id='status'>
-          <div className='spinner'>
-            <div className='bounce1'></div>
-            <div className='bounce2'></div>
-            <div className='bounce3'></div>
+      <div id="preloader">
+        <div id="status">
+          <div className="spinner">
+            <div className="bounce1"></div>
+            <div className="bounce2"></div>
+            <div className="bounce3"></div>
           </div>
         </div>
       </div>
@@ -90,19 +90,20 @@ const Layout1 = ({ Settings, FetchUserThemeSettings }) => {
   return (
     <React.Fragment>
       <Suspense fallback={PreLoader}>
-        <Container id='layout1'>
+        <Container id="layout1">
           <Row>
             <Col>
               <Navbar />
             </Col>
           </Row>
-          <Row id='main-container'>
-            <Col xs={3} className='pr-0'>
+          <Row id="main-container">
+            <Col xs={3} className="pr-0">
               <Sidebar list={state.navItems} />
             </Col>
             <Col
               xs
-              className='p-0 main-section-container position-relative overflow-hidden'>
+              className="p-0 main-section-container position-relative overflow-hidden"
+            >
               <MainSection />
             </Col>
           </Row>
@@ -119,7 +120,7 @@ function mapDispatchToProps(dispatch) {
     {
       ...Actions,
     },
-    dispatch,
+    dispatch
   );
 }
 function mapStateToProps({ Settings }) {

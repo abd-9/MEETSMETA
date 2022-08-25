@@ -4,15 +4,17 @@ import InputBase from "@mui/material/InputBase";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 
-import { SearchIcon } from "./icons";
+import { SearchIcon } from "../icons";
+import { TextField } from "@mui/material";
 
 export default function SearchInput({ placeholder = "Search" }) {
   return (
     <Paper
-      component='form'
-      className='input'
-      sx={{ p: "2px 4px", display: "flex", alignItems: "center" }}>
-      <IconButton sx={{ p: "10px" }} aria-label='menu'>
+      component="form"
+      className="input"
+      sx={{ p: "2px 4px", display: "flex", alignItems: "center" }}
+    >
+      <IconButton sx={{ p: "10px" }} aria-label="menu">
         <SearchIcon />
       </IconButton>
       <InputBase
@@ -21,5 +23,22 @@ export default function SearchInput({ placeholder = "Search" }) {
         inputProps={{ "aria-label": "search google maps" }}
       />
     </Paper>
+  );
+}
+export function InputOutlined({
+  name,
+  value,
+  onChange,
+  label,
+  placeholder = "Tyep",
+  ...res
+}) {
+  return (
+    <TextField
+      placeholder={placeholder}
+      label={label}
+      variant="outlined"
+      {...res}
+    />
   );
 }

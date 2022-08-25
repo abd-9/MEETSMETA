@@ -18,7 +18,7 @@ const SidebarHeader = ({ title }) => {
           </Col>
         </Row>
         <Row className="flexStart">
-          <h6 className="mb-0 titles-color font-weight-bold mx-5">{title}</h6>
+          <h5 className="mb-0 titles-color font-weight-bold mx-5">{title}</h5>
         </Row>
         <Divider
           style={{
