@@ -2,12 +2,12 @@ import React, { Component, useState } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
-import { Button, Col, Container, FormText, Input, Row } from "reactstrap";
 import { Actions } from "../store/actions";
 import MainSectionFooter from "./MainSection/Footer";
 import SidebarHeader from "./MainSection/Header";
 import { ColorPicker, ColorPickerButton } from "./Shared/ColorPicker";
 import { toast } from "react-toastify";
+import { Container, Grid, TextField } from "@mui/material";
 
 // Import client   Image
 
@@ -23,7 +23,7 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
       },
       () => {
         toast.error("Failed to save");
-      },
+      }
     );
   };
   const [tempColor, setTempColor] = useState({ name: "", value: "" });
@@ -35,46 +35,49 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
   return (
     <>
       <div
-        className='d-flex flex-column position-relative z-3 w-100 '
+        className="d-flex flex-column position-relative z-3 w-100 "
         style={{
           backgroundColor: "white",
           height: "90%",
           borderRadius: "30px",
           borderBottomLeftRadius: "0px",
-        }}>
-        <SidebarHeader title='Setting - Theme'></SidebarHeader>
+        }}
+      >
+        <SidebarHeader title="Setting - Theme"></SidebarHeader>
 
-        <Row className='mx-0 my-3 flex-grow-1 general-theme-section   flexCenter  '>
-          <div id='tab-container' className=''>
-            <form className='w-100' onSubmit={handelSubmit}>
-              <Container className='px-0 mx-0'>
-                <Row className='align-items-center '>
-                  <Col xs={3}>
-                    <div className='fw-500'>Title</div>{" "}
-                  </Col>
-                  <Col xs={6}>
-                    <Input
+        <Grid
+          container
+          className="mx-0 my-3 flex-grow-1 general-theme-section   flexCenter  "
+        >
+          <div id="tab-container" className="">
+            <form className="w-100" onSubmit={handelSubmit}>
+              <Container className="px-0 mx-0">
+                <Grid container className="align-items-center ">
+                  <Grid xs={3}>
+                    <div className="fw-500">Title</div>{" "}
+                  </Grid>
+                  <Grid xs={6}>
+                    <TextField
                       onChange={(e) => {
                         setData({ companyName: e.target.value });
                       }}
                       value={data.companyName}
-                      bsSize='small'
-                      className='custom-input'
-                      placeholder='Company Name LLC'></Input>
-                  </Col>
-                  <Col></Col>
-                  <Col xs={3}></Col>
-                  <Col xs={6}>
-                    <FormText className='px-2 font-italic'>
-                      This is a text input.
-                    </FormText>{" "}
-                  </Col>
-                </Row>
-                <Row className='my-3 align-items-center'>
-                  <Col xs={3}>
-                    <div className='fw-500'>Title Color</div>
-                  </Col>
-                  <Col xs={3}>
+                      bsSize="small"
+                      className="custom-input"
+                      placeholder="Company Name LLC"
+                    ></TextField>
+                  </Grid>
+                  <Grid></Grid>
+                  <Grid xs={3}></Grid>
+                  <Grid xs={6}>
+                    <p className="px-2 font-italic">This is a text input.</p>{" "}
+                  </Grid>
+                </Grid>
+                <Grid container className="my-3 align-items-center">
+                  <Grid xs={3}>
+                    <div className="fw-500">Title Color</div>
+                  </Grid>
+                  <Grid xs={3}>
                     <ColorPickerButton
                       hex={data.titleColor}
                       onClick={() =>
@@ -84,8 +87,8 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
                         })
                       }
                     />
-                  </Col>
-                  <Col xs={3}>
+                  </Grid>
+                  <Grid xs={3}>
                     <ColorPicker
                       onMouseUp={() => {
                         setData({ [tempColor.name]: tempColor.value });
@@ -99,14 +102,15 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
                         tempColor.name
                           ? " color-picker op-1 "
                           : " color-picker op-0 "
-                      }></ColorPicker>
-                  </Col>
-                </Row>
-                <Row className='my-3 align-items-center'>
-                  <Col xs={3}>
-                    <div className='fw-500'>Menu Light Color</div>
-                  </Col>
-                  <Col xs={3}>
+                      }
+                    ></ColorPicker>
+                  </Grid>
+                </Grid>
+                <Grid container className="my-3 align-items-center">
+                  <Grid xs={3}>
+                    <div className="fw-500">Menu Light Color</div>
+                  </Grid>
+                  <Grid xs={3}>
                     <ColorPickerButton
                       hex={data.menuColor}
                       onClick={() =>
@@ -116,14 +120,14 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
                         })
                       }
                     />
-                  </Col>
-                  <Col xs={3}></Col>
-                </Row>
-                <Row className='my-3 align-items-center'>
-                  <Col xs={3}>
-                    <div className='fw-500'>Menu Dark Color</div>
-                  </Col>
-                  <Col xs={3}>
+                  </Grid>
+                  <Grid xs={3}></Grid>
+                </Grid>
+                <Grid container className="my-3 align-items-center">
+                  <Grid xs={3}>
+                    <div className="fw-500">Menu Dark Color</div>
+                  </Grid>
+                  <Grid xs={3}>
                     <ColorPickerButton
                       hex={data.menuSecondColor}
                       onClick={() =>
@@ -133,15 +137,15 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
                         })
                       }
                     />
-                  </Col>
-                  <Col xs={3}></Col>
-                </Row>
+                  </Grid>
+                  <Grid xs={3}></Grid>
+                </Grid>
 
-                <Row className='my-3 align-items-center'>
-                  <Col xs={3}>
-                    <div className='fw-500'>Menu Text Color</div>
-                  </Col>
-                  <Col xs={3}>
+                <Grid container className="my-3 align-items-center">
+                  <Grid xs={3}>
+                    <div className="fw-500">Menu Text Color</div>
+                  </Grid>
+                  <Grid xs={3}>
                     <ColorPickerButton
                       hex={data.menuTextColor}
                       onClick={() =>
@@ -151,24 +155,25 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
                         })
                       }
                     />
-                  </Col>
-                  <Col xs={3}></Col>
-                </Row>
+                  </Grid>
+                  <Grid xs={3}></Grid>
+                </Grid>
               </Container>
 
-              <button type='submit' className='d-none' id='themeForm'></button>
+              <button type="submit" className="d-none" id="themeForm"></button>
             </form>
 
-            <div id='tab' className='fz-sm fw-bold'>
+            <div id="tab" className="fz-sm fw-bold">
               General
             </div>
           </div>
-        </Row>
+        </Grid>
       </div>
       <MainSectionFooter
         onSaveClick={() => {
           document.getElementById("themeForm").click();
-        }}></MainSectionFooter>
+        }}
+      ></MainSectionFooter>
     </>
   );
 };
@@ -177,7 +182,7 @@ function mapDispatchToProps(dispatch) {
     {
       ...Actions,
     },
-    dispatch,
+    dispatch
   );
 }
 function mapStateToProps({ Settings }) {

@@ -1,34 +1,32 @@
 import React, { useState } from "react";
-import { Navbar, Container, Collapse, Row, Col } from "reactstrap";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 // Import Logo
 
 //import icon
-import FeatherIcon from "feather-icons-react";
-import { OverviewIcon } from "../Shared/icons";
+
 import logo from "../Shared/icons/logo.png";
 import userimage from "../Shared/icons/user.png";
 import { Actions } from "../../store/actions";
+import { Container, Grid } from "@mui/material";
 
 const NavbarPage = ({ Settings }) => {
   const [state, setState] = useState({ isOpenMenu: false });
 
   return (
     <React.Fragment>
-      <Navbar
-        expand="md"
-        // fixed={props.top === true ? "top" : ""}
+      <Grid
+        container
         style={{}}
         className="  align-items-center mb-2 w-100 "
         id="navbar"
       >
         <Container className="  ">
-          <Row className="flexBetween w-100">
-            <Col xs>
+          <Grid container className="flexBetween w-100">
+            <Grid item xs>
               <img style={{ width: "270px" }} src={logo}></img>
-            </Col>
-            <Col xs={6} className="flexEnd">
+            </Grid>
+            <Grid item xs={6} className="flexEnd">
               <div className="h6 fw-500 mx-3 mb-0 font-weight-bold">
                 {Settings?.theme?.companyName || "Company name L.L.C"}
               </div>
@@ -39,10 +37,10 @@ const NavbarPage = ({ Settings }) => {
                   src={userimage}
                 ></img>
               </div>
-            </Col>
-          </Row>
+            </Grid>
+          </Grid>
         </Container>
-      </Navbar>
+      </Grid>
     </React.Fragment>
   );
 };

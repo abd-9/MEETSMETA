@@ -1,25 +1,26 @@
 import React from "react";
-import { Col, Container, Row } from "reactstrap";
+
 import Divider from "@mui/material/Divider";
 import { HomeIcon, NotificationIcon } from "../Shared/icons";
+import { Container, Grid } from "@mui/material";
 
 const SidebarHeader = ({ title }) => {
   return (
     <>
       <Container className="p-2 px-3">
-        <Row className="flexEnd">
-          <Col xs="auto">
+        <Grid container className="flexEnd">
+          <Grid item xs="auto">
             <span className="svg-icon">
               <NotificationIcon width="23px" className="mx-2 svg-icon" />
             </span>
             <span className="svg-icon">
               <HomeIcon width="30px" />
             </span>
-          </Col>
-        </Row>
-        <Row className="flexStart">
+          </Grid>
+        </Grid>
+        <Grid className="flexStart">
           <h5 className="mb-0 titles-color font-weight-bold mx-5">{title}</h5>
-        </Row>
+        </Grid>
         <Divider
           style={{
             left: "-40px",

@@ -1,7 +1,6 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { Col, Container, Row } from "reactstrap";
 import { Actions } from "../../store/actions";
 import {
   CollectionIcon,
@@ -10,14 +9,14 @@ import {
   SettingIcon,
   StatusIcon,
 } from "../../component/Shared/icons";
-import SettingsIcon from "@mui/icons-material/Settings";
 import { GetTheme, SetThemeColors } from "../../helper";
+import { Container, Grid } from "@mui/material";
 // Importing Section
 const Navbar = React.lazy(() => import("../../component/Navbar/NavBar"));
 
 const Sidebar = React.lazy(() => import("../../component/Sidebar"));
 const MainSection = React.lazy(() => import("../../component/MainSection"));
-const Feature = React.lazy(() => import("../../component/Feature"));
+// const Feature = React.lazy(() => import("../../component/Feature"));
 
 const Layout1 = ({ Settings, FetchUserThemeSettings }) => {
   useEffect(() => {
@@ -36,35 +35,35 @@ const Layout1 = ({ Settings, FetchUserThemeSettings }) => {
         id: 1,
         route: "/home",
         label: "Collection",
-        component: Feature,
+        // component: Feature,
         icon: CollectionIcon,
       },
       {
         id: 2,
         route: "/overview",
         label: "Overview",
-        component: Feature,
+        // component: Feature,
         icon: OverviewIcon,
       },
       {
         id: 4,
         route: "/status",
         label: "Status",
-        component: Feature,
+        // component: Feature,
         icon: StatusIcon,
       },
       {
         id: 5,
         route: "setting",
         label: "Setting",
-        component: Feature,
+        // component: Feature,
         icon: SettingIcon,
       },
       {
         id: 7,
         route: "/profile/view",
         label: "Profile",
-        component: Feature,
+        // component: Feature,
         icon: ProfileIcon,
       },
     ],
@@ -91,22 +90,22 @@ const Layout1 = ({ Settings, FetchUserThemeSettings }) => {
     <React.Fragment>
       <Suspense fallback={PreLoader}>
         <Container id="layout1">
-          <Row>
-            <Col>
+          <Grid container>
+            <Grid item>
               <Navbar />
-            </Col>
-          </Row>
-          <Row id="main-container">
-            <Col xs={3} className="pr-0">
+            </Grid>
+          </Grid>
+          <Grid container id="main-container">
+            <Grid item xs={3} className="pr-0">
               <Sidebar list={state.navItems} />
-            </Col>
-            <Col
+            </Grid>
+            <Grid
               xs
               className="p-0 main-section-container position-relative overflow-hidden"
             >
               <MainSection />
-            </Col>
-          </Row>
+            </Grid>
+          </Grid>
 
           {/* <Footer /> */}
         </Container>

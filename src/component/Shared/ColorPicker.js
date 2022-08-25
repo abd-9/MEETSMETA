@@ -1,6 +1,7 @@
 import React from "react";
 import { Wheel } from "@uiw/react-color";
-import { Button } from "reactstrap";
+import { Button } from "@mui/material";
+
 export const ColorPicker = ({ hex = "#fff", setHex, ...res }) => {
   return (
     <Wheel

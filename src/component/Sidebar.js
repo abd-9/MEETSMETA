@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
-import { Button, Col, Container, Row } from "reactstrap";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -14,6 +13,7 @@ import Divider from "@mui/material/Divider";
 import CircleIcon from "@mui/icons-material/Circle";
 //import icon
 import SearchInput from "./Shared/Input/Input";
+import { Button, Grid } from "@mui/material";
 
 const Sidebar = ({ list }) => {
   const [open, setOpen] = React.useState(false);
@@ -93,15 +93,18 @@ const Sidebar = ({ list }) => {
           })}
         </List>
 
-        <Row className="mt-auto m-0 flex-column flexCenter text-center  ">
-          <Col className="flexCenter">
+        <Grid
+          container
+          className="mt-auto m-0 flex-column flexCenter text-center  "
+        >
+          <Grid item className="flexCenter">
             <img src="/images/metamask.png" style={{ width: "30px" }}></img>{" "}
             <div className="h6 text-bold mb-0 mx-2">MetaMask wallet</div>
-          </Col>
-          <Col>
+          </Grid>
+          <Grid item>
             <Button className="logout-button my-2  p ">Logout </Button>
-          </Col>
-        </Row>
+          </Grid>
+        </Grid>
       </section>
     </React.Fragment>
   );

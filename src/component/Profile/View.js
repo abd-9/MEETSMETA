@@ -2,7 +2,6 @@ import React, { Component, useState } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
-import { Button, Col, FormText, Input, Row } from "reactstrap";
 import { Actions } from "../../store/actions";
 import MainSectionFooter from "../MainSection/Footer";
 import SidebarHeader from "../MainSection/Header";
