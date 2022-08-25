@@ -11,7 +11,7 @@ const MainSectionFooter = ({ title, onSaveClick }) => {
           <Button
             onClick={onSaveClick}
             className='logout-button my-2  p '
-            size='sm'>
+            >
             Save changes
           </Button>
         </Col>

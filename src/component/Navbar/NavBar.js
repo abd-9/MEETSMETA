@@ -29,7 +29,7 @@ const NavbarPage = ({ Settings }) => {
             </Col>
             <Col xs={6} className='flexEnd'>
               <div className='h6 fw-500 mx-3 mb-0 font-weight-bold'>
-                {Settings.theme.companyName || "Company name L.L.C"}
+                {Settings?.theme?.companyName || "Company name L.L.C"}
               </div>
               <div>
                 <img style={{ height: "39px" }} src={userimage}></img>

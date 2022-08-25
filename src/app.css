@@ -65,3 +65,8 @@
 .fw-normal {
   font-weight: normal !important;
 }
+* {
+  transition: color 0.4s linear;
+  /* transition: background 0.4s linear !important; */
+  transition: background-color 0.4s linear;
+}

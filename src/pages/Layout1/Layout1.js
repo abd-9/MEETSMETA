@@ -26,7 +26,7 @@ const Layout1 = ({ Settings, FetchUserThemeSettings }) => {
   }, [Settings.theme]);
 
   useEffect(() => {
-    if (GetTheme()) FetchUserThemeSettings();
+    // if (GetTheme()) FetchUserThemeSettings();
     return () => {};
   }, []);
 

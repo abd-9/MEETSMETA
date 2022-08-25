@@ -19,23 +19,25 @@ export const shadeColor = (color, percent) => {
 };
 
 export const SetThemeColors = (data) => {
+  if (!data) return;
   localStorage.setItem("theme", JSON.stringify(data));
+
   if (data.titleColor)
     document.documentElement.style.setProperty(
       "--title-color",
-      data.titleColor,
+      data.titleColor
     );
   if (data.menuColor)
     document.documentElement.style.setProperty("--menu-color", data.menuColor);
   if (data.menuTextColor)
     document.documentElement.style.setProperty(
       "--menu-text-color",
-      data.menuTextColor,
+      data.menuTextColor
     );
   if (data.menuSecondColor)
     document.documentElement.style.setProperty(
       "--menu-second-color",
-      data.menuSecondColor,
+      data.menuSecondColor
     );
 };
 export const GetTheme = () => {
