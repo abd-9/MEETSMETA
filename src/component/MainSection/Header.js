@@ -6,19 +6,19 @@ import { HomeIcon, NotificationIcon } from "../Shared/icons";
 const SidebarHeader = ({ title }) => {
   return (
     <>
-      <Container className='p-2 px-3'>
-        <Row className='flexEnd'>
-          <Col xs='auto'>
-            <span className='svg-icon'>
-              <NotificationIcon width='23px' className='mx-2 svg-icon' />
-            </span>{" "}
-            <span className='svg-icon'>
-              <HomeIcon width='30px' />
+      <Container className="p-2 px-3">
+        <Row className="flexEnd">
+          <Col xs="auto">
+            <span className="svg-icon">
+              <NotificationIcon width="23px" className="mx-2 svg-icon" />
+            </span>
+            <span className="svg-icon">
+              <HomeIcon width="30px" />
             </span>
           </Col>
         </Row>
-        <Row className='flexStart'>
-          <h6 className='mb-0 titles-color font-weight-bold mx-5'>{title}</h6>
+        <Row className="flexStart">
+          <h6 className="mb-0 titles-color font-weight-bold mx-5">{title}</h6>
         </Row>
         <Divider
           style={{
@@ -26,7 +26,7 @@ const SidebarHeader = ({ title }) => {
             width: "110%",
             position: "absolute",
           }}
-          className='position-absolute my-2  '
+          className="position-absolute my-2  "
         />
       </Container>
     </>

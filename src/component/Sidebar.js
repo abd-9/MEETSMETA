@@ -99,7 +99,7 @@ const Sidebar = ({ list }) => {
             <div className="h6 text-bold mb-0 mx-2">MetaMask wallet</div>
           </Col>
           <Col>
-            <Button className="logout-button my-2  p ">Logout</Button>
+            <Button className="logout-button my-2  p ">Logout </Button>
           </Col>
         </Row>
       </section>

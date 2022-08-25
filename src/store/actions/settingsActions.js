@@ -28,6 +28,7 @@ export const UpdateUserThemeSettings = (data, onSuccess, onFailure) => {
     }
   };
 };
+
 export const FetchUserThemeSettings = (onSuccess, onFailure) => {
   return async (dispatch) => {
     try {
