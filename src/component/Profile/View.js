@@ -37,7 +37,7 @@ const ViewProfile = ({ Settings, UpdateUserThemeSettings }) => {
   return (
     <>
       <div
-        className="d-flex flex-column position-relative z-3 w-full "
+        className="d-flex flex-column relative z-3 w-full "
         style={{
           backgroundColor: "white",
           height: "90%",

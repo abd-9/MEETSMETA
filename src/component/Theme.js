@@ -35,7 +35,7 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
   return (
     <>
       <div
-        className="d-flex flex-column grow-1 position-relative z-3 w-full "
+        className="d-flex flex-column grow-1 relative z-3 w-full "
         style={{
           backgroundColor: "white",
           height: "90%",
