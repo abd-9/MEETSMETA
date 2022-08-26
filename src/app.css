@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .fz-xl {
   font-size: clamp(0.875rem, 0.8184rem + 0.2516vw, 1.125rem) !important;
 }

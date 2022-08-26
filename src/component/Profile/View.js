@@ -37,7 +37,7 @@ const ViewProfile = ({ Settings, UpdateUserThemeSettings }) => {
   return (
     <>
       <div
-        className="d-flex flex-column position-relative z-3 w-100 "
+        className="d-flex flex-column position-relative z-3 w-full "
         style={{
           backgroundColor: "white",
           height: "90%",
@@ -47,7 +47,7 @@ const ViewProfile = ({ Settings, UpdateUserThemeSettings }) => {
       >
         <SidebarHeader title="Profile"></SidebarHeader>
 
-        <form className="w-100 h-100" onSubmit={handelSubmit}>
+        <form className="w-full h-100" onSubmit={handelSubmit}>
           <Container>
             <Grid container className="px-2 ">
               <Grid

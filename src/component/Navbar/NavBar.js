@@ -18,11 +18,11 @@ const NavbarPage = ({ Settings }) => {
       <Grid
         container
         style={{}}
-        className="  align-items-center mb-2 w-100 "
+        className="  align-items-center mb-2 w-full "
         id="navbar"
       >
         <Container className="  ">
-          <Grid container className="flexBetween w-100">
+          <Grid container className="flexBetween w-full">
             <Grid item xs>
               <img style={{ width: "270px" }} src={logo}></img>
             </Grid>

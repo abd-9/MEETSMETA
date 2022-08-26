@@ -35,7 +35,7 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
   return (
     <>
       <div
-        className="d-flex flex-column position-relative z-3 w-100 "
+        className="d-flex flex-column grow-1 position-relative z-3 w-full "
         style={{
           backgroundColor: "white",
           height: "90%",
@@ -47,10 +47,10 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
 
         <Grid
           container
-          className="mx-0 my-3 flex-grow-1 general-theme-section   flexCenter  "
+          className="mx-0 my-3 grow-1  general-theme-section   flexCenter  "
         >
           <div id="tab-container" className="">
-            <form className="w-100" onSubmit={handelSubmit}>
+            <form className="w-full" onSubmit={handelSubmit}>
               <Container className="px-0 mx-0">
                 <Grid container className="align-items-center ">
                   <Grid xs={3}>
