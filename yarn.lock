@@ -1639,6 +1639,20 @@
     prop-types "^15.8.1"
     react-is "^18.2.0"
 
+"@mui/base@^5.0.0-alpha.94":
+  version "5.0.0-alpha.94"
+  resolved "https://registry.yarnpkg.com/@mui/base/-/base-5.0.0-alpha.94.tgz#8835dfb41fab8ee0dfafacd89178f877ea24bcbf"
+  integrity sha512-IJXmgTF07H1Iv5zjDV7zJZGUmb9cN8ERzd2dgA1akh6NWZgwyIGyQx+Au9+QSDoM5vN3FqZvU/0YCU6inUwgeQ==
+  dependencies:
+    "@babel/runtime" "^7.17.2"
+    "@emotion/is-prop-valid" "^1.2.0"
+    "@mui/types" "^7.1.5"
+    "@mui/utils" "^5.9.3"
+    "@popperjs/core" "^2.11.6"
+    clsx "^1.2.1"
+    prop-types "^15.8.1"
+    react-is "^18.2.0"
+
 "@mui/icons-material@^5.8.4":
   version "5.8.4"
   resolved "https://registry.yarnpkg.com/@mui/icons-material/-/icons-material-5.8.4.tgz#3f2907c9f8f5ce4d754cb8fb4b68b5a1abf4d095"
@@ -1777,7 +1791,7 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
-"@popperjs/core@^2.11.5":
+"@popperjs/core@^2.11.5", "@popperjs/core@^2.11.6":
   version "2.11.6"
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.6.tgz#cee20bd55e68a1720bdab363ecf0c821ded4cd45"
   integrity sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==
@@ -3387,11 +3401,6 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==
-
-bootstrap@^4.6.0:
-  version "4.6.2"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.6.2.tgz#8e0cd61611728a5bf65a3a2b8d6ff6c77d5d7479"
-  integrity sha512-51Bbp/Uxr9aTuy6ca/8FbFloBUJZLHwnhTcnjIeRn2suQWsWzcuJhGjKDB5eppVte/8oCdOL3VuwxvZDUggwGQ==
 
 brace-expansion@^1.1.7:
   version "1.1.11"

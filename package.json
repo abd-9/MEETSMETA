@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
+    "@mui/base": "^5.0.0-alpha.94",
     "@mui/icons-material": "^5.8.4",
     "@mui/lab": "^5.0.0-alpha.94",
     "@mui/material": "^5.10.0",
@@ -13,7 +14,6 @@
     "@testing-library/user-event": "^12.8.1",
     "@uiw/react-color": "^1.1.0",
     "axios": "^0.27.2",
-    "bootstrap": "^4.6.0",
     "feather-icons-react": "^0.4.3",
     "formik": "^2.2.9",
     "node-sass": "^7.0.1",

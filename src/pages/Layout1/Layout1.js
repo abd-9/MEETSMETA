@@ -95,12 +95,13 @@ const Layout1 = ({ Settings, FetchUserThemeSettings }) => {
               <Navbar />
             </Grid>
           </Grid>
-          <Grid container id="main-container">
+          <Grid container id="main-container button">
             <Grid item xs={3} className="pr-0">
               <Sidebar list={state.navItems} />
             </Grid>
             <Grid
               xs
+              item
               className="p-0 main-section-container position-relative overflow-hidden"
             >
               <MainSection />
