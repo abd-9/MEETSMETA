@@ -4,9 +4,9 @@ import Divider from "@mui/material/Divider";
 import { HomeIcon, NotificationIcon } from "../Shared/icons";
 import { Container, Grid } from "@mui/material";
 
-const SidebarHeader = ({ title }) => {
+const SidebarHeader = ({ title, className }) => {
   return (
-    <Container className="p-2 px-3">
+    <Container className={className + " p-2 px-3 pb-5 "}>
       <Grid container className="flexEnd">
         <Grid item xs="auto" className="flexCenter">
           <span className="svg-icon">

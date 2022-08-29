@@ -44,6 +44,7 @@ module.exports = {
       fuchsia: colors.fuchsia,
       pink: colors.pink,
       rose: colors.rose,
+      grayLight: "#555555",
       primary: "var(--primary-color)",
       secondary: "var(--secondary-color)",
     }),

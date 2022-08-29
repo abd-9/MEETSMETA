@@ -8,6 +8,8 @@ import SidebarHeader from "./MainSection/Header";
 import { ColorPicker, ColorPickerButton } from "./Shared/ColorPicker";
 import { toast } from "react-toastify";
 import { Container, Grid, TextField } from "@mui/material";
+import { InputOutlined } from "./Shared/Input/Input";
+import MainSectionContainer from "./MainSection/MainContainer";
 
 // Import client   Image
 
@@ -34,50 +36,54 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
 
   return (
     <>
-      <div
-        className="d-flex flex-column grow-1 relative z-3 w-full "
-        style={{
-          backgroundColor: "white",
-          height: "90%",
-          borderRadius: "30px",
-          borderBottomLeftRadius: "0px",
-        }}
-      >
-        <SidebarHeader title="Setting - Theme"></SidebarHeader>
-
+      <MainSectionContainer>
+        <SidebarHeader
+          className={"mb-10"}
+          title="Setting - Theme"
+        ></SidebarHeader>
         <Grid
           container
-          className="mx-0 my-16 grow-1  general-theme-section   flexCenter  "
+          className="mx-0 grow-1  general-theme-section   flexCenter  "
         >
           <div id="tab-container" className="">
             <form className="w-full" onSubmit={handelSubmit}>
               <Container className="px-0 mx-0">
-                <Grid container className="align-items-center ">
-                  <Grid xs={3}>
+                <Grid
+                  container
+                  alignItems={"center"}
+                  className=" content-center "
+                >
+                  <Grid item xs={3}>
                     <div className="fw-500">Title</div>{" "}
                   </Grid>
-                  <Grid xs={6}>
-                    <TextField
+                  <Grid item xs={6}>
+                    <InputOutlined
+                      margin="none"
                       onChange={(e) => {
                         setData({ companyName: e.target.value });
                       }}
                       value={data.companyName}
-                      bsSize="small"
                       className="custom-input"
                       placeholder="Company Name LLC"
-                    ></TextField>
+                    ></InputOutlined>
                   </Grid>
-                  <Grid></Grid>
-                  <Grid xs={3}></Grid>
-                  <Grid xs={6}>
-                    <p className="px-2 font-italic">This is a text input.</p>{" "}
+                  <Grid item xs={2}></Grid>
+                  <Grid item xs={3}></Grid>
+                  <Grid item xs={6}>
+                    <p className="px-2 pt-1 text-sm italic">
+                      This is a text input.
+                    </p>{" "}
                   </Grid>
                 </Grid>
-                <Grid container className="my-3 align-items-center">
-                  <Grid xs={3}>
+                <Grid
+                  container
+                  alignItems={"center"}
+                  className="my-10 align-items-center"
+                >
+                  <Grid item xs={3}>
                     <div className="fw-500">Title Color</div>
                   </Grid>
-                  <Grid xs={3}>
+                  <Grid item xs={3}>
                     <ColorPickerButton
                       hex={data.titleColor}
                       onClick={() =>
@@ -88,7 +94,7 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
                       }
                     />
                   </Grid>
-                  <Grid xs={3}>
+                  <Grid item xs={3}>
                     <ColorPicker
                       onMouseUp={() => {
                         setData({ [tempColor.name]: tempColor.value });
@@ -106,11 +112,15 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
                     ></ColorPicker>
                   </Grid>
                 </Grid>
-                <Grid container className="my-3 align-items-center">
-                  <Grid xs={3}>
+                <Grid
+                  alignItems={"center"}
+                  container
+                  className="my-10 align-items-center"
+                >
+                  <Grid item xs={3}>
                     <div className="fw-500">Menu Light Color</div>
                   </Grid>
-                  <Grid xs={3}>
+                  <Grid item xs={3}>
                     <ColorPickerButton
                       hex={data.menuColor}
                       onClick={() =>
@@ -121,13 +131,17 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
                       }
                     />
                   </Grid>
-                  <Grid xs={3}></Grid>
+                  <Grid item xs={3}></Grid>
                 </Grid>
-                <Grid container className="my-3 align-items-center">
-                  <Grid xs={3}>
+                <Grid
+                  alignItems={"center"}
+                  container
+                  className="my-10 align-items-center"
+                >
+                  <Grid item xs={3}>
                     <div className="fw-500">Menu Dark Color</div>
                   </Grid>
-                  <Grid xs={3}>
+                  <Grid item xs={3}>
                     <ColorPickerButton
                       hex={data.menuSecondColor}
                       onClick={() =>
@@ -141,11 +155,15 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
                   <Grid xs={3}></Grid>
                 </Grid>
 
-                <Grid container className="my-3 align-items-center">
-                  <Grid xs={3}>
+                <Grid
+                  container
+                  alignItems={"center"}
+                  className="my-10 align-items-center"
+                >
+                  <Grid item xs={3}>
                     <div className="fw-500">Menu Text Color</div>
                   </Grid>
-                  <Grid xs={3}>
+                  <Grid item xs={3}>
                     <ColorPickerButton
                       hex={data.menuTextColor}
                       onClick={() =>
@@ -156,7 +174,7 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
                       }
                     />
                   </Grid>
-                  <Grid xs={3}></Grid>
+                  <Grid item xs={3}></Grid>
                 </Grid>
               </Container>
 
@@ -168,7 +186,8 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
             </div>
           </div>
         </Grid>
-      </div>
+      </MainSectionContainer>
+
       <MainSectionFooter
         onSaveClick={() => {
           document.getElementById("themeForm").click();

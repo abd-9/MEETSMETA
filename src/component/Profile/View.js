@@ -10,6 +10,8 @@ import { toast } from "react-toastify";
 import { Container } from "@mui/system";
 import { Grid } from "@mui/material";
 import { InputOutlined } from "../Shared/Input/Input";
+import ButtonGradient from "../Shared/Buttons";
+import MainSectionContainer from "../MainSection/MainContainer";
 
 // Import client   Image
 
@@ -36,15 +38,7 @@ const ViewProfile = ({ Settings, UpdateUserThemeSettings }) => {
 
   return (
     <>
-      <div
-        className="d-flex flex-column relative z-3 w-full "
-        style={{
-          backgroundColor: "white",
-          height: "90%",
-          borderRadius: "30px",
-          borderBottomLeftRadius: "0px",
-        }}
-      >
+      <MainSectionContainer>
         <SidebarHeader title="Profile"></SidebarHeader>
 
         <form className="w-full h-100" onSubmit={handelSubmit}>
@@ -58,29 +52,66 @@ const ViewProfile = ({ Settings, UpdateUserThemeSettings }) => {
               >
                 <Grid item xs={4} className=" ">
                   <img
-                    src="/images/empty-image.png"
+                    src="/images/empty-company-logo.png"
                     width={"200px"}
                     height="auto"
                   />
                 </Grid>
-                <Grid item xs={8} style={{}}>
-                  <h3 className="mb-4">Company name </h3>
+                <Grid item xs={7} style={{}}>
+                  <div className=" text-grayLight fw-500 mb-10 text-3xl">
+                    Company name
+                  </div>
+                  <div className="flexCenter ">
+                    <InputOutlined
+                      onChange={(e) => {
+                        setData({ companyName: e.target.value });
+                      }}
+                      value={data.companyName}
+                      label={null}
+                      placeholder="Company Name LLC"
+                      endButton={
+                        <ButtonGradient
+                          customPadding="px-3"
+                          className={"text-black  "}
+                          color="secondary"
+                        >
+                          Choose file{" "}
+                        </ButtonGradient>
+                      }
+                    ></InputOutlined>
 
-                  <InputOutlined
-                    onChange={(e) => {
-                      setData({ companyName: e.target.value });
-                    }}
-                    value={data.companyName}
-                    label={null}
-                    placeholder="Company Name LLC"
-                  ></InputOutlined>
+                    <ButtonGradient className={"mx-5"} color="primary">
+                      Upload
+                    </ButtonGradient>
+                  </div>
                 </Grid>
+              </Grid>
+              <Grid container direction={"column"} className="mx-2 my-8">
+                <div className="text-base fw-500 mb-5">Address</div>
+
+                <div className="text-sm  mx-8">
+                  <div className="my-5">United Arab Emirates</div>
+                  <div className="my-5 text-gray-400 ">
+                    308, Capital Golden Tower, 125 street, Business Bay, Dubai.
+                  </div>
+                </div>
+              </Grid>
+              <Grid container direction={"column"} className="mx-2 ">
+                <div className="text-base fw-500 mb-5">Primary contact</div>
+
+                <div className="text-sm  mx-8">
+                  <div className="my-2 text-gray-400 ">Haligul Jaman</div>
+                  <div className="my-2 text-gray-400 ">+971 52939393</div>
+                  <div className="my-2 text-gray-400 ">
+                    companyemail@address.com
+                  </div>
+                </div>
               </Grid>
             </Grid>
           </Container>
           <button type="submit" className="d-none" id="themeForm"></button>
         </form>
-      </div>
+      </MainSectionContainer>
       <MainSectionFooter
         onSaveClick={() => {
           document.getElementById("themeForm").click();

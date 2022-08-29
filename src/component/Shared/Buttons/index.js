@@ -6,18 +6,22 @@ export default function ButtonGradient({
   children,
   size = "medium",
   className,
+  customPadding = false,
   ...res
 }) {
+  let classes =
+    " xbutton  rounded-lg fw-500 shadow-none hover:shadow-none  normal-case   ";
+  if (customPadding) {
+    classes += " " + customPadding;
+  } else {
+    classes += "   py-2 px-8 ";
+  }
+  if (className) classes += " " + className;
   return (
     <Button
       variant="contained"
       // size={size}
-      className={
-        " xbutton  rounded-lg fw-500 shadow-none hover:shadow-none  " +
-        classes[color] +
-        " " +
-        className
-      }
+      className={`${classes} ${ColorClasses[color]} `}
       {...res}
     >
       <span>{children}</span>
@@ -25,7 +29,7 @@ export default function ButtonGradient({
   );
 }
 
-const classes = {
+const ColorClasses = {
   primary: " primaryGradient ",
   secondary: " secondaryGradient  light ",
   secondaryDark: " secondaryGradient dark ",

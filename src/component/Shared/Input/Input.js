@@ -4,7 +4,7 @@ import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
 
 import { SearchIcon } from "../icons";
-import { TextField } from "@mui/material";
+import { InputAdornment, TextField } from "@mui/material";
 
 export default function SearchInput({ placeholder = "Search" }) {
   return (
@@ -30,12 +30,21 @@ export function InputOutlined({
   onChange,
   label,
   placeholder = "Type",
+  className,
+  endButton = null,
   ...res
 }) {
   return (
     <TextField
+      size="small"
+      className={" xinput w-full  " + className}
       placeholder={placeholder}
       label={label}
+      InputProps={{
+        endAdornment: endButton && (
+          <InputAdornment position="end">{endButton}</InputAdornment>
+        ),
+      }}
       variant="outlined"
       {...res}
     />
