@@ -10,11 +10,11 @@ import theme from "./theme";
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
-      <StyledEngineProvider injectFirst>
-        <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
+        <StyledEngineProvider injectFirst>
           <App />
-        </ThemeProvider>
-      </StyledEngineProvider>
+        </StyledEngineProvider>
+      </ThemeProvider>
     </Provider>
   </BrowserRouter>,
   document.getElementById("root")

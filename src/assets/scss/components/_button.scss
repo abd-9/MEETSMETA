@@ -1,0 +1,25 @@
+.xbutton {
+  @apply px-8 py-2;
+  > span {
+    @apply text-xs;
+  }
+  &.primaryGradient {
+    background: transparent
+      linear-gradient(180deg, var(--primary-color) 0%, #135155a8 100%) 0% 0%
+      no-repeat padding-box;
+  }
+  &.secondaryGradient {
+    &.dark {
+      background: transparent linear-gradient(180deg, #999999 0%, #0e1e20 100%)
+        0% 0% no-repeat padding-box;
+    }
+    &.light {
+      background: transparent linear-gradient(180deg, #cdcdcd 0%, #565656 100%)
+        0% 0% no-repeat padding-box;
+    }
+  }
+}
+
+.MuiButton-root {
+  font-family: $font-primary;
+}

@@ -14,6 +14,7 @@ import CircleIcon from "@mui/icons-material/Circle";
 //import icon
 import SearchInput from "./Shared/Input/Input";
 import { Button, Grid } from "@mui/material";
+import ButtonGradient from "./Shared/Buttons";
 
 const Sidebar = ({ list }) => {
   const [open, setOpen] = React.useState(false);
@@ -102,7 +103,13 @@ const Sidebar = ({ list }) => {
             <div className="h6 text-bold mb-0 mx-2">MetaMask wallet</div>
           </Grid>
           <Grid item>
-            <Button className="logout-button my-2  p ">Logout</Button>
+            <ButtonGradient
+              // onClick={onSaveClick}
+              color="secondary"
+              className="my-5"
+            >
+              Logout
+            </ButtonGradient>
           </Grid>
         </Grid>
       </section>

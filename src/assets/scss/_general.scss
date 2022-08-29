@@ -46,3 +46,13 @@ h6 {
 body {
   overflow-y: overlay;
 }
+.flex-culomn {
+  display: flex;
+  flex-direction: column;
+}
+.flex-grow-1 {
+  flex-grow: 1;
+}
+.flex-grow-0 {
+  flex-grow: 0;
+}

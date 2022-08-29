@@ -18,7 +18,7 @@ const SidebarHeader = ({ title }) => {
         </Grid>
       </Grid>
       <Grid className="flexStart">
-        <h5 className="mb-0 titles-color font-weight-bold mx-5">{title}</h5>
+        <h3 className="mb-0 titles-color font-weight-bold mx-5">{title}</h3>
       </Grid>
       <Divider
         style={{

@@ -16,10 +16,6 @@ $dark: #343a40;
 $muted: #9b9bae;
 $light: #fbfbfd;
 
-$title-color: #4d4d71;
-$menu-color: #fbfbfd;
-$menu-text-color: #fbfbfd;
-
 $theme-colors: (
   "primary": $primary,
   "secondary": $secondary,
@@ -43,16 +39,18 @@ $shadow: 2px 2px 12px -2px rgba($black, 0.08);
 $font-primary: "Montserrat", sans-serif;
 $font-secondary: "Montserrat", sans-serif;
 
-$font-family-sans-serif: "Montserrat", "Segoe UI", Roboto, "Helvetica Neue",
-  Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
+$font-family-sans-serif: "Montserrat", "Segoe UI", "Helvetica Neue", Arial,
+  "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
   "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
-$font-family-monospace: "Montserrat", "Segoe UI", Roboto, "Helvetica Neue",
-  Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
+$font-family-monospace: "Montserrat", "Segoe UI", "Helvetica Neue", Arial,
+  "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
   "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
-$font-family-base: "Montserrat", "Segoe UI", Roboto, "Helvetica Neue", Arial,
+$font-family-base: "Montserrat", "Segoe UI", "Helvetica Neue", Arial,
   "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
   "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 :root {
   --font-family-sans-serif: "Montserrat", "Segoe UI";
   --font-family-monospace: "Montserrat", "Segoe UI";
+  --primary-color: #27e0ef;
+  --secondary-color: #777777;
 }

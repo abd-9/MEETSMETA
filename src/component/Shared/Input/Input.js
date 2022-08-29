@@ -29,7 +29,7 @@ export function InputOutlined({
   value,
   onChange,
   label,
-  placeholder = "Tyep",
+  placeholder = "Type",
   ...res
 }) {
   return (

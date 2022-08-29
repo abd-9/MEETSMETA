@@ -69,8 +69,31 @@
 .fw-normal {
   font-weight: normal !important;
 }
-* {
-  transition: color 0.4s linear;
-  /* transition: background 0.4s linear !important; */
-  transition: background-color 0.4s linear;
+/* * { */
+/* transition: color 0.4s linear; */
+/* transition: background 0.4s linear !important; */
+/* transition: background-color 0.4s linear; */
+/* } */
+
+@layer base {
+  h1 {
+    @apply text-2xl;
+  }
+
+  h2 {
+    @apply text-xl;
+  }
+  h3 {
+    @apply text-lg;
+  }
+  h4 {
+    @apply text-base;
+  }
+  h5 {
+    @apply text-base;
+  }
+  h6 {
+    @apply text-sm;
+  }
+  /* ... */
 }

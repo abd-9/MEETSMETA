@@ -91,9 +91,7 @@ const Layout1 = ({ Settings, FetchUserThemeSettings }) => {
       <Suspense fallback={PreLoader}>
         <Container id="layout1">
           <Grid container>
-            <Grid item>
-              <Navbar />
-            </Grid>
+            <Navbar />
           </Grid>
           <Grid container id="main-container">
             <Grid item xs={3} className="pr-0 ">

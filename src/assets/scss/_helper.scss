@@ -3,12 +3,12 @@
 //
 
 @each $color, $value in $theme-colors {
-  .text-#{$color} {
-    color: #{$value} !important;
-  }
-  .bg-#{$color} {
-    background-color: #{$value} !important;
-  }
+  // .text-#{$color} {
+  //   color: #{$value} !important;
+  // }
+  // .bg-#{$color} {
+  //   background-color: #{$value} !important;
+  // }
   .icon-fill-#{$color} {
     fill: rgba($value, 0.15);
   }

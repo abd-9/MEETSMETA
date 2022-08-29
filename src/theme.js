@@ -2,7 +2,7 @@ import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   palette: {
-    mode: "light",
+    // mode: "light",
     // primary: {
     //   main: orange[500],
     // },
@@ -53,9 +53,23 @@ const theme = createTheme({
       // black: grey[900],
       // white: grey[200],
       // fontFamily: ["Montserrat"],
+      fontFamily: [
+        "Montserrat",
+        "Roboto",
+        '"Helvetica Neue"',
+        "Arial",
+        "sans-serif",
+      ].join(","),
     },
+
     typography: {
-      fontFamily: "Montserrat",
+      fontFamily: [
+        "Montserrat",
+        "Roboto",
+        '"Helvetica Neue"',
+        "Arial",
+        "sans-serif",
+      ].join(","),
     },
   },
 });

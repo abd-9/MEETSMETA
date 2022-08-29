@@ -8,10 +8,9 @@ import {
 } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import "./app.css";
 //import style
 import "./assets/css/pe-icon-7.css";
-import "./app.css";
 
 import "./assets/scss/themes.scss";
 import { Suspense } from "react";
@@ -19,7 +18,7 @@ import { Suspense } from "react";
 class App extends Component {
   render() {
     return (
-      <React.Fragment>
+      <div className="">
         <Suspense fallback={<div>Loading...</div>}>
           <ToastContainer />
           <Router>
@@ -34,7 +33,7 @@ class App extends Component {
             </Switch>
           </Router>
         </Suspense>
-      </React.Fragment>
+      </div>
     );
   }
 }

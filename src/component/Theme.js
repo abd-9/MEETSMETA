@@ -47,7 +47,7 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
 
         <Grid
           container
-          className="mx-0 my-3 grow-1  general-theme-section   flexCenter  "
+          className="mx-0 my-16 grow-1  general-theme-section   flexCenter  "
         >
           <div id="tab-container" className="">
             <form className="w-full" onSubmit={handelSubmit}>

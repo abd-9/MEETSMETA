@@ -1,5 +1,11 @@
 # Getting Started with Create React App
+
 https://xd.adobe.com/view/8e9b3334-3958-45af-bcf1-9d4372085ee3-dbc8/screen/fdd9856c-e335-456f-ba23-4bcc436640bd/specs/
+
+# to see the Taillwind vars:
+
+tailwind-config-viewer
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
