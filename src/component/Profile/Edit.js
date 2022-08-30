@@ -9,7 +9,7 @@ import { Container } from "@mui/system";
 import { Grid } from "@mui/material";
 import { InputOutlined, InputStandard } from "../Shared/Input/Input";
 import ButtonGradient from "../Shared/Buttons";
-import MainSectionContainer from "../MainSection/MainContainer";
+import SettingsContainer from "../MainSection/SettingsMainContainer";
 import { Form, useFormik } from "formik";
 import { Label } from "../Shared/Lable";
 import { validHex } from "@uiw/react-color";
@@ -31,7 +31,7 @@ const EditProfile = ({ Settings, UpdateUserThemeSettings }) => {
 
   return (
     <>
-      <MainSectionContainer>
+      <SettingsContainer>
         <SidebarHeader title="Profile Information"></SidebarHeader>
 
         <form onSubmit={fromApi.handleSubmit} className="w-full h-100 my-5">
@@ -141,7 +141,7 @@ const EditProfile = ({ Settings, UpdateUserThemeSettings }) => {
           </Container>
           <button type="submit" className="d-none" id="themeForm"></button>
         </form>
-      </MainSectionContainer>
+      </SettingsContainer>
       <MainSectionFooter
         onEditClick={() => {
           history.goBack();

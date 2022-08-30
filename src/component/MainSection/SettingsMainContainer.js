@@ -4,7 +4,7 @@ import Divider from "@mui/material/Divider";
 import { HomeIcon, NotificationIcon } from "../Shared/icons";
 import { Container, Grid } from "@mui/material";
 
-const MainSectionContainer = ({ children }) => {
+const SettingsContainer = ({ children }) => {
   return (
     <div
       className="d-flex flex-column grow-1 relative z-3 w-full "
@@ -20,4 +20,4 @@ const MainSectionContainer = ({ children }) => {
   );
 };
 
-export default MainSectionContainer;
+export default SettingsContainer;

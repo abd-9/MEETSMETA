@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { Actions } from "../../store/actions";
 import {
   CollectionIcon,
+  ContractIcon,
   OverviewIcon,
   ProfileIcon,
   SettingIcon,
@@ -15,7 +16,9 @@ import { Container, Grid } from "@mui/material";
 const Navbar = React.lazy(() => import("../../component/Navbar/NavBar"));
 
 const Sidebar = React.lazy(() => import("../../component/Sidebar"));
-const MainSection = React.lazy(() => import("../../component/MainSection"));
+const MainSection = React.lazy(() =>
+  import("../../component/MainSectionRouter")
+);
 // const Feature = React.lazy(() => import("../../component/Feature"));
 
 const Layout1 = ({ Settings, FetchUserThemeSettings }) => {
@@ -66,6 +69,14 @@ const Layout1 = ({ Settings, FetchUserThemeSettings }) => {
         pageName: "profile",
         // component: Feature,
         icon: ProfileIcon,
+      },
+      {
+        id: 8,
+        route: "/contract",
+        label: "Contract",
+
+        // component: Feature,
+        icon: ContractIcon,
       },
     ],
     pos: document.documentElement.scrollTop,

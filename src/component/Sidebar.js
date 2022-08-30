@@ -36,7 +36,7 @@ const Sidebar = ({ list }) => {
           {list.map((l, index) => {
             if (l.route?.includes("setting")) {
               return (
-                <div className="overflow-hidden" key={index}>
+                <div className="" key={index}>
                   <ListItemButton
                     onClick={() => {
                       handleClick();
@@ -53,12 +53,7 @@ const Sidebar = ({ list }) => {
                     />
                     {open ? <ExpandLess /> : <ExpandMore />}
                   </ListItemButton>
-                  <Collapse
-                    className="overflow-hidden"
-                    in={open}
-                    timeout="auto"
-                    unmountOnExit
-                  >
+                  <Collapse className="" in={open} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
                       <SubItem
                         key="theme"

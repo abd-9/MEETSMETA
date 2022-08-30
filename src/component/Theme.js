@@ -9,7 +9,7 @@ import { ColorPicker, ColorPickerButton } from "./Shared/ColorPicker";
 import { toast } from "react-toastify";
 import { Container, Grid, TextField } from "@mui/material";
 import { InputOutlined } from "./Shared/Input/Input";
-import MainSectionContainer from "./MainSection/MainContainer";
+import SettingsContainer from "./MainSection/SettingsMainContainer";
 
 // Import client   Image
 
@@ -36,7 +36,7 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
 
   return (
     <>
-      <MainSectionContainer>
+      <SettingsContainer>
         <SidebarHeader
           className={"mb-10"}
           title="Setting - Theme"
@@ -186,7 +186,7 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
             </div>
           </div>
         </Grid>
-      </MainSectionContainer>
+      </SettingsContainer>
 
       <MainSectionFooter
         onSaveClick={() => {
