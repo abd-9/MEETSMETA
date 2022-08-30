@@ -4,10 +4,18 @@ import { HomeIcon, NotificationIcon } from "../Shared/icons";
 import { Container, Grid } from "@mui/material";
 import ButtonGradient from "../Shared/Buttons";
 
-const MainSectionFooter = ({ title, onSaveClick }) => {
+const MainSectionFooter = ({ onEditClick, onSaveClick }) => {
   return (
     <Container className="p-2 w-full px-3 main-section-footer z-1">
       <Grid container className="flexEnd mr-5 mb-3">
+        <ButtonGradient
+          onClick={onEditClick}
+          color="secondaryDark"
+          customPadding=" px-2"
+          className="   my-2 mx-5  "
+        >
+          Edit
+        </ButtonGradient>
         <ButtonGradient
           onClick={onSaveClick}
           color="secondaryDark"

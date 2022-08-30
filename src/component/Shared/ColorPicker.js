@@ -21,7 +21,7 @@ export const ColorPickerButton = ({ hex = "#fff", onMouseUp, ...res }) => {
         <div style={{ backgroundColor: hex }} id="perviewer"></div>
         <div id="perviewer2"></div>
         <div id="text" className="relative z-3 pl-3">
-          <span className="  ">Select color</span>
+          <span className=" text-sm ">Select color</span>
         </div>
       </Button>
     </div>

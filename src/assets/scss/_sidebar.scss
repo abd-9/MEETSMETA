@@ -26,6 +26,11 @@
   }
 
   .sidebar-sub-item {
+    .sub-list-icon {
+      stroke: var(--menu-color);
+      fill: var(--menu-color);
+      z-index: 11;
+    }
     margin: 0px 20px;
     .MuiTouchRipple-root {
       display: none !important;
@@ -36,10 +41,6 @@
       display: flex;
       justify-content: center;
       min-width: 30px;
-      svg {
-        stroke: var(--menu-text-color) !important;
-        fill: var(--menu-text-color) !important;
-      }
     }
     background: transparent;
     transition: all 0.2s linear;
@@ -62,6 +63,10 @@
     }
 
     &.Mui-selected {
+      .sub-list-icon {
+        stroke: var(--menu-text-color);
+        fill: var(--menu-text-color);
+      }
       .MuiListItemText-root {
         background: #00dff1;
         padding-left: 15px;
@@ -110,5 +115,15 @@
   h5,
   h6 {
     color: var(--menu-text-color);
+  }
+
+  .list-points-line:last-of-type {
+    position: absolute;
+    width: 2px;
+    height: 20rem;
+    bottom: 1px;
+    /* left: -3rem; */
+    background-color: var(--menu-color);
+    z-index: 10;
   }
 }

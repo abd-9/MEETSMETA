@@ -41,9 +41,9 @@ const ViewProfile = ({ Settings, UpdateUserThemeSettings }) => {
       <MainSectionContainer>
         <SidebarHeader title="Profile"></SidebarHeader>
 
-        <form className="w-full h-100" onSubmit={handelSubmit}>
+        <form className="w-full h-100 my-5" onSubmit={handelSubmit}>
           <Container>
-            <Grid container className="px-2 ">
+            <Grid container className=" px-2 ">
               <Grid
                 container
                 justifyContent={"center"}
@@ -115,6 +115,9 @@ const ViewProfile = ({ Settings, UpdateUserThemeSettings }) => {
       <MainSectionFooter
         onSaveClick={() => {
           document.getElementById("themeForm").click();
+        }}
+        onEditClick={() => {
+          alert("Edit clicked");
         }}
       ></MainSectionFooter>
     </>

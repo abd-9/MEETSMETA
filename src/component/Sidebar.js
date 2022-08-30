@@ -17,11 +17,11 @@ import { Button, Grid } from "@mui/material";
 import ButtonGradient from "./Shared/Buttons";
 
 const Sidebar = ({ list }) => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpenSettingsList] = React.useState(false);
   const location = useLocation();
   const history = useHistory();
   const handleClick = () => {
-    setOpen(!open);
+    setOpenSettingsList(!open);
   };
   const handleChageTab = (value) => {
     history.push(value);
@@ -36,7 +36,7 @@ const Sidebar = ({ list }) => {
           {list.map((l, index) => {
             if (l.route?.includes("setting")) {
               return (
-                <React.Fragment key={index}>
+                <div className="overflow-hidden" key={index}>
                   <ListItemButton
                     onClick={() => {
                       handleClick();
@@ -53,7 +53,12 @@ const Sidebar = ({ list }) => {
                     />
                     {open ? <ExpandLess /> : <ExpandMore />}
                   </ListItemButton>
-                  <Collapse in={open} timeout="auto" unmountOnExit>
+                  <Collapse
+                    className="overflow-hidden"
+                    in={open}
+                    timeout="auto"
+                    unmountOnExit
+                  >
                     <List component="div" disablePadding>
                       <SubItem
                         key="theme"
@@ -76,7 +81,7 @@ const Sidebar = ({ list }) => {
                     </List>
                   </Collapse>
                   <Divider className="line" />
-                </React.Fragment>
+                </div>
               );
             }
             return (
@@ -85,7 +90,10 @@ const Sidebar = ({ list }) => {
                   key={l.id}
                   route={l.route}
                   selected={location.pathname.includes(l.route)}
-                  onClick={() => handleChageTab(l.route)}
+                  onClick={() => {
+                    handleChageTab(l.route);
+                    setOpenSettingsList(false);
+                  }}
                   Icon={l.icon}
                   text={l.label}
                 ></Item>
@@ -98,11 +106,11 @@ const Sidebar = ({ list }) => {
           container
           className="mt-auto m-0 flex-column flexCenter text-center  "
         >
-          <Grid item className="flexCenter">
+          <Grid item xs={12} className="flexCenter">
             <img src="/images/metamask.png" style={{ width: "30px" }}></img>{" "}
             <div className="h6 text-bold mb-0 mx-2">MetaMask wallet</div>
           </Grid>
-          <Grid item>
+          <Grid item xs={12}>
             <ButtonGradient
               // onClick={onSaveClick}
               color="secondary"
@@ -135,7 +143,14 @@ const Item = ({ Icon = DraftsIcon, text, selected, route, ...res }) => {
     </>
   );
 };
-const SubItem = ({ Icon = DraftsIcon, text, selected, route, ...res }) => {
+const SubItem = ({
+  Icon = DraftsIcon,
+  text,
+  selected,
+  route,
+  isLast,
+  ...res
+}) => {
   return (
     <>
       <ListItemButton
@@ -144,10 +159,11 @@ const SubItem = ({ Icon = DraftsIcon, text, selected, route, ...res }) => {
         sx={{ pl: 4 }}
         {...res}
       >
-        <ListItemIcon>
+        <ListItemIcon className="relative">
+          <div className="list-points-line"></div>
           <CircleIcon
+            className="sub-list-icon"
             style={{
-              fill: "white",
               widht: "15px",
               height: "15px",
             }}

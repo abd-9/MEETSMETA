@@ -54,7 +54,7 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
                   className=" content-center "
                 >
                   <Grid item xs={3}>
-                    <div className="fw-500">Title</div>{" "}
+                    <div className="fw-500 text-base">Title</div>{" "}
                   </Grid>
                   <Grid item xs={6}>
                     <InputOutlined
@@ -81,7 +81,7 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
                   className="my-10 align-items-center"
                 >
                   <Grid item xs={3}>
-                    <div className="fw-500">Title Color</div>
+                    <span className="fw-500 text-base">Title Color</span>
                   </Grid>
                   <Grid item xs={3}>
                     <ColorPickerButton
@@ -118,7 +118,7 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
                   className="my-10 align-items-center"
                 >
                   <Grid item xs={3}>
-                    <div className="fw-500">Menu Light Color</div>
+                    <div className="fw-500 text-base">Menu Light Color</div>
                   </Grid>
                   <Grid item xs={3}>
                     <ColorPickerButton
@@ -136,10 +136,10 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
                 <Grid
                   alignItems={"center"}
                   container
-                  className="my-10 align-items-center"
+                  className="my-10  align-items-center"
                 >
                   <Grid item xs={3}>
-                    <div className="fw-500">Menu Dark Color</div>
+                    <div className="fw-500 text-base">Menu Dark Color</div>
                   </Grid>
                   <Grid item xs={3}>
                     <ColorPickerButton
@@ -161,7 +161,7 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
                   className="my-10 align-items-center"
                 >
                   <Grid item xs={3}>
-                    <div className="fw-500">Menu Text Color</div>
+                    <div className="fw-500 text-base">Menu Text Color</div>
                   </Grid>
                   <Grid item xs={3}>
                     <ColorPickerButton
