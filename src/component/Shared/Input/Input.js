@@ -29,9 +29,10 @@ export function InputOutlined({
   value,
   onChange,
   label,
-  placeholder = "Type",
+  placeholder = "",
   className,
   endButton = null,
+  startButton = null,
   ...res
 }) {
   return (
@@ -44,8 +45,42 @@ export function InputOutlined({
         endAdornment: endButton && (
           <InputAdornment position="end">{endButton}</InputAdornment>
         ),
+        startAdornment: startButton && (
+          <InputAdornment position="start">{startButton}</InputAdornment>
+        ),
       }}
       variant="outlined"
+      {...res}
+    />
+  );
+}
+
+export function InputStandard({
+  name,
+  value,
+  onChange,
+  label,
+  placeholder = "",
+  className,
+  endButton = null,
+  startButton = null,
+  ...res
+}) {
+  return (
+    <TextField
+      size="small"
+      className={" xinput w-full  " + className}
+      placeholder={placeholder}
+      label={label}
+      InputProps={{
+        endAdornment: endButton && (
+          <InputAdornment position="end">{endButton}</InputAdornment>
+        ),
+        startAdornment: startButton && (
+          <InputAdornment position="start">{startButton}</InputAdornment>
+        ),
+      }}
+      variant="standard"
       {...res}
     />
   );

@@ -5,18 +5,19 @@ import { connect } from "react-redux";
 import { Actions } from "../../store/actions";
 import MainSectionFooter from "../MainSection/Footer";
 import SidebarHeader from "../MainSection/Header";
-import { ColorPicker, ColorPickerButton } from "../Shared/ColorPicker";
 import { toast } from "react-toastify";
 import { Container } from "@mui/system";
 import { Grid } from "@mui/material";
 import { InputOutlined } from "../Shared/Input/Input";
 import ButtonGradient from "../Shared/Buttons";
 import MainSectionContainer from "../MainSection/MainContainer";
-
-// Import client   Image
+import { useHistory } from "react-router-dom";
 
 const ViewProfile = ({ Settings, UpdateUserThemeSettings }) => {
   const [data, _setData] = useState(Settings.theme || {});
+
+  const history = useHistory();
+
   const handelSubmit = (e) => {
     e.preventDefault();
 
@@ -117,7 +118,7 @@ const ViewProfile = ({ Settings, UpdateUserThemeSettings }) => {
           document.getElementById("themeForm").click();
         }}
         onEditClick={() => {
-          alert("Edit clicked");
+          history.push("/profile/edit");
         }}
       ></MainSectionFooter>
     </>

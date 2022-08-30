@@ -9,9 +9,9 @@ import DraftsIcon from "@mui/icons-material/Drafts";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import Divider from "@mui/material/Divider";
-// Import Background Image
+
 import CircleIcon from "@mui/icons-material/Circle";
-//import icon
+
 import SearchInput from "./Shared/Input/Input";
 import { Button, Grid } from "@mui/material";
 import ButtonGradient from "./Shared/Buttons";
@@ -89,7 +89,7 @@ const Sidebar = ({ list }) => {
                 <Item
                   key={l.id}
                   route={l.route}
-                  selected={location.pathname.includes(l.route)}
+                  selected={location.pathname.includes(l.pageName || l.route)}
                   onClick={() => {
                     handleChageTab(l.route);
                     setOpenSettingsList(false);

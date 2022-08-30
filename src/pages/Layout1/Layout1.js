@@ -63,6 +63,7 @@ const Layout1 = ({ Settings, FetchUserThemeSettings }) => {
         id: 7,
         route: "/profile/view",
         label: "Profile",
+        pageName: "profile",
         // component: Feature,
         icon: ProfileIcon,
       },
