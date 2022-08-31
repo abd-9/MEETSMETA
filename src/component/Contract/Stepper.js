@@ -4,14 +4,20 @@ import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import { StepButton, Typography } from "@mui/material";
+import PropTypes from "prop-types";
+import { styled } from "@mui/material/styles";
+import Stack from "@mui/material/Stack";
+import SettingsIcon from "@mui/icons-material/Settings";
+import GroupAddIcon from "@mui/icons-material/GroupAdd";
+import VideoLabelIcon from "@mui/icons-material/VideoLabel";
+import StepConnector, {
+  stepConnectorClasses,
+} from "@mui/material/StepConnector";
+import { Label } from "../Shared/Lable";
 
-const steps = [
-  { id: "1", label: "Networks" },
-  { id: "2", label: "Contract" },
-];
+const steps = ["Networks", "Contract"];
 
-export default function AddContractStepper() {
-  const [activeStep, setActiveStep] = React.useState(0);
+export function CustomizedSteppers({ activeStep, setActiveStep }) {
   const [completed, setCompleted] = React.useState({});
 
   const totalSteps = () => {
@@ -68,7 +74,7 @@ export default function AddContractStepper() {
         activeStep={activeStep}
       >
         {steps.map((label, index) => (
-          <Step key={label} completed={completed[index]}>
+          <Step key={label} connector={<div />} completed={completed[index]}>
             <StepButton color="inherit" onClick={handleStep(index)}>
               {label}
             </StepButton>
@@ -76,5 +82,122 @@ export default function AddContractStepper() {
         ))}
       </Stepper>
     </Box>
+  );
+}
+
+const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
+  [`&.${stepConnectorClasses.alternativeLabel}`]: {
+    top: "12px",
+  },
+  [`&.${stepConnectorClasses.active}`]: {
+    [`& .${stepConnectorClasses.line}`]: {
+      backgroundColor: "var(--menu-color)",
+      opacity: 0.5,
+    },
+  },
+  [`&.${stepConnectorClasses.completed}`]: {
+    [`& .${stepConnectorClasses.line}`]: {
+      backgroundColor: "var(--menu-color)",
+      opacity: 1,
+    },
+  },
+  [`& .${stepConnectorClasses.line}`]: {
+    height: 12,
+    border: 0,
+    backgroundColor: "var(--menu-color)",
+    opacity: 0.5,
+    borderRadius: 1,
+    width: "calc(100% + 10px)",
+    marginLeft: "-6px",
+  },
+}));
+
+const ColorlibStepIconRoot = styled("div")(({ theme, ownerState }) => ({
+  backgroundColor: "var(--menu-color)",
+  opacity: 0.5,
+
+  zIndex: 1,
+  color: "#fff",
+  width: 35,
+  height: 35,
+  display: "flex",
+  fill: "red",
+  stroke: "red",
+  borderRadius: "50%",
+  justifyContent: "center",
+  alignItems: "center",
+  ...(ownerState.active && {
+    opacity: 1,
+    backgroundColor: "var(--menu-color)",
+    // boxShadow: "0 4px 10px 0 rgba(0,0,0,.25)",
+  }),
+  ...(ownerState.completed && {
+    opacity: 1,
+    backgroundColor: "var(--menu-color)",
+  }),
+}));
+
+function ColorlibStepIcon(props) {
+  const { active, completed, className } = props;
+
+  //   const icons = {
+  //     1: (
+  //       <Label fontColor="text-white" className="font-bold ">
+  //         {props.icon}
+  //       </Label>
+  //     ),
+  //     2: (
+  //       <Label fontColor="text-white" className="font-bold">
+  //         2
+  //       </Label>
+  //     ),
+  //   };
+
+  return (
+    <ColorlibStepIconRoot
+      ownerState={{ completed, active }}
+      className={className}
+    >
+      <Label fontColor="text-white" className="font-bold ">
+        {props.icon}
+      </Label>
+    </ColorlibStepIconRoot>
+  );
+}
+
+ColorlibStepIcon.propTypes = {
+  /**
+   * Whether this step is active.
+   * @default false
+   */
+  active: PropTypes.bool,
+  className: PropTypes.string,
+  /**
+   * Mark the step as completed. Is passed to child components.
+   * @default false
+   */
+  completed: PropTypes.bool,
+  /**
+   * The label displayed in the step icon.
+   */
+  icon: PropTypes.node,
+};
+
+export default function AddContractStepper({ activeStep, setActiveStep }) {
+  return (
+    <Stack sx={{ width: "100%" }} spacing={4}>
+      <Stepper
+        className="add-corntract-stepper "
+        alternativeLabel
+        activeStep={activeStep}
+        connector={<ColorlibConnector />}
+      >
+        {steps.map((label, index) => (
+          <Step completed={activeStep >= index} key={label}>
+            <StepLabel StepIconComponent={ColorlibStepIcon}>{label}</StepLabel>
+          </Step>
+        ))}
+      </Stepper>
+    </Stack>
   );
 }

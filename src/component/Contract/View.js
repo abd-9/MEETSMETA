@@ -73,7 +73,7 @@ const ViewProfile = ({ Settings, UpdateUserThemeSettings }) => {
                       endButton={
                         <ButtonGradient
                           customPadding="px-3"
-                          className={"text-black  "}
+                          textColor={"text-black  "}
                           color="secondary"
                         >
                           Choose file{" "}

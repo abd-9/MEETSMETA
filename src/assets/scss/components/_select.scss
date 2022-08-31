@@ -1,0 +1,26 @@
+.xautocomplate {
+  .MuiButtonBase-root {
+    @apply hover:bg-transparent;
+  }
+  * {
+    font-family: $font-primary;
+    color: #2d2d2d;
+    // @apply text-base;
+    font-size: small;
+  }
+  .MuiInputBase-sizeSmall {
+    padding: 8px !important;
+  }
+  .MuiInputLabel-root {
+    font-family: $font-primary;
+  }
+}
+
+.MuiAutocomplete-popper {
+  * {
+    font-family: $font-primary;
+    font-size: small;
+
+    color: #2d2d2d;
+  }
+}

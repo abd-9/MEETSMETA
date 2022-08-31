@@ -2,14 +2,14 @@ import React, { Component, useState } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
-import { Actions } from "../store/actions";
-import MainSectionFooter from "./MainSection/Footer";
-import SidebarHeader from "./MainSection/Header";
-import { ColorPicker, ColorPickerButton } from "./Shared/ColorPicker";
+import { Actions } from "../../store/actions";
+import MainSectionFooter from "../MainSection/Footer";
+import SidebarHeader from "../MainSection/Header";
+import { ColorPicker, ColorPickerButton } from "../Shared/ColorPicker";
 import { toast } from "react-toastify";
 import { Container, Grid, TextField } from "@mui/material";
-import { InputOutlined } from "./Shared/Input/Input";
-import SettingsContainer from "./MainSection/SettingsMainContainer";
+import { InputOutlined } from "../Shared/Input/Input";
+import SettingsContainer from "../MainSection/SettingsMainContainer";
 
 // Import client   Image
 

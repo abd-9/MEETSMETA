@@ -5,16 +5,20 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
 import { StyledEngineProvider, ThemeProvider } from "@mui/material/styles";
-import theme from "./theme";
+import _ from "lodash";
+import CustomTheme from "./theme";
+
+export const xAction = (action) => store.dispatch(action);
+export const xState = (path) => _.get(store.getState(), path);
 
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
-      <ThemeProvider theme={theme}>
+      <CustomTheme>
         <StyledEngineProvider injectFirst>
           <App />
         </StyledEngineProvider>
-      </ThemeProvider>
+      </CustomTheme>
     </Provider>
   </BrowserRouter>,
   document.getElementById("root")

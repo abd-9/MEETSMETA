@@ -6,11 +6,11 @@ export function Label({
   name,
   children,
   fontClassName = "text-base",
-
+  fontColor = "text-grayLight",
   className,
   ...res
 }) {
-  let classes = ` xlabel text-grayLight ${className} ${fontClassName}`;
+  let classes = ` xlabel ${className} ${fontClassName} ${fontColor} `;
 
   return (
     <Typography className={classes} {...res}>

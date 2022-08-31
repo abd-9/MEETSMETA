@@ -28,7 +28,7 @@ const Sidebar = ({ list }) => {
   };
   return (
     <React.Fragment>
-      <section className="section " id="sidebar">
+      <section className=" pt-10 pb-5 " id="sidebar">
         <div className="px-3">
           <SearchInput />
         </div>
@@ -60,6 +60,12 @@ const Sidebar = ({ list }) => {
                         text="Theme"
                         selected={location.pathname.includes("theme")}
                         onClick={() => handleChageTab("/setting/theme")}
+                      ></SubItem>
+                      <SubItem
+                        key="billing"
+                        text="Billing"
+                        selected={location.pathname.includes("billing")}
+                        onClick={() => handleChageTab("/setting/billing")}
                       ></SubItem>
                       <SubItem
                         key="plan"
@@ -97,10 +103,7 @@ const Sidebar = ({ list }) => {
           })}
         </List>
 
-        <Grid
-          container
-          className="mt-auto m-0 flex-column flexCenter text-center  "
-        >
+        <Grid container className="mt-auto m-0  flexCenter text-center  ">
           <Grid item xs={12} className="flexCenter">
             <img src="/images/metamask.png" style={{ width: "30px" }}></img>{" "}
             <div className="h6 text-bold mb-0 mx-2">MetaMask wallet</div>
@@ -109,7 +112,7 @@ const Sidebar = ({ list }) => {
             <ButtonGradient
               // onClick={onSaveClick}
               color="secondary"
-              className="my-5"
+              className="mt-5"
             >
               Logout
             </ButtonGradient>

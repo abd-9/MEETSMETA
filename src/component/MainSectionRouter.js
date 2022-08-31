@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Route, Router, Switch } from "react-router-dom";
 
-import Theme from "./Theme";
+import Theme from "./Settings/Theme";
+import Billing from "./Settings/Billing";
 import ViewProfile from "./Profile/View";
 import EditProfile from "./Profile/Edit";
 import AddContract from "./Contract/Add";
@@ -10,6 +11,7 @@ export default class MainSection extends Component {
     return (
       <Switch>
         <Route path={"/setting/theme"} component={Theme} key={"theme"} />
+        <Route path={"/setting/billing"} component={Billing} key={"billing"} />
         <Route
           path={"/profile/view"}
           component={ViewProfile}
@@ -23,7 +25,7 @@ export default class MainSection extends Component {
         <Route
           path={"/contract/add"}
           component={AddContract}
-          key={"profile-edit"}
+          key={"contract-edit"}
         />
       </Switch>
     );

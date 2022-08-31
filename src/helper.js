@@ -27,18 +27,28 @@ export const SetThemeColors = (data) => {
       "--title-color",
       data.titleColor
     );
-  if (data.menuColor)
+  if (data.menuColor) {
     document.documentElement.style.setProperty("--menu-color", data.menuColor);
+    document.documentElement.style.setProperty(
+      "--primary-color",
+      data.menuColor
+    );
+  }
   if (data.menuTextColor)
     document.documentElement.style.setProperty(
       "--menu-text-color",
       data.menuTextColor
     );
-  if (data.menuSecondColor)
+  if (data.menuSecondColor) {
     document.documentElement.style.setProperty(
       "--menu-second-color",
       data.menuSecondColor
     );
+    document.documentElement.style.setProperty(
+      "--secondary-color",
+      data.menuSecondColor
+    );
+  }
 };
 export const GetTheme = () => {
   return JSON.parse(localStorage.getItem("theme"));

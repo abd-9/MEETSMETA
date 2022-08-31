@@ -72,7 +72,7 @@ const Layout1 = ({ Settings, FetchUserThemeSettings }) => {
       },
       {
         id: 8,
-        route: "/contract",
+        route: "/contract/add",
         label: "Contract",
 
         // component: Feature,

@@ -35,7 +35,7 @@
     .MuiTouchRipple-root {
       display: none !important;
     }
-    height: 50px;
+    height: 40px;
     border-radius: 30px;
     .MuiListItemIcon-root {
       display: flex;
@@ -68,7 +68,7 @@
         fill: var(--menu-text-color);
       }
       .MuiListItemText-root {
-        background: #00dff1;
+        background: var(--menu-color) !important;
         padding-left: 15px;
       }
     }

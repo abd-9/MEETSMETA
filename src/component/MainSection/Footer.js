@@ -9,13 +9,12 @@ const MainSectionFooter = ({
 }) => {
   return (
     <Container className="p-2 w-full px-3 main-section-footer z-1">
-      <Grid container className="flexEnd mr-5 mb-3">
+      <Grid container className="flexEnd mr-5 mb-2">
         {onEditClick && (
           <ButtonGradient
             onClick={onEditClick}
-            color="secondaryDark"
-            customPadding=" px-2"
-            className=" my-2 mx-5  "
+            color="secondary"
+            className=" my-2  mx-4 "
           >
             {editLable}
           </ButtonGradient>
