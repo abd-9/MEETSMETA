@@ -79,7 +79,7 @@ const EditProfile = ({ Settings, UpdateUserThemeSettings }) => {
                   </div>
                 </Grid>
                 <Grid item xs={2}>
-                  <ButtonGradient className={"mx-2 my-15rem"} color="primary">
+                  <ButtonGradient className={"mx-2 my-1 "} color="primary">
                     Upload
                   </ButtonGradient>
                 </Grid>

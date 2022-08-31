@@ -53,8 +53,8 @@ const ViewProfile = ({ Settings, UpdateUserThemeSettings }) => {
               >
                 <Grid item xs={4} className=" ">
                   <img
-                    src="/images/empty-company-logo.png"
-                    width={"200px"}
+                    src="/images/empty-profile.png"
+                    width={"220px"}
                     height="auto"
                   />
                 </Grid>
