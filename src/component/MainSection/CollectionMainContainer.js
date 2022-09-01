@@ -1,12 +1,12 @@
 import React from "react";
 
-const ContractMainContainer = ({ children }) => {
+const CollectionMainContainer = ({ children }) => {
   return (
     <div
-      className="flex flex-col  grow relative z-3 w-full "
+      className="d-flex flex-column grow-1 relative z-3 w-full "
       style={{
         backgroundColor: "white",
-        height: "100%",
+        height: "92%",
         borderRadius: "30px",
         borderBottomLeftRadius: "0px",
       }}
@@ -16,4 +16,4 @@ const ContractMainContainer = ({ children }) => {
   );
 };
 
-export default ContractMainContainer;
+export default CollectionMainContainer;

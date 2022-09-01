@@ -3,7 +3,7 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
 import { Actions } from "../../store/actions";
-import MainSectionFooter from "../MainSection/Footer";
+import MainSectionFooter from "../MainSection/SettingsFooter";
 import SidebarHeader from "../MainSection/Header";
 import { Container } from "@mui/system";
 import { Grid } from "@mui/material";
@@ -17,6 +17,7 @@ import { XAutoComplate } from "../Shared/XAutoComplate";
 import ContractMainContainer from "../MainSection/ContractMainContainer";
 import ButtonGradient from "../Shared/Buttons";
 import Checkbox from "../Shared/Checkbox";
+import { toast } from "react-toastify";
 
 // Import client   Image
 
@@ -40,7 +41,7 @@ const AddContract = ({ Settings, UpdateUserThemeSettings }) => {
   };
 
   const handleDeploy = () => {
-    alert("deploy");
+    toast.success("Deployed Successfully ");
   };
 
   const renderButotn = () => {

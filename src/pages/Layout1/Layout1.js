@@ -36,8 +36,9 @@ const Layout1 = ({ Settings, FetchUserThemeSettings }) => {
     navItems: [
       {
         id: 1,
-        route: "/home",
+        route: "/collection",
         label: "Collection",
+        pageName: "collection",
         // component: Feature,
         icon: CollectionIcon,
       },

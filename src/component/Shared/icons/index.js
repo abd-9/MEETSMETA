@@ -361,7 +361,7 @@ export function CheckedIcon({ width, height, ...res }) {
         d="M278.649,1074.406l1.667,4.4,9.028-4.4"
         transform="translate(-574.857 -936.033) rotate(-17)"
         fill="none"
-        stroke="#00dff1"
+        stroke="var(--primary-color)"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="3"

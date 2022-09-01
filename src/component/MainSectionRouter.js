@@ -4,6 +4,7 @@ import { Route, Router, Switch } from "react-router-dom";
 import Theme from "./Settings/Theme";
 import Billing from "./Settings/Billing";
 import ViewProfile from "./Profile/View";
+import CollectionsList from "./Collaction/List";
 import EditProfile from "./Profile/Edit";
 import AddContract from "./Contract/Add";
 export default class MainSection extends Component {
@@ -26,6 +27,11 @@ export default class MainSection extends Component {
           path={"/contract/add"}
           component={AddContract}
           key={"contract-edit"}
+        />
+        <Route
+          path={"/collection"}
+          component={CollectionsList}
+          key={"collection"}
         />
       </Switch>
     );

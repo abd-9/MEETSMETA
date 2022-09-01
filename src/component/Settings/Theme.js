@@ -3,7 +3,7 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
 import { Actions } from "../../store/actions";
-import MainSectionFooter from "../MainSection/Footer";
+import MainSectionFooter from "../MainSection/SettingsFooter";
 import SidebarHeader from "../MainSection/Header";
 import { ColorPicker, ColorPickerButton } from "../Shared/ColorPicker";
 import { toast } from "react-toastify";
@@ -21,7 +21,7 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
     UpdateUserThemeSettings(
       data,
       () => {
-        toast.info("Saved Successfully ");
+        toast.info("Saved Successfully");
       },
       () => {
         toast.error("Failed to save");

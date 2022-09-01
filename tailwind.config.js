@@ -43,6 +43,7 @@ module.exports = {
       purple: colors.purple,
       fuchsia: colors.fuchsia,
       pink: colors.pink,
+      secondaryLight: "var(--main-bg-color)",
       rose: colors.rose,
       grayLight: "#555555",
       primary: "var(--primary-color)",
@@ -364,7 +365,7 @@ module.exports = {
     },
 
     fontSize: {
-      xs: ["0.75rem", { lineHeight: "1rem" }],
+      xs: ["0.70rem", { lineHeight: ".9rem" }],
       sm: ["0.875rem", { lineHeight: "1.25rem" }],
       base: [".9rem", { lineHeight: "1.5rem" }],
       lg: ["1.125rem", { lineHeight: "1.75rem" }],

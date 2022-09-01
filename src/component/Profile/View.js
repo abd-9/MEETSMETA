@@ -3,7 +3,7 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
 import { Actions } from "../../store/actions";
-import MainSectionFooter from "../MainSection/Footer";
+import MainSectionFooter from "../MainSection/SettingsFooter";
 import SidebarHeader from "../MainSection/Header";
 import { toast } from "react-toastify";
 import { Container } from "@mui/system";
