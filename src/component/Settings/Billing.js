@@ -14,6 +14,7 @@ import { Form, useFormik } from "formik";
 import { Label } from "../Shared/Lable";
 import { validHex } from "@uiw/react-color";
 import { useHistory } from "react-router-dom";
+import { SectionAnimation } from "../Shared/Animation";
 
 // Import client   Image
 
@@ -33,72 +34,79 @@ const Billing = ({ Settings, UpdateUserThemeSettings }) => {
     <>
       <SettingsContainer>
         <SidebarHeader title="Profile Information"></SidebarHeader>
-
-        <form onSubmit={fromApi.handleSubmit} className="w-full h-100 my-5">
-          <Container>
-            <Grid
-              container
-              rowSpacing={1}
-              justifyContent={"flex-start"}
-              // direction="column"
-              justifyItems="flex-start"
-              // alignItems={"flex-start"}
-              className=" px-2 "
-            >
-              <Grid item xs={10}>
-                <Label className={"my-3 font-semibold"}> Company name</Label>
-                <InputOutlined
-                  name="name"
-                  value={values.name}
-                  onChange={fromApi.handleChange}
-                ></InputOutlined>
-              </Grid>{" "}
-              <Grid item xs={10}>
-                <Label className={"my-3 font-semibold"}>
-                  Email (where invoices are sent)
-                </Label>
-                <InputOutlined
-                  name="email"
-                  value={values.email}
-                  onChange={fromApi.handleChange}
-                ></InputOutlined>
+        <SectionAnimation>
+          <form onSubmit={fromApi.handleSubmit} className="w-full h-100 my-5">
+            <Container>
+              <Grid
+                container
+                rowSpacing={1}
+                justifyContent={"flex-start"}
+                // direction="column"
+                justifyItems="flex-start"
+                // alignItems={"flex-start"}
+                className=" px-2 "
+              >
+                <Grid item xs={10}>
+                  <Label className={"my-3 font-semibold"}> Company name</Label>
+                  <InputOutlined
+                    name="name"
+                    value={values.name}
+                    onChange={fromApi.handleChange}
+                  ></InputOutlined>
+                </Grid>{" "}
+                <Grid item xs={10}>
+                  <Label className={"my-3 font-semibold"}>
+                    Email (where invoices are sent)
+                  </Label>
+                  <InputOutlined
+                    name="email"
+                    value={values.email}
+                    onChange={fromApi.handleChange}
+                  ></InputOutlined>
+                </Grid>
+                <Grid item xs={10}>
+                  <Label className={"my-3 font-semibold"}>
+                    {" "}
+                    Address line 1
+                  </Label>
+                  <InputOutlined
+                    name="name"
+                    value={values.country}
+                    onChange={fromApi.handleChange}
+                  ></InputOutlined>
+                </Grid>{" "}
+                <Grid item xs={10}>
+                  <Label className={"my-3 font-semibold"}>
+                    {" "}
+                    Address line 2
+                  </Label>
+                  <InputOutlined
+                    name="name"
+                    value={values.country}
+                    onChange={fromApi.handleChange}
+                  ></InputOutlined>
+                </Grid>{" "}
+                <Grid item xs={10}>
+                  <Label className={"my-3 font-semibold"}> City</Label>
+                  <InputOutlined
+                    name="name"
+                    value={values.country}
+                    onChange={fromApi.handleChange}
+                  ></InputOutlined>
+                </Grid>{" "}
+                <Grid item xs={10}>
+                  <Label className={"my-3 font-semibold"}> Country</Label>
+                  <InputOutlined
+                    name="name"
+                    value={values.country}
+                    onChange={fromApi.handleChange}
+                  ></InputOutlined>
+                </Grid>{" "}
               </Grid>
-              <Grid item xs={10}>
-                <Label className={"my-3 font-semibold"}> Address line 1</Label>
-                <InputOutlined
-                  name="name"
-                  value={values.country}
-                  onChange={fromApi.handleChange}
-                ></InputOutlined>
-              </Grid>{" "}
-              <Grid item xs={10}>
-                <Label className={"my-3 font-semibold"}> Address line 2</Label>
-                <InputOutlined
-                  name="name"
-                  value={values.country}
-                  onChange={fromApi.handleChange}
-                ></InputOutlined>
-              </Grid>{" "}
-              <Grid item xs={10}>
-                <Label className={"my-3 font-semibold"}> City</Label>
-                <InputOutlined
-                  name="name"
-                  value={values.country}
-                  onChange={fromApi.handleChange}
-                ></InputOutlined>
-              </Grid>{" "}
-              <Grid item xs={10}>
-                <Label className={"my-3 font-semibold"}> Country</Label>
-                <InputOutlined
-                  name="name"
-                  value={values.country}
-                  onChange={fromApi.handleChange}
-                ></InputOutlined>
-              </Grid>{" "}
-            </Grid>
-          </Container>
-          <button type="submit" className="d-none" id="themeForm"></button>
-        </form>
+            </Container>
+            <button type="submit" className="d-none" id="themeForm"></button>
+          </form>
+        </SectionAnimation>
       </SettingsContainer>
       <MainSectionFooter
         onEditClick={() => {

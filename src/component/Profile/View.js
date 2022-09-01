@@ -12,6 +12,7 @@ import { InputOutlined } from "../Shared/Input/Input";
 import ButtonGradient from "../Shared/Buttons";
 import SettingsContainer from "../MainSection/SettingsMainContainer";
 import { useHistory } from "react-router-dom";
+import { SectionAnimation } from "../Shared/Animation";
 
 const ViewProfile = ({ Settings, UpdateUserThemeSettings }) => {
   const [data, _setData] = useState(Settings.theme || {});
@@ -41,77 +42,79 @@ const ViewProfile = ({ Settings, UpdateUserThemeSettings }) => {
     <>
       <SettingsContainer>
         <SidebarHeader title="Profile"></SidebarHeader>
+        <SectionAnimation>
+          <form className="w-full h-100 my-5" onSubmit={handelSubmit}>
+            <Container>
+              <Grid container className=" px-2 ">
+                <Grid
+                  container
+                  justifyContent={"center"}
+                  justifyItems="center"
+                  alignItems={"flex-end"}
+                >
+                  <Grid item xs={4} className=" ">
+                    <img
+                      src="/images/empty-profile.png"
+                      width={"220px"}
+                      height="auto"
+                    />
+                  </Grid>
+                  <Grid item xs={7} style={{}}>
+                    <div className=" text-grayLight fw-500 mb-10 text-3xl">
+                      Company name
+                    </div>
+                    <div className="flexCenter ">
+                      <InputOutlined
+                        onChange={(e) => {
+                          setData({ companyName: e.target.value });
+                        }}
+                        value={data.companyName}
+                        label={null}
+                        placeholder="Company Name LLC"
+                        endButton={
+                          <ButtonGradient
+                            customPadding="px-3"
+                            className={"text-black  "}
+                            color="secondary"
+                          >
+                            Choose file{" "}
+                          </ButtonGradient>
+                        }
+                      ></InputOutlined>
 
-        <form className="w-full h-100 my-5" onSubmit={handelSubmit}>
-          <Container>
-            <Grid container className=" px-2 ">
-              <Grid
-                container
-                justifyContent={"center"}
-                justifyItems="center"
-                alignItems={"flex-end"}
-              >
-                <Grid item xs={4} className=" ">
-                  <img
-                    src="/images/empty-profile.png"
-                    width={"220px"}
-                    height="auto"
-                  />
+                      <ButtonGradient className={"mx-5"} color="primary">
+                        Upload
+                      </ButtonGradient>
+                    </div>
+                  </Grid>
                 </Grid>
-                <Grid item xs={7} style={{}}>
-                  <div className=" text-grayLight fw-500 mb-10 text-3xl">
-                    Company name
-                  </div>
-                  <div className="flexCenter ">
-                    <InputOutlined
-                      onChange={(e) => {
-                        setData({ companyName: e.target.value });
-                      }}
-                      value={data.companyName}
-                      label={null}
-                      placeholder="Company Name LLC"
-                      endButton={
-                        <ButtonGradient
-                          customPadding="px-3"
-                          className={"text-black  "}
-                          color="secondary"
-                        >
-                          Choose file{" "}
-                        </ButtonGradient>
-                      }
-                    ></InputOutlined>
+                <Grid container direction={"column"} className="mx-2 my-8">
+                  <div className="text-base fw-500 mb-5">Address</div>
 
-                    <ButtonGradient className={"mx-5"} color="primary">
-                      Upload
-                    </ButtonGradient>
+                  <div className="text-sm  mx-8">
+                    <div className="my-5">United Arab Emirates</div>
+                    <div className="my-5 text-gray-400 ">
+                      308, Capital Golden Tower, 125 street, Business Bay,
+                      Dubai.
+                    </div>
+                  </div>
+                </Grid>
+                <Grid container direction={"column"} className="mx-2 ">
+                  <div className="text-base fw-500 mb-5">Primary contact</div>
+
+                  <div className="text-sm  mx-8">
+                    <div className="my-2 text-gray-400 ">Haligul Jaman</div>
+                    <div className="my-2 text-gray-400 ">+971 52939393</div>
+                    <div className="my-2 text-gray-400 ">
+                      companyemail@address.com
+                    </div>
                   </div>
                 </Grid>
               </Grid>
-              <Grid container direction={"column"} className="mx-2 my-8">
-                <div className="text-base fw-500 mb-5">Address</div>
-
-                <div className="text-sm  mx-8">
-                  <div className="my-5">United Arab Emirates</div>
-                  <div className="my-5 text-gray-400 ">
-                    308, Capital Golden Tower, 125 street, Business Bay, Dubai.
-                  </div>
-                </div>
-              </Grid>
-              <Grid container direction={"column"} className="mx-2 ">
-                <div className="text-base fw-500 mb-5">Primary contact</div>
-
-                <div className="text-sm  mx-8">
-                  <div className="my-2 text-gray-400 ">Haligul Jaman</div>
-                  <div className="my-2 text-gray-400 ">+971 52939393</div>
-                  <div className="my-2 text-gray-400 ">
-                    companyemail@address.com
-                  </div>
-                </div>
-              </Grid>
-            </Grid>
-          </Container>
-          <button type="submit" className="d-none" id="themeForm"></button>
-        </form>
+            </Container>
+            <button type="submit" className="d-none" id="themeForm"></button>
+          </form>
+        </SectionAnimation>
       </SettingsContainer>
       <MainSectionFooter
         onSaveClick={() => {

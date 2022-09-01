@@ -17,6 +17,7 @@
     "axios": "^0.27.2",
     "feather-icons-react": "^0.4.3",
     "formik": "^2.2.9",
+    "framer-motion": "6.5.1",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
     "node-sass": "^7.0.1",

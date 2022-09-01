@@ -93,6 +93,7 @@ const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
     [`& .${stepConnectorClasses.line}`]: {
       backgroundColor: "var(--menu-color)",
       opacity: 0.5,
+      transition: "all .3s",
     },
   },
   [`&.${stepConnectorClasses.completed}`]: {
@@ -104,6 +105,7 @@ const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
   [`& .${stepConnectorClasses.line}`]: {
     height: 12,
     border: 0,
+    transition: "all .3s",
     backgroundColor: "var(--menu-color)",
     opacity: 0.5,
     borderRadius: 1,

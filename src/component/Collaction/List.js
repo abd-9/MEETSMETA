@@ -19,6 +19,7 @@ import xHistory from "../../utilities/history";
 import CollectionCard, {
   EmptyCollectionCard,
 } from "../Shared/Card/CollectionCard";
+import { AP, ListAnimation } from "../Shared/Animation";
 
 const CollectionsList = ({ Settings }) => {
   const history = useHistory();
@@ -27,42 +28,30 @@ const CollectionsList = ({ Settings }) => {
     <>
       <CollectionMainContainer>
         <SidebarHeader title="Collection"></SidebarHeader>
+
         <Grid container spacing={4} className="px-6 py-4">
-          <Grid item xs={4}>
-            <CollectionCard
-              title="White Sands Parcel PassParcel PassParPassParcel PassParPassParcel PassParPassParcel PassParcel Pass"
-              desc="White Sands is your home in an open and evolving metaverse proudly built on NFT Worlds."
-              coverUrl={"images/test/bg1.png"}
-              imageUrl={"images/test/pro1.png"}
-            />
-          </Grid>{" "}
-          <Grid item xs={4}>
-            <CollectionCard
-              title="White Sands Parcel Pass"
-              desc="White Sands is your home in an open and evolving metaverse proudly built on NFT Worlds."
-              coverUrl={"images/test/bg1.png"}
-              imageUrl={"images/test/pro1.png"}
-            />
-          </Grid>{" "}
-          <Grid item xs={4}>
-            <CollectionCard
-              title="White Sands Parcel Pass"
-              desc="White Sands is your home in an open and evolving metaverse proudly built on NFT Worlds."
-              coverUrl={"images/test/bg1.png"}
-              imageUrl={"images/test/pro1.png"}
-            />
-          </Grid>
-          <Grid item xs={4}>
-            <CollectionCard
-              title="White Sands Parcel Pass"
-              desc="White Sands is your home in an open and evolving metaverse proudly built on NFT Worlds."
-              coverUrl={"images/test/bg1.png"}
-              imageUrl={"images/test/pro1.png"}
-            />
-          </Grid>
-          <Grid item xs={4}>
-            <EmptyCollectionCard />
-          </Grid>
+          <AP exitBeforeEnter>
+            {[1, 2, 3, 4, 5, 6, 7].map((index) => {
+              return (
+                <Grid item xs={4} key={index}>
+                  <ListAnimation delay={`${0.2 * (index / 10)}`} key={index}>
+                    <CollectionCard
+                      title="White Sands Parcel PassParcel PassParPassParcel PassParPassParcel PassParPassParcel PassParcel Pass"
+                      desc="White Sands is your home in an open and evolving metaverse proudly built on NFT Worlds."
+                      coverUrl={"images/test/bg1.png"}
+                      imageUrl={"images/test/pro1.png"}
+                    />
+                  </ListAnimation>
+                </Grid>
+              );
+            })}
+
+            <Grid item xs={4}>
+              <ListAnimation delay={0.2 * ([1, 2, 3, 4, 5, 6, 7].length / 10)}>
+                <EmptyCollectionCard />
+              </ListAnimation>
+            </Grid>
+          </AP>
         </Grid>
       </CollectionMainContainer>
       <CollactionFooter

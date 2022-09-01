@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 import { Container, Grid, TextField } from "@mui/material";
 import { InputOutlined } from "../Shared/Input/Input";
 import SettingsContainer from "../MainSection/SettingsMainContainer";
+import { SectionAnimation } from "../Shared/Animation";
 
 // Import client   Image
 
@@ -21,7 +22,7 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
     UpdateUserThemeSettings(
       data,
       () => {
-        toast.info("Saved Successfully");
+        toast.info("Saved Successfully ");
       },
       () => {
         toast.error("Failed to save");
@@ -45,7 +46,7 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
           container
           className="mx-0 grow-1  general-theme-section   flexCenter  "
         >
-          <div id="tab-container" className="">
+          <SectionAnimation id="tab-container">
             <form className="w-full" onSubmit={handelSubmit}>
               <Container className="px-0 mx-0">
                 <Grid
@@ -184,7 +185,7 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
             <div id="tab" className="fz-sm fw-bold">
               General
             </div>
-          </div>
+          </SectionAnimation>
         </Grid>
       </SettingsContainer>
 

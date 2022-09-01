@@ -18,6 +18,7 @@ import ContractMainContainer from "../MainSection/ContractMainContainer";
 import ButtonGradient from "../Shared/Buttons";
 import Checkbox from "../Shared/Checkbox";
 import { toast } from "react-toastify";
+import { SectionAnimation } from "../Shared/Animation";
 
 // Import client   Image
 
@@ -122,13 +123,17 @@ const AddContract = ({ Settings, UpdateUserThemeSettings }) => {
             className=" px-2 "
           >
             <Grid item xs={12}>
-              <AddContractStepper
-                activeStep={activeStep}
-                setActiveStep={setActiveStep}
-              ></AddContractStepper>
+              <SectionAnimation>
+                <AddContractStepper
+                  activeStep={activeStep}
+                  setActiveStep={setActiveStep}
+                ></AddContractStepper>
+              </SectionAnimation>
             </Grid>
             <Grid item xs={12} className="stepper-container">
-              {renderCurrentStep()}
+              <SectionAnimation key={activeStep}>
+                {renderCurrentStep()}
+              </SectionAnimation>
             </Grid>
           </Grid>
           <div className="self-end mx-1 mb-2">{renderButotn()}</div>
