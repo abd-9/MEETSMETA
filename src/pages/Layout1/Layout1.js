@@ -12,6 +12,7 @@ import {
 } from "../../component/Shared/icons";
 import { GetTheme, SetThemeColors } from "../../helper";
 import { Container, Grid } from "@mui/material";
+import { SECTIONS_ROUTE } from "../../routes";
 // Importing Section
 const Navbar = React.lazy(() => import("../../component/Navbar/NavBar"));
 
@@ -36,7 +37,7 @@ const Layout1 = ({ Settings, FetchUserThemeSettings }) => {
     navItems: [
       {
         id: 1,
-        route: "/collection",
+        route: SECTIONS_ROUTE.collection.list,
         label: "Collection",
         pageName: "collection",
         // component: Feature,
@@ -44,28 +45,31 @@ const Layout1 = ({ Settings, FetchUserThemeSettings }) => {
       },
       {
         id: 2,
-        route: "/overview",
+        route: SECTIONS_ROUTE.overview,
+        // route: "overview",
         label: "Overview",
         // component: Feature,
         icon: OverviewIcon,
       },
       {
         id: 4,
-        route: "/status",
+
+        route: SECTIONS_ROUTE.status,
         label: "Status",
         // component: Feature,
         icon: StatusIcon,
       },
       {
         id: 5,
-        route: "/setting",
+        route: SECTIONS_ROUTE.settings.main,
+
         label: "Setting",
         // component: Feature,
         icon: SettingIcon,
       },
       {
         id: 7,
-        route: "/profile/view",
+        route: SECTIONS_ROUTE.profile.view,
         label: "Profile",
         pageName: "profile",
         // component: Feature,
@@ -73,7 +77,7 @@ const Layout1 = ({ Settings, FetchUserThemeSettings }) => {
       },
       {
         id: 8,
-        route: "/contract/add",
+        route: SECTIONS_ROUTE.contract.add,
         label: "Contract",
 
         // component: Feature,

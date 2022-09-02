@@ -1,5 +1,29 @@
 import Layout1 from "../src/pages/Layout1/Layout1";
+import WalletLayout from "./pages/WalletLayout";
 
-const routes = [{ path: "/", component: Layout1 }];
+const routes = [
+  { path: "/dashboard", component: Layout1 },
+  { path: "/wallet", component: WalletLayout },
+];
 
 export default routes;
+
+export const SECTIONS_ROUTE = {
+  overview: "/dashboard/overview",
+  status: "/dashboard/status",
+  settings: {
+    theme: "/dashboard/settings/theme",
+    billing: "/dashboard/settings/billing",
+    main: "/dashboard/settings/theme",
+    plan: "/dashboard/settings/plan",
+    notifications: "/dashboard/settings/notifications",
+  },
+  profile: {
+    view: "/dashboard/profile/view",
+    edit: "/dashboard/profile/edit",
+  },
+  contract: { add: "/dashboard/contract/add" },
+  collection: {
+    list: "/dashboard/collection/list",
+  },
+};

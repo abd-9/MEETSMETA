@@ -20,6 +20,7 @@ import CollectionCard, {
   EmptyCollectionCard,
 } from "../Shared/Card/CollectionCard";
 import { AP, ListAnimation } from "../Shared/Animation";
+import { SECTIONS_ROUTE } from "../../routes";
 
 const CollectionsList = ({ Settings }) => {
   const history = useHistory();
@@ -38,8 +39,8 @@ const CollectionsList = ({ Settings }) => {
                     <CollectionCard
                       title="White Sands Parcel Pass"
                       desc="White Sands is your home in an open and evolving metaverse proudly built on NFT Worlds."
-                      coverUrl={"images/test/bg1.png"}
-                      imageUrl={"images/test/pro1.png"}
+                      coverUrl={"/images/test/bg1.png"}
+                      imageUrl={"/images/test/pro1.png"}
                     />
                   </ListAnimation>
                 </Grid>
@@ -57,7 +58,7 @@ const CollectionsList = ({ Settings }) => {
       <CollactionFooter
         onSaveClick={() => {
           // document.getElementById("themeForm").click();
-          xHistory.push("/profile/view");
+          xHistory.push(SECTIONS_ROUTE.profile.edit);
         }}
         // onEditClick={() => {
         //   history.push("/profile/edit");

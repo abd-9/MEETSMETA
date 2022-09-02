@@ -7,7 +7,7 @@ const XSvg = ({ name, color = "var(--primary-color)" }) => {
       style={{ fill: color }}
       fill="red"
       stroke="red"
-      src={`images/icons/${name}.svg`}
+      src={`/images/icons/${name}.svg`}
     />
   );
 };

@@ -22,40 +22,26 @@ export const SetThemeColors = (data) => {
   if (!data) return;
   localStorage.setItem("theme", JSON.stringify(data));
 
-  if (data.titleColor)
-    document.documentElement.style.setProperty(
-      "--title-color",
-      data.titleColor
-    );
+  if (data.titleColor) ChagngeThemeVar("--title-color", data.titleColor);
   if (data.menuColor) {
-    document.documentElement.style.setProperty("--menu-color", data.menuColor);
-    // document.documentElement.style.setProperty(
+    ChagngeThemeVar("--menu-color", data.menuColor);
+    // ChagngeThemeVar(
     //   "--primary-color",
     //   data.menuColor
     // );
   }
   if (data.menuTextColor)
-    document.documentElement.style.setProperty(
-      "--menu-text-color",
-      data.menuTextColor
-    );
+    ChagngeThemeVar("--menu-text-color", data.menuTextColor);
   if (data.secondaryColor)
-    document.documentElement.style.setProperty(
-      "--secondary-color",
-      data.secondaryColor
-    );
-  if (data.primaryColor)
-    document.documentElement.style.setProperty(
-      "--primary-color",
-      data.primaryColor
-    );
+    ChagngeThemeVar("--secondary-color", data.secondaryColor);
+  if (data.primaryColor) ChagngeThemeVar("--primary-color", data.primaryColor);
   if (data.menuSecondColor) {
-    document.documentElement.style.setProperty(
-      "--menu-second-color",
-      data.menuSecondColor
-    );
+    ChagngeThemeVar("--menu-second-color", data.menuSecondColor);
   }
 };
 export const GetTheme = () => {
   return JSON.parse(localStorage.getItem("theme"));
+};
+export const ChagngeThemeVar = (varName, value) => {
+  document.documentElement.style.setProperty(varName, value);
 };

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -15,6 +15,7 @@ import CircleIcon from "@mui/icons-material/Circle";
 import SearchInput from "./Shared/Input/Input";
 import { Button, Grid } from "@mui/material";
 import ButtonGradient from "./Shared/Buttons";
+import { SECTIONS_ROUTE } from "../routes";
 
 const Sidebar = ({ list }) => {
   const [open, setOpenSettingsList] = React.useState(false);
@@ -23,6 +24,16 @@ const Sidebar = ({ list }) => {
   const handleClick = () => {
     setOpenSettingsList(!open);
   };
+
+  useEffect(() => {
+    if (location.pathname.includes("settings") && !open) {
+      setOpenSettingsList(true);
+    }
+    return () => {
+      // second
+    };
+  }, [location.pathname]);
+
   const handleChageTab = (value) => {
     history.push(value);
   };
@@ -34,7 +45,7 @@ const Sidebar = ({ list }) => {
         </div>
         <List sx={{ width: "100%" }} component="nav" className="mb-3">
           {list.map((l, index) => {
-            if (l.route?.includes("setting")) {
+            if (l.route?.includes("settings")) {
               return (
                 <div className="" key={index}>
                   <ListItemButton
@@ -42,7 +53,7 @@ const Sidebar = ({ list }) => {
                       handleClick();
                       handleChageTab(l.route);
                     }}
-                    selected={location.pathname.includes(l.route)}
+                    selected={location.pathname.includes("setting")}
                     className="sidebar-item"
                   >
                     <ListItemIcon>{<l.icon />}</ListItemIcon>
@@ -59,25 +70,33 @@ const Sidebar = ({ list }) => {
                         key="theme"
                         text="Theme"
                         selected={location.pathname.includes("theme")}
-                        onClick={() => handleChageTab("/setting/theme")}
+                        onClick={() =>
+                          handleChageTab(SECTIONS_ROUTE.settings.theme)
+                        }
                       ></SubItem>
                       <SubItem
                         key="billing"
                         text="Billing"
                         selected={location.pathname.includes("billing")}
-                        onClick={() => handleChageTab("/setting/billing")}
+                        onClick={() =>
+                          handleChageTab(SECTIONS_ROUTE.settings.billing)
+                        }
                       ></SubItem>
                       <SubItem
                         key="plan"
                         text="Plan"
                         selected={location.pathname.includes("plan")}
-                        onClick={() => handleChageTab("/setting/plan")}
+                        onClick={() =>
+                          handleChageTab(SECTIONS_ROUTE.settings.plan)
+                        }
                       ></SubItem>
                       <SubItem
                         key="notifications"
+                        onClick={() =>
+                          handleChageTab(SECTIONS_ROUTE.settings.notifications)
+                        }
                         selected={location.pathname.includes("notifications")}
                         text="Notifications"
-                        onClick={() => handleChageTab("/setting/notifications")}
                       ></SubItem>
                     </List>
                   </Collapse>

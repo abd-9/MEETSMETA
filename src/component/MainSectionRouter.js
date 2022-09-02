@@ -9,38 +9,39 @@ import EditProfile from "./Profile/Edit";
 import AddContract from "./Contract/Add";
 import { AnimatePresence } from "framer-motion";
 import { SectionAnimation } from "./Shared/Animation";
+import { SECTIONS_ROUTE } from "../routes";
 export default class MainSection extends Component {
   render() {
     return (
       <AnimatePresence exitBeforeEnter>
         <Switch>
           <Route
-            path={"/setting/theme"}
+            path={SECTIONS_ROUTE.settings.theme}
             component={() => <Theme />}
             key={"theme"}
           ></Route>
           <Route
-            path={"/setting/billing"}
+            path={SECTIONS_ROUTE.settings.billing}
             component={Billing}
             key={"billing"}
           />
           <Route
-            path={"/profile/view"}
+            path={SECTIONS_ROUTE.profile.view}
             component={ViewProfile}
             key={"profile-view"}
           />
           <Route
-            path={"/profile/edit"}
+            path={SECTIONS_ROUTE.profile.edit}
             component={EditProfile}
             key={"profile-edit"}
           />
           <Route
-            path={"/contract/add"}
+            path={SECTIONS_ROUTE.contract.add}
             component={AddContract}
             key={"contract-edit"}
           />
           <Route
-            path={"/collection"}
+            path={SECTIONS_ROUTE.collection.list}
             component={CollectionsList}
             key={"collection"}
           />

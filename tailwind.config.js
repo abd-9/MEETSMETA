@@ -50,6 +50,7 @@ module.exports = {
       secondary: "var(--secondary-color)",
       label: {
         d2: "#2D2D2D",
+        b9: "#9b9b9b",
       },
     }),
 

@@ -13,6 +13,8 @@ import ButtonGradient from "../Shared/Buttons";
 import SettingsContainer from "../MainSection/SettingsMainContainer";
 import { useHistory } from "react-router-dom";
 import { SectionAnimation } from "../Shared/Animation";
+import { SECTIONS_ROUTE } from "../../routes";
+import xHistory from "../../utilities/history";
 
 const ViewProfile = ({ Settings, UpdateUserThemeSettings }) => {
   const [data, _setData] = useState(Settings.theme || {});
@@ -121,7 +123,7 @@ const ViewProfile = ({ Settings, UpdateUserThemeSettings }) => {
           document.getElementById("themeForm").click();
         }}
         onEditClick={() => {
-          history.push("/profile/edit");
+          xHistory.push(SECTIONS_ROUTE.profile.edit);
         }}
       ></MainSectionFooter>
     </>

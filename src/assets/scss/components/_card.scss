@@ -31,4 +31,31 @@
       -webkit-box-orient: vertical;
     }
   }
+
+  &.wallet-status-card {
+    @apply rounded-xl md:w-2/3 lg:w-1/2 shadow-none;
+    border-color: #f4f4f4;
+    border-width: 2px;
+    min-height: 13rem;
+
+    height: 13rem;
+    margin-bottom: 4rem;
+    .card-header {
+      @apply border-b-2  h-2/5;
+      border-bottom-color: #f4f4f4;
+      .card-title {
+        @apply text-xl font-bold text-primary text-center pb-2;
+      }
+
+      .card-description {
+        @apply text-sm text-center;
+      }
+
+      .line {
+      }
+    }
+    .card-containt {
+      @apply h-3/5 p-3 px-4;
+    }
+  }
 }
