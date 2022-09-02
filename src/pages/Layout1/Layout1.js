@@ -58,7 +58,7 @@ const Layout1 = ({ Settings, FetchUserThemeSettings }) => {
       },
       {
         id: 5,
-        route: "setting",
+        route: "/setting",
         label: "Setting",
         // component: Feature,
         icon: SettingIcon,

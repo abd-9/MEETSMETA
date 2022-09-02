@@ -11,7 +11,7 @@ const CustomTheme = ({ children, colors }) => {
       palette: {
         // mode: "light",
         primary: {
-          main: colors.menuColor || "#007d88",
+          main: colors.primaryColor || "#007d88",
         },
         secondary: {
           // light: red[500],

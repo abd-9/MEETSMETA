@@ -10,6 +10,8 @@ const initialState = {
     menuTextColor: "#fff",
     titleColor: "#ccc",
     menuSecondColor: "#007d88",
+    primaryColor: "#27e0ef",
+    secondaryColor: "#007d88",
   },
   isLoading: true,
 };

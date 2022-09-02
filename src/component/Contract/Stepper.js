@@ -91,14 +91,14 @@ const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
   },
   [`&.${stepConnectorClasses.active}`]: {
     [`& .${stepConnectorClasses.line}`]: {
-      backgroundColor: "var(--menu-color)",
+      backgroundColor: "var(--primary-color)",
       opacity: 0.5,
       transition: "all .3s",
     },
   },
   [`&.${stepConnectorClasses.completed}`]: {
     [`& .${stepConnectorClasses.line}`]: {
-      backgroundColor: "var(--menu-color)",
+      backgroundColor: "var(--primary-color)",
       opacity: 1,
     },
   },
@@ -106,7 +106,7 @@ const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
     height: 12,
     border: 0,
     transition: "all .3s",
-    backgroundColor: "var(--menu-color)",
+    backgroundColor: "var(--primary-color)",
     opacity: 0.5,
     borderRadius: 1,
     width: "calc(100% + 10px)",
@@ -115,7 +115,7 @@ const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
 }));
 
 const ColorlibStepIconRoot = styled("div")(({ theme, ownerState }) => ({
-  backgroundColor: "var(--menu-color)",
+  backgroundColor: "var(--primary-color)",
   opacity: 0.5,
 
   zIndex: 1,
@@ -130,12 +130,12 @@ const ColorlibStepIconRoot = styled("div")(({ theme, ownerState }) => ({
   alignItems: "center",
   ...(ownerState.active && {
     opacity: 1,
-    backgroundColor: "var(--menu-color)",
+    backgroundColor: "var(--primary-color)",
     // boxShadow: "0 4px 10px 0 rgba(0,0,0,.25)",
   }),
   ...(ownerState.completed && {
     opacity: 1,
-    backgroundColor: "var(--menu-color)",
+    backgroundColor: "var(--primary-color)",
   }),
 }));
 

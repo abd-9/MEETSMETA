@@ -13,8 +13,9 @@
         0% 0% no-repeat padding-box;
     }
     &.light {
-      background: transparent linear-gradient(180deg, #cdcdcd 0%, #565656 100%)
-        0% 0% no-repeat padding-box;
+      background: transparent
+        linear-gradient(180deg, #cdcdcd 0%, var(--secondary-color) 100%) 0% 0%
+        no-repeat padding-box;
     }
   }
 }

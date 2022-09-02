@@ -29,23 +29,29 @@ export const SetThemeColors = (data) => {
     );
   if (data.menuColor) {
     document.documentElement.style.setProperty("--menu-color", data.menuColor);
-    document.documentElement.style.setProperty(
-      "--primary-color",
-      data.menuColor
-    );
+    // document.documentElement.style.setProperty(
+    //   "--primary-color",
+    //   data.menuColor
+    // );
   }
   if (data.menuTextColor)
     document.documentElement.style.setProperty(
       "--menu-text-color",
       data.menuTextColor
     );
+  if (data.secondaryColor)
+    document.documentElement.style.setProperty(
+      "--secondary-color",
+      data.secondaryColor
+    );
+  if (data.primaryColor)
+    document.documentElement.style.setProperty(
+      "--primary-color",
+      data.primaryColor
+    );
   if (data.menuSecondColor) {
     document.documentElement.style.setProperty(
       "--menu-second-color",
-      data.menuSecondColor
-    );
-    document.documentElement.style.setProperty(
-      "--secondary-color",
       data.menuSecondColor
     );
   }

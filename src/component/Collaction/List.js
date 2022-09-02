@@ -36,7 +36,7 @@ const CollectionsList = ({ Settings }) => {
                 <Grid item xs={4} key={index}>
                   <ListAnimation delay={`${0.2 * (index / 10)}`} key={index}>
                     <CollectionCard
-                      title="White Sands Parcel PassParcel PassParPassParcel PassParPassParcel PassParPassParcel PassParcel Pass"
+                      title="White Sands Parcel Pass"
                       desc="White Sands is your home in an open and evolving metaverse proudly built on NFT Worlds."
                       coverUrl={"images/test/bg1.png"}
                       imageUrl={"images/test/pro1.png"}

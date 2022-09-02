@@ -155,7 +155,6 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
                   </Grid>
                   <Grid xs={3}></Grid>
                 </Grid>
-
                 <Grid
                   container
                   alignItems={"center"}
@@ -171,6 +170,48 @@ const Theme = ({ Settings, UpdateUserThemeSettings }) => {
                         setTempColor({
                           value: data.menuTextColor,
                           name: "menuTextColor",
+                        })
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={3}></Grid>
+                </Grid>
+                <Grid
+                  container
+                  alignItems={"center"}
+                  className="my-10 align-items-center"
+                >
+                  <Grid item xs={3}>
+                    <div className="fw-500 text-base">Primary Color</div>
+                  </Grid>
+                  <Grid item xs={3}>
+                    <ColorPickerButton
+                      hex={data.primaryColor}
+                      onClick={() =>
+                        setTempColor({
+                          value: data.primaryColor,
+                          name: "primaryColor",
+                        })
+                      }
+                    />
+                  </Grid>
+                  <Grid item xs={3}></Grid>
+                </Grid>{" "}
+                <Grid
+                  container
+                  alignItems={"center"}
+                  className="my-10 align-items-center"
+                >
+                  <Grid item xs={3}>
+                    <div className="fw-500 text-base">Secondary Color</div>
+                  </Grid>
+                  <Grid item xs={3}>
+                    <ColorPickerButton
+                      hex={data.secondaryColor}
+                      onClick={() =>
+                        setTempColor({
+                          value: data.secondaryColor,
+                          name: "secondaryColor",
                         })
                       }
                     />
