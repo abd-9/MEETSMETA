@@ -82,14 +82,14 @@ const Sidebar = ({ list }) => {
                           handleChageTab(SECTIONS_ROUTE.settings.billing)
                         }
                       ></SubItem>
-                      <SubItem
+                      {/* <SubItem
                         key="plan"
                         text="Plan"
                         selected={location.pathname.includes("plan")}
                         onClick={() =>
                           handleChageTab(SECTIONS_ROUTE.settings.plan)
                         }
-                      ></SubItem>
+                      ></SubItem> */}
                       <SubItem
                         key="notifications"
                         onClick={() =>

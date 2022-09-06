@@ -21,7 +21,7 @@ export default function ButtonGradient({
   return (
     <MButton
       variant="contained"
-      // size={size}
+      size={size}
       className={`${classes} ${ColorGradinetClasses[color]} `}
       {...res}
     >

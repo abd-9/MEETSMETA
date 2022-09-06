@@ -1,9 +1,11 @@
 import Layout1 from "../src/pages/Layout1/Layout1";
 import WalletLayout from "./pages/WalletLayout";
+import LandingLayout from "./pages/LandingLayout";
 
 const routes = [
   { path: "/dashboard", component: Layout1 },
   { path: "/wallet", component: WalletLayout },
+  { path: "/landing", component: LandingLayout },
 ];
 
 export default routes;
