@@ -13,6 +13,7 @@ import {
 import { ChagngeThemeVar, GetTheme, SetThemeColors } from "../../helper";
 import { Container, Grid } from "@mui/material";
 import WalletStatusCard from "../../component/Shared/Card/WalletStatusCard";
+import { SectionAnimation } from "../../component/Shared/Animation";
 // Importing Section
 const Navbar = React.lazy(() => import("../../component/Navbar/NavBar"));
 

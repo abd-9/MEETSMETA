@@ -17,8 +17,12 @@ const Navbar = ({ className }) => {
   const { userData, connectWallet } = useWeb3();
   const handleConnectWalletClick = () => {
     if (!(userData.isAuthorized || userData.signature)) {
-      connectWallet();
+      connectWallet().then(() => {
+        xHistory.push("/wallet");
+      });
       // () => xHistory.push("/wallet")
+    } else if (userData.isAuthorized || userData.signature) {
+      xHistory.push("/wallet");
     }
   };
   // const [account, setAccount] = useState(); // state variable to set account.

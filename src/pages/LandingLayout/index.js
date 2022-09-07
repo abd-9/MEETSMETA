@@ -5,6 +5,7 @@ import { Actions } from "../../store/actions";
 
 import { Container, Grid } from "@mui/material";
 import { ChagngeThemeVar } from "../../helper";
+import { FadeInWhenVisible } from "../../component/Shared/Animation";
 const Navbar = React.lazy(() =>
   import("../../component/LandingLayout/Navbar/index")
 );
@@ -61,8 +62,17 @@ const LandingLayout = ({ Settings }) => {
           rowGap={10}
           id="landing-layout"
         >
-          <FirstSection />
-          <FirstSection />
+          <FirstSection key={"2232"} />
+
+          <FirstSection key={"2s"} />
+
+          <FirstSection key={"22sw32"} />
+
+          <FirstSection key={"2sw"} />
+
+          <FirstSection key={"22swsa32"} />
+
+          <FirstSection key={"2as"} />
 
           {/* <Footer /> */}
         </Grid>

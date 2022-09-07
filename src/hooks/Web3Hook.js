@@ -155,11 +155,11 @@ export default () => {
         { chainId: "0x1" },
       ]);
     } catch (e) {
-      if (e.code === -32002) return;
-      notification({
-        message:
-          "We have sent you a request to change the blockchain chain, you may not have seen it - check MetaMask.",
-      });
+      if (e.code === -32002)
+        return notification({
+          message:
+            "We have sent you a request to change the blockchain chain, you may not have seen it - check MetaMask.",
+        });
 
       error({
         message:
@@ -173,59 +173,64 @@ export default () => {
   /**
    * Receives data necessary for further authorization.
    */
-  const connectWallet = useCallback(async () => {
-    if (!provider)
-      return error({ message: "You must install the MetaMask extension." });
+  const connectWallet = useCallback(
+    async (cb) => {
+      if (!provider)
+        return error({ message: "You must install the MetaMask extension." });
 
-    let address;
-    try {
-      address = (await provider.current.send("eth_requestAccounts"))[0];
-    } catch (e) {
-      if (e.code === 4001)
+      let address;
+      try {
+        address = (await provider.current.send("eth_requestAccounts"))[0];
+      } catch (e) {
+        if (e.code === 4001)
+          return error({
+            message: "You must accept the request to connect to the site.",
+          });
+
         return error({
-          message: "You must accept the request to connect to the site.",
+          message: `Something went wrong when getting an address.`,
         });
+      }
+      if (config.whitelist?.length > 0 && !config.whitelist.includes(address))
+        return notification({ message: "Coming soon..." });
+      //#change - should call new auth api here
+      // const data = await preAuthenticate(address);
+      // if (data.error instanceof Error)
+      //   return error({
+      //     message: `Something went wrong when receiving a nonce: ${data.error.message}.`,
+      //   });
 
-      return error({
-        message: `Something went wrong when getting an address.`,
-      });
-    }
-    if (config.whitelist?.length > 0 && !config.whitelist.includes(address))
-      return notification({ message: "Coming soon..." });
-    //#change - should call new auth api here
-    // const data = await preAuthenticate(address);
-    // if (data.error instanceof Error)
-    //   return error({
-    //     message: `Something went wrong when receiving a nonce: ${data.error.message}.`,
-    //   });
+      let signature;
+      try {
+        signature = await web3.current.eth.personal.sign(
+          // `meets scholarship nonce: ${data.nonce}`,
+          `meets scholarship nonce: 221`,
+          address,
+          ""
+        );
+      } catch (e) {
+        if (e.code === 4001)
+          error({
+            message:
+              "You must sign a contract to connect your wallet to the site.",
+          });
+        else
+          error({
+            message: `Something went wrong when signing the contract: ${e.message}.`,
+          });
+        throw error(e.message);
+      }
 
-    let signature;
-    try {
-      signature = await web3.current.eth.personal.sign(
-        // `meets scholarship nonce: ${data.nonce}`,
-        `meets scholarship nonce: 221`,
-        address,
-        ""
-      );
-    } catch (e) {
-      if (e.code === 4001)
-        return error({
-          message:
-            "You must sign a contract to connect your wallet to the site.",
-        });
-
-      return error({
-        message: `Something went wrong when signing the contract: ${e.message}.`,
-      });
-    }
-
-    setUserData((userData) => ({
-      ...userData,
-      wallet: address,
-      // role: data.role,
-      signature,
-    }));
-  }, [dispatch, provider, web3, preAuthenticate]);
+      setUserData((userData) => ({
+        ...userData,
+        wallet: address,
+        // role: data.role,
+        isAuthorized: false,
+        signature,
+      }));
+    },
+    [dispatch, provider, web3, preAuthenticate]
+  );
 
   /**
    * Deletes user authorization data.

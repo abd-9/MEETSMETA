@@ -11,6 +11,11 @@ import "./assets/scss/themes.scss";
 
 import { Suspense } from "react";
 import xHistory from "./utilities/history";
+import {
+  AP,
+  RouteAnimation,
+  SectionAnimation,
+} from "./component/Shared/Animation";
 
 class App extends Component {
   render() {
@@ -19,15 +24,21 @@ class App extends Component {
         <Suspense fallback={<div>Loading...</div>}>
           <ToastContainer />
           <Router history={xHistory}>
-            <Switch>
-              {routes.map((route, idx) => (
-                <Route
-                  path={route.path}
-                  component={route.component}
-                  key={idx}
-                />
-              ))}
-            </Switch>
+            <AP>
+              <Switch>
+                {routes.map((route, idx) => (
+                  <Route
+                    path={route.path}
+                    render={({ ...res }) => (
+                      <RouteAnimation>
+                        {<route.component {...res} />}
+                      </RouteAnimation>
+                    )}
+                    key={idx}
+                  />
+                ))}
+              </Switch>
+            </AP>
           </Router>
         </Suspense>
       </div>
