@@ -15,12 +15,10 @@ import { useHistory } from "react-router-dom";
 import ContractMainContainer from "../MainSection/ContractMainContainer";
 import CollactionFooter from "../MainSection/CollactionFooter";
 import CollectionMainContainer from "../MainSection/CollectionMainContainer";
-import xHistory from "../../utilities/history";
 import CollectionCard, {
   EmptyCollectionCard,
 } from "../Shared/Card/CollectionCard";
 import { AP, ListAnimation } from "../Shared/Animation";
-import { SECTIONS_ROUTE } from "../../routes";
 
 const CollectionsList = ({ Settings }) => {
   const history = useHistory();

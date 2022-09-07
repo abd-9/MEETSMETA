@@ -53,7 +53,7 @@ const LandingLayout = ({ Settings }) => {
 
   return (
     <React.Fragment>
-      <Suspense fallback={PreLoader}>
+      <Suspense fallback={<PreLoader />}>
         <Navbar className=" px-16" />
         <Grid
           container

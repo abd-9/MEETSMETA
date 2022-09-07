@@ -9,6 +9,7 @@ import _ from "lodash";
 import CustomTheme from "./theme";
 import xHistory from "./utilities/history";
 import "@babel/polyfill";
+import { Web3Provider } from "./context/Web3Context";
 
 export const xAction = (action) => store.dispatch(action);
 export const xState = (path) => _.get(store.getState(), path);
@@ -18,7 +19,9 @@ ReactDOM.render(
     <Provider store={store}>
       <CustomTheme>
         <StyledEngineProvider injectFirst>
-          <App />
+          <Web3Provider>
+            <App />
+          </Web3Provider>
         </StyledEngineProvider>
       </CustomTheme>
     </Provider>

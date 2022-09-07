@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-// import Web3 from "web3";
+import Web3 from "web3";
+import { useWeb3 } from "../../../context/Web3Context";
 import xHistory from "../../../utilities/history";
 import ButtonGradient from "../../Shared/Buttons";
 import XSvg from "../../Shared/icons/XSvg";
@@ -9,12 +10,18 @@ const Navbar = ({ className }) => {
     const button = document.querySelector("#menu-button");
     const menu = document.querySelector("#menu");
 
-    button.addEventListener("click", () => {
+    button?.addEventListener("click", () => {
       menu.classList.toggle("hidden");
     });
   }, []);
-
-  const [account, setAccount] = useState(); // state variable to set account.
+  const { userData, connectWallet } = useWeb3();
+  const handleConnectWalletClick = () => {
+    if (!(userData.isAuthorized || userData.signature)) {
+      connectWallet();
+      // () => xHistory.push("/wallet")
+    }
+  };
+  // const [account, setAccount] = useState(); // state variable to set account.
 
   // useEffect(() => {
   //   async function load() {
@@ -69,9 +76,8 @@ const Navbar = ({ className }) => {
           <li>
             <ButtonGradient
               className={" mr-4"}
-              onClick={() => xHistory.push("/wallet")}
+              onClick={handleConnectWalletClick}
             >
-              {/* Your account is: {account} */}
               Connect wallet
             </ButtonGradient>
           </li>

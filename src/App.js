@@ -8,6 +8,7 @@ import "./app.css";
 import "./assets/css/pe-icon-7.css";
 
 import "./assets/scss/themes.scss";
+
 import { Suspense } from "react";
 import xHistory from "./utilities/history";
 
