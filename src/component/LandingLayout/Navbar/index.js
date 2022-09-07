@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+// import Web3 from "web3";
 import xHistory from "../../../utilities/history";
 import ButtonGradient from "../../Shared/Buttons";
 import XSvg from "../../Shared/icons/XSvg";
@@ -12,6 +13,18 @@ const Navbar = ({ className }) => {
       menu.classList.toggle("hidden");
     });
   }, []);
+
+  const [account, setAccount] = useState(); // state variable to set account.
+
+  // useEffect(() => {
+  //   async function load() {
+  //     const web3 = new Web3(Web3.givenProvider || "http://localhost:7545");
+  //     const accounts = await web3.eth.requestAccounts();
+
+  //     setAccount(accounts[0]);
+  //   }
+  //   load();
+  // }, []);
   return (
     <nav
       id="landing-layout-nav"
@@ -58,6 +71,7 @@ const Navbar = ({ className }) => {
               className={" mr-4"}
               onClick={() => xHistory.push("/wallet")}
             >
+              {/* Your account is: {account} */}
               Connect wallet
             </ButtonGradient>
           </li>

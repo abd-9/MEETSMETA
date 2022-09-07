@@ -16,7 +16,7 @@ import AddContractStepper from "./Stepper";
 import { XAutoComplate } from "../Shared/XAutoComplate";
 import ContractMainContainer from "../MainSection/ContractMainContainer";
 import ButtonGradient from "../Shared/Buttons";
-import Checkbox from "../Shared/Checkbox";
+import Checkbox from "../Shared/Checkbox/index.js";
 import { toast } from "react-toastify";
 import { SectionAnimation } from "../Shared/Animation";
 

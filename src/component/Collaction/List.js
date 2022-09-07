@@ -58,8 +58,9 @@ const CollectionsList = ({ Settings }) => {
       <CollactionFooter
         onSaveClick={() => {
           // document.getElementById("themeForm").click();
-          xHistory.push(SECTIONS_ROUTE.profile.edit);
+          // xHistory.push(SECTIONS_ROUTE.profile.edit);
         }}
+        saveLabel="Upload"
         // onEditClick={() => {
         //   history.push("/profile/edit");
         // }}

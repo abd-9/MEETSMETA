@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import routes from "../src/routes";
 import { withRouter, Route, Switch, Router } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+// import "react-toastify/dist/ReactToastify.css";
 import "./app.css";
 //import style
 import "./assets/css/pe-icon-7.css";

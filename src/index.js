@@ -8,6 +8,7 @@ import { StyledEngineProvider, ThemeProvider } from "@mui/material/styles";
 import _ from "lodash";
 import CustomTheme from "./theme";
 import xHistory from "./utilities/history";
+import "@babel/polyfill";
 
 export const xAction = (action) => store.dispatch(action);
 export const xState = (path) => _.get(store.getState(), path);
