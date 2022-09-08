@@ -390,3 +390,39 @@ export function UnCheckedIcon({ width, height, ...res }) {
     </svg>
   );
 }
+export function Star({ width, height, ...res }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="17"
+      height="16.32"
+      viewBox="0 0 17 16.32"
+    >
+      <path
+        id="Polygon_4"
+        data-name="Polygon 4"
+        d="M8.5,0l2.89,5.006L17,6.234l-3.824,4.321.577,5.765L8.5,13.984,3.247,16.32l.577-5.765L0,6.234,5.61,5.006Z"
+        fill="#00ace7"
+      />
+    </svg>
+  );
+}
+
+export function EmptyStar({ width, height, ...res }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="17"
+      height="16.32"
+      viewBox="0 0 17 16.32"
+    >
+      <path
+        id="Polygon_5"
+        data-name="Polygon 5"
+        d="M8.5,0l2.89,5.006L17,6.234l-3.824,4.321.577,5.765L8.5,13.984,3.247,16.32l.577-5.765L0,6.234,5.61,5.006Z"
+        fill="#99def5"
+        opacity="0.47"
+      />
+    </svg>
+  );
+}

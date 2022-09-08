@@ -35,7 +35,10 @@ module.exports = {
       green: colors.green,
       emerald: colors.emerald,
       teal: colors.teal,
-      cyan: colors.cyan,
+      cyan: {
+        1: "#E1FDFF",
+        4: "#93EAF1",
+      },
       sky: colors.sky,
       blue: colors.blue,
       indigo: colors.indigo,

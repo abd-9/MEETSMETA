@@ -1,26 +1,24 @@
 import React, { Component, useState } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-
-import { Actions } from "../../store/actions";
-import MainSectionFooter from "../MainSection/SettingsFooter";
-import SidebarHeader from "../MainSection/Header";
+import { useHistory } from "react-router-dom";
 import { Container } from "@mui/system";
 import { Grid } from "@mui/material";
-import SettingsContainer from "../MainSection/SettingsMainContainer";
-import { Form, useFormik } from "formik";
+import { useFormik } from "formik";
+
+import { toast } from "react-toastify";
+import xHistory from "../../utilities/history";
+import { SECTIONS_ROUTE } from "../../routes";
+import { Actions } from "../../store/actions";
+
+import { SectionAnimation } from "../Shared/Animation";
+import SidebarHeader from "../MainSection/Header";
 import { Label } from "../Shared/Lable";
-import { validHex } from "@uiw/react-color";
-import { useHistory } from "react-router-dom";
 import AddContractStepper from "./Stepper";
 import { XAutoComplate } from "../Shared/XAutoComplate";
 import ContractMainContainer from "../MainSection/ContractMainContainer";
 import ButtonGradient from "../Shared/Buttons";
 import Checkbox from "../Shared/Checkbox/index.js";
-import { toast } from "react-toastify";
-import { SectionAnimation } from "../Shared/Animation";
-import xHistory from "../../utilities/history";
-import { SECTIONS_ROUTE } from "../../routes";
 
 // Import client   Image
 

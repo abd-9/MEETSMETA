@@ -7,10 +7,11 @@ import ViewProfile from "./Profile/View";
 import CollectionsList from "./Collaction/List";
 import EditProfile from "./Profile/Edit";
 import AddContract from "./Contract/Add";
+import Status from "./Status/index";
 import ContractList from "./Contract/List";
 import { AnimatePresence } from "framer-motion";
-import { SectionAnimation } from "./Shared/Animation";
 import { SECTIONS_ROUTE } from "../routes";
+
 export default class MainSection extends Component {
   render() {
     return (
@@ -50,6 +51,11 @@ export default class MainSection extends Component {
             path={SECTIONS_ROUTE.collection.list}
             component={CollectionsList}
             key={"collection"}
+          />
+          <Route
+            path={SECTIONS_ROUTE.status}
+            component={Status}
+            key={"status"}
           />
         </Switch>
       </AnimatePresence>

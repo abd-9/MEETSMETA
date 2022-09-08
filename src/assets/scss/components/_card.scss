@@ -85,4 +85,34 @@
       @apply h-3/5 p-3 px-4;
     }
   }
+
+  &.player-accordion-card {
+    * {
+      transition: all 0.3s;
+    }
+    @apply rounded-3xl shadow-none border-solid border-cyan-4 bg-cyan-1;
+    .Mui-expanded {
+      &.card-player-header {
+        @apply border-b-cyan-4;
+
+        min-height: 45px;
+        height: 45px;
+      }
+    }
+
+    border-width: 1px;
+    .card-player-header {
+      .MuiAccordionSummary-content {
+        @apply flex justify-between items-center content-center;
+      }
+
+      .card-title {
+        @apply font-medium;
+      }
+      min-height: 45px;
+      height: 45px;
+      transition: all 0.3s;
+      border-bottom: transparent 1px solid;
+    }
+  }
 }

@@ -3,23 +3,16 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
 import { Actions } from "../../store/actions";
-import MainSectionFooter from "../MainSection/SettingsFooter";
 import SidebarHeader from "../MainSection/Header";
-import { toast } from "react-toastify";
-import { Container } from "@mui/system";
 import { Grid } from "@mui/material";
-import { InputOutlined } from "../Shared/Input/Input";
 import ButtonGradient, { Button, CircleButton } from "../Shared/Buttons";
 import SettingsContainer from "../MainSection/SettingsMainContainer";
 import xHistory from "../../utilities/history";
 import { SECTIONS_ROUTE } from "../../routes";
 import { useHistory } from "react-router-dom";
 import { AP, ListAnimation } from "../Shared/Animation";
-import CollectionCard, {
-  EmptyCollectionCard,
-} from "../Shared/Card/CollectionCard";
+
 import ContractCard, {
-  EmptyContractCard,
   SkeletonContractCard,
 } from "../Shared/Card/ContractCard";
 import AddIcon from "@mui/icons-material/Add";
