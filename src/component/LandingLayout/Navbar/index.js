@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Web3 from "web3";
 import { useWeb3 } from "../../../context/Web3Context";
 import xHistory from "../../../utilities/history";
 import ButtonGradient from "../../Shared/Buttons";

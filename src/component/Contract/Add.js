@@ -19,6 +19,8 @@ import ButtonGradient from "../Shared/Buttons";
 import Checkbox from "../Shared/Checkbox/index.js";
 import { toast } from "react-toastify";
 import { SectionAnimation } from "../Shared/Animation";
+import xHistory from "../../utilities/history";
+import { SECTIONS_ROUTE } from "../../routes";
 
 // Import client   Image
 
@@ -43,6 +45,7 @@ const AddContract = ({ Settings, UpdateUserThemeSettings }) => {
 
   const handleDeploy = () => {
     toast.success("Deployed Successfully ");
+    xHistory.push(SECTIONS_ROUTE.contract.list);
   };
 
   const renderButotn = () => {

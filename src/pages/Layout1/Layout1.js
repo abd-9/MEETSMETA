@@ -77,9 +77,9 @@ const Layout1 = ({ Settings, FetchUserThemeSettings }) => {
       },
       {
         id: 8,
-        route: SECTIONS_ROUTE.contract.add,
+        route: SECTIONS_ROUTE.contract.list,
         label: "Contract",
-
+        pageName: "contract", // pageName it's a grouping key to reliase if section route in same page like "contract, settings"
         // component: Feature,
         icon: ContractIcon,
       },

@@ -63,6 +63,16 @@ const SectionVariants = (delay = 0.2) => ({
     opacity: 0,
     x: "-1vw",
   },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { type: "tween", duration: 0.2 },
+  },
+  exit: {
+    x: "1vh",
+    opacity: 0,
+    transition: { type: "tween", duration: 0.2 },
+  },
 });
 
 const RouteVariants = {

@@ -4,7 +4,7 @@ import Divider from "@mui/material/Divider";
 import { HomeIcon, NotificationIcon } from "../Shared/icons";
 import { Container, Grid } from "@mui/material";
 
-const SidebarHeader = ({ title, className }) => {
+const SidebarHeader = ({ title, className, endComponent }) => {
   return (
     <Container className={className + " p-2 px-3 pb-5 "}>
       <Grid container className="flexEnd">
@@ -17,8 +17,11 @@ const SidebarHeader = ({ title, className }) => {
           </span>
         </Grid>
       </Grid>
-      <Grid className="flexStart">
-        <h3 className="mb-0 titles-color text-bold mx-5">{title}</h3>
+      <Grid className="flexBetween">
+        <div>
+          <h3 className="mb-0 titles-color text-bold mx-5">{title}</h3>
+        </div>
+        <div>{endComponent}</div>
       </Grid>
       <Divider
         style={{

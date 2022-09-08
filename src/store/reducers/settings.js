@@ -8,7 +8,7 @@ const initialState = {
   theme: {
     menuColor: "#27e0ef",
     menuTextColor: "#fff",
-    titleColor: "#ccc",
+    titleColor: "#2CB8C3",
     menuSecondColor: "#007d88",
     primaryColor: "#16A2AD",
     secondaryColor: "#777777",

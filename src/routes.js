@@ -24,7 +24,10 @@ export const SECTIONS_ROUTE = {
     view: "/dashboard/profile/view",
     edit: "/dashboard/profile/edit",
   },
-  contract: { add: "/dashboard/contract/add" },
+  contract: {
+    add: "/dashboard/contract/add",
+    list: "/dashboard/contract/list",
+  },
   collection: {
     list: "/dashboard/collection/list",
   },

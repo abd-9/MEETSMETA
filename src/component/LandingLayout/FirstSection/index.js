@@ -2,11 +2,7 @@ import { Group } from "@mui/icons-material";
 import { Grid } from "@mui/material";
 import React, { useEffect } from "react";
 import xHistory from "../../../utilities/history";
-import {
-  EnterInWhenVisible,
-  FadeInWhenVisible,
-  SectionAnimation,
-} from "../../Shared/Animation";
+import { EnterInWhenVisible } from "../../Shared/Animation";
 import ButtonGradient from "../../Shared/Buttons";
 import XSvg from "../../Shared/icons/XSvg";
 import { Label } from "../../Shared/Lable";

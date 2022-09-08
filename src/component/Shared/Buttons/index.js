@@ -1,4 +1,4 @@
-import { Button as MButton } from "@mui/material";
+import { Button as MButton, Fab } from "@mui/material";
 import * as React from "react";
 
 export default function ButtonGradient({
@@ -42,7 +42,7 @@ const ColorClasses = {
 };
 
 export function Button({
-  color = "primary" || "secondary" || "secondaryDark",
+  color = "primary" || "secondary",
   children,
   size = "medium",
   className,
@@ -67,5 +67,31 @@ export function Button({
     >
       <span>{children}</span>
     </MButton>
+  );
+}
+
+export function CircleButton({
+  color = "primary" || "secondary",
+  children,
+  size = "medium",
+  className,
+  textColor = "text-white",
+  customPadding = false,
+  ...res
+}) {
+  let classes = ` xbutton h-10 w-10 rounded-full fw-500 shadow-none hover:shadow-none p-0 normal-case ${textColor} `;
+  if (customPadding) {
+    classes += " " + customPadding;
+  }
+
+  if (className) classes += " " + className;
+  return (
+    <Fab
+      {...res}
+      color={color}
+      className={`${classes} ${ColorClasses[color]}   `}
+    >
+      <span>{children}</span>
+    </Fab>
   );
 }

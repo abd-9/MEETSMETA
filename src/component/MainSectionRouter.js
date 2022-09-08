@@ -7,6 +7,7 @@ import ViewProfile from "./Profile/View";
 import CollectionsList from "./Collaction/List";
 import EditProfile from "./Profile/Edit";
 import AddContract from "./Contract/Add";
+import ContractList from "./Contract/List";
 import { AnimatePresence } from "framer-motion";
 import { SectionAnimation } from "./Shared/Animation";
 import { SECTIONS_ROUTE } from "../routes";
@@ -17,7 +18,7 @@ export default class MainSection extends Component {
         <Switch>
           <Route
             path={SECTIONS_ROUTE.settings.theme}
-            component={() => <Theme />}
+            component={Theme}
             key={"theme"}
           ></Route>
           <Route
@@ -38,6 +39,11 @@ export default class MainSection extends Component {
           <Route
             path={SECTIONS_ROUTE.contract.add}
             component={AddContract}
+            key={"contract-view"}
+          />
+          <Route
+            path={SECTIONS_ROUTE.contract.list}
+            component={ContractList}
             key={"contract-edit"}
           />
           <Route

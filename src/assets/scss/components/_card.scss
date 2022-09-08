@@ -31,6 +31,33 @@
       -webkit-box-orient: vertical;
     }
   }
+  &.contract-card {
+    min-height: 144px;
+    @apply rounded-lg bg-secondaryLight;
+
+    .card-header {
+      @apply h-12  flex justify-center center justify-items-center items-center border-b-2 border-grayline;
+      .card-title {
+        @apply text-primary;
+        font-weight: 500;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+    }
+    .card-description {
+      @apply text-label-d2;
+      // min-height: 50px;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+  }
 
   &.wallet-status-card {
     @apply rounded-xl md:w-2/3 lg:w-1/2 shadow-none;

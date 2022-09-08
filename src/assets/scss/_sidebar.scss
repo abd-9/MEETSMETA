@@ -1,4 +1,9 @@
 #sidebar {
+  nav {
+    overflow: auto;
+    max-height: fit-content;
+    height: 80%;
+  }
   -webkit-box-shadow: -6px 6px 8px -1px rgba(0, 0, 0, 0.24);
   box-shadow: -6px 6px 8px -1px rgba(0, 0, 0, 0.24);
   border-radius: 30px;

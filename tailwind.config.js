@@ -46,11 +46,14 @@ module.exports = {
       secondaryLight: "var(--main-bg-color)",
       rose: colors.rose,
       grayLight: "#555555",
+      grayline: "#d3d3d3",
       primary: "var(--primary-color)",
       secondary: "var(--secondary-color)",
+      titleColor: "var(--title-color)",
       label: {
         d2: "#2D2D2D",
         b9: "#9b9b9b",
+        be: "#BEBEBE",
       },
     }),
 
