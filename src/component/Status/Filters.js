@@ -16,7 +16,7 @@ export const StatusFilters = () => {
       <Formik initialValues={{ sortType: null }}>
         {(formikApi) => {
           return (
-            <Grid item xs={4}>
+            <Grid item xs={3}>
               <XSelect
                 formikApi={formikApi}
                 name="sortType"
