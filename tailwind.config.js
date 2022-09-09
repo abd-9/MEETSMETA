@@ -37,7 +37,9 @@ module.exports = {
       teal: colors.teal,
       cyan: {
         1: "#E1FDFF",
+
         4: "#93EAF1",
+        5: "#00ACE7",
       },
       sky: colors.sky,
       blue: colors.blue,
@@ -57,6 +59,7 @@ module.exports = {
         d2: "#2D2D2D",
         b9: "#9b9b9b",
         be: "#BEBEBE",
+        b3: "#3b3b3b",
       },
     }),
 

@@ -24,3 +24,40 @@
     color: #2d2d2d;
   }
 }
+
+.xselect {
+  &.filter-select-1 {
+    * {
+      border: none !important;
+    }
+    .MuiIconButton-root {
+      @apply absolute bg-cyan-5 border-none;
+      top: -2.5px;
+      border-radius: 10px !important;
+      border-top-left-radius: 0px !important;
+      border-bottom-left-radius: 0px !important;
+      .ddl-icon {
+      }
+    }
+    .MuiAutocomplete-popupIndicatorOpen {
+      &.MuiIconButton-root {
+        border-top-left-radius: 10px !important;
+        border-bottom-left-radius: 10px !important;
+        border-top-right-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+      }
+    }
+    .MuiInputBase-root {
+      // border-radius: b;
+
+      @apply bg-cyan-4;
+      border-top-right-radius: 0px !important;
+      border-bottom-right-radius: 0px !important;
+      padding: 5px !important;
+      border-color: transparent !important;
+    }
+    .MuiInputBase-input {
+      @apply relative;
+    }
+  }
+}

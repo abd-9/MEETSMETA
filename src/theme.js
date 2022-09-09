@@ -2,7 +2,7 @@ import React from "react";
 
 import { StyledEngineProvider, ThemeProvider } from "@mui/material/styles";
 import { createTheme } from "@mui/material/styles";
-import { color } from "@uiw/react-color";
+
 import { connect } from "react-redux";
 
 const CustomTheme = ({ children, colors }) => {

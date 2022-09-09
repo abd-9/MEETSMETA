@@ -32,6 +32,7 @@ export const XAutoComplate = ({
   onInputChange,
   onChange,
   withApi,
+  customIcon,
   ...res
 }) => {
   const [inputValue, setInputValue] = useState("");
@@ -48,16 +49,15 @@ export const XAutoComplate = ({
 
         classes={{ endAdornment: "hover:bg-transparent" }}
         popupIcon={
-          <div className="mt-0.5">
-            <DropdownDownIcon disableRipple />
-          </div>
+          customIcon || <div className="mt-0.5">{<DropdownDownIcon />}</div>
         }
         // limitTags={4}
         disableClearable
         options={options}
-        getOptionSelected={(option, value) =>
-          option[valueKey] === value[valueKey]
-        }
+        // getOptionSelected={(option, value) =>
+        //   option[valueKey] === value[valueKey]
+        // }
+
         size="small"
         // renderTags={(tagValue, getTagProps) =>
         //   tagValue.map((option, index) => {
@@ -81,19 +81,11 @@ export const XAutoComplate = ({
         // }
         // inputValue={inputValue || ""}
         value={value}
-        // loading={loading}
-        getOptionLabel={(option) => option[lableKey]}
+        getOptionLabel={(option) => _.get(option, lableKey)}
         defaultValue={null}
         renderInput={(params) => (
           <InputOutlined
             {...params}
-            // onChange={(ev) => {
-            //   console.log("ev", ev);
-            //   setInputValue(ev.target.value);
-            //   if (ev.target.value !== "" || ev.target.value !== null) {
-            //     onInputChange(ev.target.value);
-            //   }
-            // }}
             endButton={
               <React.Fragment>
                 {loading ? (
@@ -102,17 +94,6 @@ export const XAutoComplate = ({
                 {params.InputProps.endAdornment}
               </React.Fragment>
             }
-            // InputProps={{
-            //   ...params.InputProps,
-            //   endAdornment: (
-            //     <React.Fragment>
-            //       {loading ? (
-            //         <CircularProgress color="inherit" size={20} />
-            //       ) : null}
-            //       {params.InputProps.endAdornment}
-            //     </React.Fragment>
-            //   ),
-            // }}
           />
         )}
       />

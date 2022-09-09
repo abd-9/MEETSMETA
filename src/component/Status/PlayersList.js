@@ -12,16 +12,13 @@ import { SECTIONS_ROUTE } from "../../routes";
 import { useHistory } from "react-router-dom";
 import { AP, ListAnimation } from "../Shared/Animation";
 
-import ContractCard, {
-  SkeletonContractCard,
-} from "../Shared/Card/ContractCard";
-import AddIcon from "@mui/icons-material/Add";
-import { Label } from "../Shared/Lable";
-import PlayerAccordionCard from "../Shared/Card/PlayerAccordionCard";
+import PlayerAccordionCard, {
+  SkeletonPlayerRow,
+} from "../Shared/Card/PlayerAccordionCard";
 
 const PlayersList = ({ Settings }) => {
   return (
-    <Grid container rowSpacing={2} id="players-list" className="px-5 py-4">
+    <Grid container rowGap={1} id="players-list" className="px-5 py-4">
       <AP exitBeforeEnter>
         {[1, 2, 3, 4, 5, 6, 7].map((index) => {
           return (
@@ -34,18 +31,22 @@ const PlayersList = ({ Settings }) => {
             >
               <PlayerAccordionCard
                 title="White Sands Parcel Pass"
-                desc="White Sands is your home in an open and evolving metaverse proudly built on NFT Worlds."
-                coverUrl={"/images/test/bg1.png"}
-                imageUrl={"/images/test/pro1.png"}
+                imageUrl={"/images/test/player1.png"}
+                sponserPeriod="30"
+                total="-"
+                status="Playing..."
+                playerId="0x12r45... Qws3"
+                remaining="10"
+                isFavorit={false}
               />
             </Grid>
           );
         })}
 
-        <Grid item xs={4}>
-          <ListAnimation delay={0.2 * ([1, 2, 3, 4, 5, 6, 7].length / 10)}>
-            <SkeletonContractCard />
-          </ListAnimation>
+        <Grid item container rowGap={1} xs={12}>
+          <SkeletonPlayerRow />
+          <SkeletonPlayerRow />
+          <SkeletonPlayerRow />
         </Grid>
       </AP>
     </Grid>

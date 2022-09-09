@@ -87,9 +87,6 @@
   }
 
   &.player-accordion-card {
-    * {
-      transition: all 0.3s;
-    }
     @apply rounded-3xl shadow-none border-solid border-cyan-4 bg-cyan-1;
     .Mui-expanded {
       &.card-player-header {
@@ -97,18 +94,31 @@
 
         min-height: 45px;
         height: 45px;
+
+        .details-fields {
+          opacity: 0;
+        }
+      }
+
+      .card-title {
+        @apply whitespace-pre-wrap;
       }
     }
 
     border-width: 1px;
     .card-player-header {
+      .details-fields {
+        opacity: 1;
+        transition: opacity 0.25s linear;
+      }
       .MuiAccordionSummary-content {
         @apply flex justify-between items-center content-center;
       }
 
       .card-title {
-        @apply font-medium;
+        @apply font-medium w-1/4 text-clip whitespace-nowrap;
       }
+      @apply pl-5;
       min-height: 45px;
       height: 45px;
       transition: all 0.3s;
