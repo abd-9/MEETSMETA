@@ -37,6 +37,7 @@ const Sidebar = ({ list }) => {
   const handleChageTab = (value) => {
     history.push(value);
   };
+
   return (
     <React.Fragment>
       <section className=" pt-10 pb-5 " id="sidebar">
@@ -75,11 +76,11 @@ const Sidebar = ({ list }) => {
                         }
                       ></SubItem>
                       <SubItem
-                        key="billing"
-                        text="Billing"
-                        selected={location.pathname.includes("billing")}
+                        key="payment"
+                        text="Payment"
+                        selected={location.pathname.includes("payment")}
                         onClick={() =>
-                          handleChageTab(SECTIONS_ROUTE.settings.billing)
+                          handleChageTab(SECTIONS_ROUTE.settings.payment)
                         }
                       ></SubItem>
                       {/* <SubItem
@@ -128,11 +129,7 @@ const Sidebar = ({ list }) => {
             <div className="h6 text-bold mb-0 mx-2">MetaMask wallet</div>
           </Grid>
           <Grid item xs={12}>
-            <ButtonGradient
-              // onClick={onSaveClick}
-              color="secondary"
-              className="mt-5"
-            >
+            <ButtonGradient color="secondary" className="mt-5">
               Logout
             </ButtonGradient>
           </Grid>

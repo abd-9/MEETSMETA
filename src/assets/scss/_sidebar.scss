@@ -3,6 +3,21 @@
     overflow: auto;
     max-height: fit-content;
     height: 80%;
+    &::-webkit-scrollbar {
+      width: 0em;
+      height: 0em;
+    }
+    // &::-webkit-scrollbar-track-piece {
+    //   padding-bottom: 2rem;
+    // }
+    &::-webkit-scrollbar-thumb {
+      background-color: #c1c1c1 !important;
+      border-radius: 5px !important;
+
+      &:hover {
+        background: #adadad !important;
+      }
+    }
   }
   -webkit-box-shadow: -6px 6px 8px -1px rgba(0, 0, 0, 0.24);
   box-shadow: -6px 6px 8px -1px rgba(0, 0, 0, 0.24);

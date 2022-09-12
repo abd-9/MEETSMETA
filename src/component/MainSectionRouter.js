@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Route, Router, Switch } from "react-router-dom";
 
 import Theme from "./Settings/Theme";
-import Billing from "./Settings/Billing";
+import Payment from "./Settings/Payment";
 import ViewProfile from "./Profile/View";
 import CollectionsList from "./Collaction/List";
 import EditProfile from "./Profile/Edit";
@@ -23,9 +23,9 @@ export default class MainSection extends Component {
             key={"theme"}
           ></Route>
           <Route
-            path={SECTIONS_ROUTE.settings.billing}
-            component={Billing}
-            key={"billing"}
+            path={SECTIONS_ROUTE.settings.payment}
+            component={Payment}
+            key={"payment"}
           />
           <Route
             path={SECTIONS_ROUTE.profile.view}

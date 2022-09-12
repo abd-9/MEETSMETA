@@ -1,4 +1,6 @@
 .xcard {
+  @apply shadow-none;
+
   &.collection-card {
     height: 160px;
     @apply rounded-xl bg-secondaryLight shadow-none;
@@ -124,6 +126,37 @@
       height: 45px;
       transition: all 0.3s;
       border-bottom: transparent 1px solid;
+    }
+  }
+
+  &.payment-card {
+    @apply rounded-xl py-6 pl-6 pr-10 shadow-none h-56 flex flex-col justify-center gap-5 relative;
+    background-color: #d1d1d1;
+    .card-header {
+      z-index: 11;
+      // @apply mb-2;
+    }
+    .user-image {
+      @apply absolute h-24 w-32 rounded-r-none rounded-l-2xl bg-cover bg-center;
+      background-color: #bdbdbd;
+      top: 0px;
+      z-index: 11;
+      right: 0px;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+    .card-containt {
+      @apply py-0 px-1;
+      z-index: 11;
+    }
+    .card-overlay {
+      @apply absolute  rounded-xl bg-white w-full h-full;
+      top: 0px;
+      z-index: 10;
+      right: 30px;
+      background-color: #f2f2f2;
+    }
+    .card-title {
     }
   }
 }

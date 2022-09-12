@@ -30,6 +30,7 @@ export const XAutoComplate = ({
   loading = false,
   value,
   onInputChange,
+  defaultValue = null,
   onChange,
   withApi,
   customIcon,
@@ -40,6 +41,7 @@ export const XAutoComplate = ({
   return (
     <div className="xautocomplate ">
       <Autocomplete
+        {...res}
         // multiple={multiple}
         onChange={(e, v) => {
           onChange(e, v);
@@ -82,7 +84,7 @@ export const XAutoComplate = ({
         // inputValue={inputValue || ""}
         value={value}
         getOptionLabel={(option) => _.get(option, lableKey)}
-        defaultValue={null}
+        defaultValue={defaultValue}
         renderInput={(params) => (
           <InputOutlined
             {...params}

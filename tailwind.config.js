@@ -37,7 +37,6 @@ module.exports = {
       teal: colors.teal,
       cyan: {
         1: "#E1FDFF",
-
         4: "#93EAF1",
         5: "#00ACE7",
       },

@@ -15,7 +15,7 @@ export const SECTIONS_ROUTE = {
   status: "/dashboard/status",
   settings: {
     theme: "/dashboard/settings/theme",
-    billing: "/dashboard/settings/billing",
+    payment: "/dashboard/settings/payment",
     main: "/dashboard/settings/theme",
     plan: "/dashboard/settings/plan",
     notifications: "/dashboard/settings/notifications",

@@ -4,7 +4,6 @@ import FormHelperText from "@mui/material/FormHelperText";
 import FormControl from "@mui/material/FormControl";
 import _ from "lodash";
 import { XAutoComplate } from "../XAutoComplate";
-import { DropdownDownIcon } from "../icons";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 export default function XSelect({
@@ -17,6 +16,7 @@ export default function XSelect({
   valueKey = "id",
   className = "w-full ",
   selectClassName = "",
+  defaultValue,
   options = [],
   formikApi,
   ...res
@@ -32,6 +32,7 @@ export default function XSelect({
           disablePortal
           lableKey={lableKey}
           valueKey={valueKey}
+          defaultValue={defaultValue || options[0]}
           options={options}
           {...res}
           customIcon={
@@ -44,7 +45,9 @@ export default function XSelect({
           }
           id={`lab-${label}`}
           className={selectClassName}
-          value={formikApi ? _.get(formikApi?.values, name) : value}
+          value={
+            formikApi ? _.get(formikApi?.values, name) || options[0] : value
+          }
           label={label}
           onChange={
             formikApi
