@@ -6,6 +6,7 @@ import _ from "lodash";
 import { XAutoComplate } from "../XAutoComplate";
 import { DropdownDownIcon } from "../icons";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+
 export default function XSelect({
   value = {},
   onChange = () => {},
@@ -36,7 +37,7 @@ export default function XSelect({
           customIcon={
             <div className="ddl-icon">
               <KeyboardArrowDownIcon
-                color="primary"
+                style={{ fill: "white", stroke: "white", colorL: "white" }}
                 className="w-7 h-7 text-primary"
               />
             </div>

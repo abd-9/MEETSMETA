@@ -30,9 +30,15 @@
     * {
       border: none !important;
     }
+
     .MuiIconButton-root {
       @apply absolute bg-cyan-5 border-none;
       top: -2.5px;
+      left: 0px;
+      transition: margin 0.2s;
+      &:hover {
+        margin-left: 3px;
+      }
       border-radius: 10px !important;
       border-top-left-radius: 0px !important;
       border-bottom-left-radius: 0px !important;

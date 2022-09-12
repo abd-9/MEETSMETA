@@ -1,14 +1,14 @@
 .xcard {
   &.collection-card {
     height: 160px;
-    @apply rounded-xl bg-secondaryLight;
+    @apply rounded-xl bg-secondaryLight shadow-none;
 
     .cover-image-container {
       @apply bg-cover bg-center rounded-xl rounded-b-none;
       height: 5rem;
     }
     .prfile-image {
-      @apply relative -top-5 rounded-xl border-white border-2;
+      @apply relative -top-5 rounded-xl border-white border-2 bg-white;
       height: 70px;
       width: 70px;
       background-position: center;
@@ -29,11 +29,12 @@
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
+      min-height: 1.81rem;
     }
   }
   &.contract-card {
     min-height: 144px;
-    @apply rounded-lg bg-secondaryLight;
+    @apply rounded-lg bg-secondaryLight shadow-none;
 
     .card-header {
       @apply h-12  flex justify-center center justify-items-center items-center border-b-2 border-grayline;

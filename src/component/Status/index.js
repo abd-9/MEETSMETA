@@ -52,7 +52,7 @@ const Status = ({ Settings, UpdateUserThemeSettings }) => {
       <SidebarHeader title="Status"></SidebarHeader>
       <form onSubmit={formApi.handleSubmit} className="w-full grow my-5">
         <Container className="h-full flex  flex-col px-0">
-          <Grid style={{ height: "2rem" }} className="px-5" container>
+          <Grid style={{ height: "3rem" }} className="px-5" container>
             <StatusFilters />
           </Grid>
           <Grid

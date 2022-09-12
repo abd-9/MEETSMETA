@@ -12,11 +12,12 @@ export const StatusFilters = () => {
       justifyContent={"flex-end"}
       alignContent="center"
       alignItems={"center"}
+      className="pb-4"
     >
       <Formik initialValues={{ sortType: null }}>
         {(formikApi) => {
           return (
-            <Grid item xs={3}>
+            <Grid item xs={2}>
               <XSelect
                 formikApi={formikApi}
                 name="sortType"

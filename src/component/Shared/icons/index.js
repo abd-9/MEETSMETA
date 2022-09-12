@@ -243,9 +243,18 @@ export function ContractIcon(props) {
     </SvgIcon>
   );
 }
-export function DropdownDownIcon(props) {
+export function DropdownDownIcon({ color, ...res }) {
   return (
-    <SvgIcon style={{ width: "15px", height: "15px" }} {...props}>
+    <SvgIcon
+      style={{
+        width: "15px",
+        height: "15px",
+        color: color,
+        fill: color,
+        stroke: color,
+      }}
+      {...res}
+    >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 18">
         <g
           id="Group_146"
@@ -257,7 +266,6 @@ export function DropdownDownIcon(props) {
             data-name="Polygon 2"
             d="M8.772,2.962a2,2,0,0,1,3.455,0l7.018,12.031A2,2,0,0,1,17.518,18H3.482a2,2,0,0,1-1.728-3.008Z"
             transform="translate(1400.166 469.016) rotate(180)"
-            fill="#bebebe"
           />
         </g>
       </svg>

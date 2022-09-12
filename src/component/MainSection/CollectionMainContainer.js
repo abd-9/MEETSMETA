@@ -9,6 +9,8 @@ const CollectionMainContainer = ({ children }) => {
         height: "92%",
         borderRadius: "30px",
         borderBottomLeftRadius: "0px",
+        display: "flex",
+        flexDirection: "column",
       }}
     >
       {children}
