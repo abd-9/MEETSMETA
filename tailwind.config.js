@@ -53,6 +53,7 @@ module.exports = {
       grayline: "#d3d3d3",
       primary: "var(--primary-color)",
       secondary: "var(--secondary-color)",
+      primaryLight: "var(--primary-light-color)",
       titleColor: "var(--title-color)",
       label: {
         d2: "#2D2D2D",

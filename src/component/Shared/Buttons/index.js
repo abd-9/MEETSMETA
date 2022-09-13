@@ -39,6 +39,7 @@ const ColorGradinetClasses = {
 const ColorClasses = {
   primary: " bg-primary ",
   secondary: " bg-secondary  ",
+  info: " bg-primaryLight hover:bg-primary ",
 };
 
 export function Button({
@@ -48,9 +49,10 @@ export function Button({
   className,
   textColor = "text-white",
   customPadding = false,
+  roundedClass = "rounded-lg",
   ...res
 }) {
-  let classes = ` xbutton  rounded-lg fw-500 shadow-none hover:shadow-none  normal-case ${textColor} `;
+  let classes = ` xbutton   fw-500 shadow-none hover:shadow-none  normal-case ${textColor} ${roundedClass} `;
   if (customPadding) {
     classes += " " + customPadding;
   } else {

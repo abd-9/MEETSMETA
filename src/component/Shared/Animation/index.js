@@ -1,7 +1,7 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export const SectionAnimation = ({ children, delay, ...res }) => {
+export const SectionAnimation = ({ children, delay, Component, ...res }) => {
   return (
     <motion.div
       initial="initial"

@@ -7,7 +7,7 @@ import { Container, Grid } from "@mui/material";
 const SettingsContainer = ({ children }) => {
   return (
     <div
-      className="d-flex flex-column grow-1 relative z-3 w-full "
+      className="flex flex-col grow relative z-3 w-full "
       style={{
         backgroundColor: "white",
         height: "92%",

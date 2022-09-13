@@ -131,6 +131,8 @@
 
   &.payment-card {
     @apply rounded-xl py-6 pl-6 pr-10 shadow-none h-56 flex flex-col justify-center gap-5 relative;
+    // min-width: ;
+    width: 500px;
     background-color: #d1d1d1;
     .card-header {
       z-index: 11;
