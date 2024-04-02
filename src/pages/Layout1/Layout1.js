@@ -1,23 +1,26 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { Col, Container, Row } from "reactstrap";
 import { Actions } from "../../store/actions";
 import {
   CollectionIcon,
+  ContractIcon,
   OverviewIcon,
   ProfileIcon,
   SettingIcon,
   StatusIcon,
 } from "../../component/Shared/icons";
-import SettingsIcon from "@mui/icons-material/Settings";
 import { GetTheme, SetThemeColors } from "../../helper";
+import { Container, Grid } from "@mui/material";
+import { SECTIONS_ROUTE } from "../../routes";
 // Importing Section
 const Navbar = React.lazy(() => import("../../component/Navbar/NavBar"));
 
 const Sidebar = React.lazy(() => import("../../component/Sidebar"));
-const MainSection = React.lazy(() => import("../../component/MainSection"));
-const Feature = React.lazy(() => import("../../component/Feature"));
+const MainSection = React.lazy(() =>
+  import("../../component/MainSectionRouter")
+);
+// const Feature = React.lazy(() => import("../../component/Feature"));
 
 const Layout1 = ({ Settings, FetchUserThemeSettings }) => {
   useEffect(() => {
@@ -26,7 +29,7 @@ const Layout1 = ({ Settings, FetchUserThemeSettings }) => {
   }, [Settings.theme]);
 
   useEffect(() => {
-    if (GetTheme()) FetchUserThemeSettings();
+    // if (GetTheme()) FetchUserThemeSettings();
     return () => {};
   }, []);
 
@@ -34,38 +37,51 @@ const Layout1 = ({ Settings, FetchUserThemeSettings }) => {
     navItems: [
       {
         id: 1,
-        route: "/home",
+        route: SECTIONS_ROUTE.collection.list,
         label: "Collection",
-        component: Feature,
+        pageName: "collection",
+        // component: Feature,
         icon: CollectionIcon,
       },
       {
         id: 2,
-        route: "/overview",
+        route: SECTIONS_ROUTE.overview,
+        // route: "overview",
         label: "Overview",
-        component: Feature,
+        // component: Feature,
         icon: OverviewIcon,
       },
       {
         id: 4,
-        route: "/status",
+
+        route: SECTIONS_ROUTE.status,
         label: "Status",
-        component: Feature,
+        // component: Feature,
         icon: StatusIcon,
       },
       {
         id: 5,
-        route: "setting",
+        route: SECTIONS_ROUTE.settings.main,
+
         label: "Setting",
-        component: Feature,
+        // component: Feature,
         icon: SettingIcon,
       },
       {
         id: 7,
-        route: "/profile",
+        route: SECTIONS_ROUTE.profile.view,
         label: "Profile",
-        component: Feature,
+        pageName: "profile",
+        // component: Feature,
         icon: ProfileIcon,
+      },
+      {
+        id: 8,
+        route: SECTIONS_ROUTE.contract.list,
+        label: "Contract",
+        pageName: "contract", // pageName it's a grouping key to reliase if section route in same page like "contract, settings"
+        // component: Feature,
+        icon: ContractIcon,
       },
     ],
     pos: document.documentElement.scrollTop,
@@ -75,12 +91,12 @@ const Layout1 = ({ Settings, FetchUserThemeSettings }) => {
 
   const PreLoader = () => {
     return (
-      <div id='preloader'>
-        <div id='status'>
-          <div className='spinner'>
-            <div className='bounce1'></div>
-            <div className='bounce2'></div>
-            <div className='bounce3'></div>
+      <div id="preloader">
+        <div id="status">
+          <div className="spinner">
+            <div className="bounce1"></div>
+            <div className="bounce2"></div>
+            <div className="bounce3"></div>
           </div>
         </div>
       </div>
@@ -90,22 +106,22 @@ const Layout1 = ({ Settings, FetchUserThemeSettings }) => {
   return (
     <React.Fragment>
       <Suspense fallback={PreLoader}>
-        <Container id='layout1'>
-          <Row>
-            <Col>
-              <Navbar />
-            </Col>
-          </Row>
-          <Row id='main-container'>
-            <Col xs={3} className='pr-0'>
+        <Container id="layout1">
+          <Grid container>
+            <Navbar />
+          </Grid>
+          <Grid container id="main-container">
+            <Grid item xs={3} className="pr-0 ">
               <Sidebar list={state.navItems} />
-            </Col>
-            <Col
+            </Grid>
+            <Grid
               xs
-              className='p-0 main-section-container position-relative overflow-hidden'>
+              item
+              className="p-0 main-section-container relative overflow-hidden"
+            >
               <MainSection />
-            </Col>
-          </Row>
+            </Grid>
+          </Grid>
 
           {/* <Footer /> */}
         </Container>
@@ -119,7 +135,7 @@ function mapDispatchToProps(dispatch) {
     {
       ...Actions,
     },
-    dispatch,
+    dispatch
   );
 }
 function mapStateToProps({ Settings }) {

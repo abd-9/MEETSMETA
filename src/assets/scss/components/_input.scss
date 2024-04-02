@@ -1,0 +1,11 @@
+.xinput {
+  .MuiInputBase-root {
+    @apply rounded-lg;
+  }
+  * {
+    font-family: $font-primary;
+  }
+  .MuiInputLabel-root {
+    font-family: $font-primary;
+  }
+}

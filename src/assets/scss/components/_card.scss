@@ -1,0 +1,164 @@
+.xcard {
+  @apply shadow-none;
+
+  &.collection-card {
+    height: 160px;
+    @apply rounded-xl bg-secondaryLight shadow-none;
+
+    .cover-image-container {
+      @apply bg-cover bg-center rounded-xl rounded-b-none;
+      height: 5rem;
+    }
+    .prfile-image {
+      @apply relative -top-5 rounded-xl border-white border-2 bg-white;
+      height: 70px;
+      width: 70px;
+      background-position: center;
+      background-size: contain;
+    }
+    .card-title {
+      font-weight: 600;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+    .card-description {
+      @apply text-xs;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      min-height: 1.81rem;
+    }
+  }
+  &.contract-card {
+    min-height: 144px;
+    @apply rounded-lg bg-secondaryLight shadow-none;
+
+    .card-header {
+      @apply h-12  flex justify-center center justify-items-center items-center border-b-2 border-grayline;
+      .card-title {
+        @apply text-primary;
+        font-weight: 500;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+    }
+    .card-description {
+      @apply text-label-d2;
+      // min-height: 50px;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  &.wallet-status-card {
+    @apply rounded-xl md:w-2/3 lg:w-1/2 shadow-none;
+    border-color: #f4f4f4;
+    border-width: 2px;
+    min-height: 13rem;
+
+    height: 13rem;
+    margin-bottom: 4rem;
+    .card-header {
+      @apply border-b-2  h-2/5;
+      border-bottom-color: #f4f4f4;
+      .card-title {
+        @apply text-xl font-bold text-primary text-center pb-2;
+      }
+
+      .card-description {
+        @apply text-sm text-center;
+      }
+
+      .line {
+      }
+    }
+    .card-containt {
+      @apply h-3/5 p-3 px-4;
+    }
+  }
+
+  &.player-accordion-card {
+    @apply rounded-3xl shadow-none border-solid border-cyan-4 bg-cyan-1;
+    .Mui-expanded {
+      &.card-player-header {
+        @apply border-b-cyan-4;
+
+        min-height: 45px;
+        height: 45px;
+
+        .details-fields {
+          opacity: 0;
+        }
+      }
+
+      .card-title {
+        @apply whitespace-pre-wrap;
+      }
+    }
+
+    border-width: 1px;
+    .card-player-header {
+      .details-fields {
+        opacity: 1;
+        transition: opacity 0.25s linear;
+      }
+      .MuiAccordionSummary-content {
+        @apply flex justify-between items-center content-center;
+      }
+
+      .card-title {
+        @apply font-medium w-1/4 text-clip whitespace-nowrap;
+      }
+      @apply pl-5;
+      min-height: 45px;
+      height: 45px;
+      transition: all 0.3s;
+      border-bottom: transparent 1px solid;
+    }
+  }
+
+  &.payment-card {
+    @apply rounded-xl py-6 pl-6 pr-10 shadow-none h-56 flex flex-col justify-center gap-5 relative;
+    // min-width: ;
+    width: 500px;
+    background-color: #d1d1d1;
+    .card-header {
+      z-index: 11;
+      // @apply mb-2;
+    }
+    .user-image {
+      @apply absolute h-24 w-32 rounded-r-none rounded-l-2xl bg-cover bg-center;
+      background-color: #bdbdbd;
+      top: 0px;
+      z-index: 11;
+      right: 0px;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+    .card-containt {
+      @apply py-0 px-1;
+      z-index: 11;
+    }
+    .card-overlay {
+      @apply absolute  rounded-xl bg-white w-full h-full;
+      top: 0px;
+      z-index: 10;
+      right: 30px;
+      background-color: #f2f2f2;
+    }
+    .card-title {
+    }
+  }
+}

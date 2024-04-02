@@ -1,6 +1,5 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
-import { Button, Col, Container, Row } from "reactstrap";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -10,99 +9,131 @@ import DraftsIcon from "@mui/icons-material/Drafts";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import Divider from "@mui/material/Divider";
-// Import Background Image
+
 import CircleIcon from "@mui/icons-material/Circle";
-//import icon
-import SearchInput from "./Shared/Input";
+
+import SearchInput from "./Shared/Input/Input";
+import { Button, Grid } from "@mui/material";
+import ButtonGradient from "./Shared/Buttons";
+import { SECTIONS_ROUTE } from "../routes";
 
 const Sidebar = ({ list }) => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpenSettingsList] = React.useState(false);
   const location = useLocation();
   const history = useHistory();
   const handleClick = () => {
-    setOpen(!open);
+    setOpenSettingsList(!open);
   };
+
+  useEffect(() => {
+    if (location.pathname.includes("settings") && !open) {
+      setOpenSettingsList(true);
+    }
+    return () => {
+      // second
+    };
+  }, [location.pathname]);
+
   const handleChageTab = (value) => {
     history.push(value);
   };
+
   return (
     <React.Fragment>
-      <section className='section ' id='sidebar'>
-        <div className='px-3'>
+      <section className=" pt-10 pb-5 " id="sidebar">
+        <div className="px-3">
           <SearchInput />
         </div>
-        <List sx={{ width: "100%" }} component='nav' className='mb-3'>
-          {list.map((l) => {
-            if (l.route?.includes("setting")) {
+        <List sx={{ width: "100%" }} component="nav" className="mb-3">
+          {list.map((l, index) => {
+            if (l.route?.includes("settings")) {
               return (
-                <>
+                <div className="" key={index}>
                   <ListItemButton
                     onClick={() => {
                       handleClick();
                       handleChageTab(l.route);
                     }}
-                    selected={location.pathname.includes(l.route)}
-                    className='sidebar-item'>
+                    selected={location.pathname.includes("setting")}
+                    className="sidebar-item"
+                  >
                     <ListItemIcon>{<l.icon />}</ListItemIcon>
 
                     <ListItemText
-                      className='mx-3 '
-                      primary={<h5 className='mb-0'>{l.label}</h5>}
+                      className="mx-3 "
+                      primary={<h5 className="mb-0">{l.label}</h5>}
                     />
                     {open ? <ExpandLess /> : <ExpandMore />}
                   </ListItemButton>
-                  <Collapse in={open} timeout='auto' unmountOnExit>
-                    <List component='div' disablePadding>
+                  <Collapse className="" in={open} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding>
                       <SubItem
-                        key='theme'
-                        text='Theme'
+                        key="theme"
+                        text="Theme"
                         selected={location.pathname.includes("theme")}
                         onClick={() =>
-                          handleChageTab("/setting/theme")
-                        }></SubItem>
+                          handleChageTab(SECTIONS_ROUTE.settings.theme)
+                        }
+                      ></SubItem>
                       <SubItem
-                        key='plan'
-                        text='Plan'
+                        key="payment"
+                        text="Payment"
+                        selected={location.pathname.includes("payment")}
+                        onClick={() =>
+                          handleChageTab(SECTIONS_ROUTE.settings.payment)
+                        }
+                      ></SubItem>
+                      {/* <SubItem
+                        key="plan"
+                        text="Plan"
                         selected={location.pathname.includes("plan")}
                         onClick={() =>
-                          handleChageTab("/setting/plan")
-                        }></SubItem>
+                          handleChageTab(SECTIONS_ROUTE.settings.plan)
+                        }
+                      ></SubItem> */}
                       <SubItem
-                        key='notifications'
-                        selected={location.pathname.includes("notifications")}
-                        text='Notifications'
+                        key="notifications"
                         onClick={() =>
-                          handleChageTab("/setting/notifications")
-                        }></SubItem>
+                          handleChageTab(SECTIONS_ROUTE.settings.notifications)
+                        }
+                        selected={location.pathname.includes("notifications")}
+                        text="Notifications"
+                      ></SubItem>
                     </List>
                   </Collapse>
-                  <Divider className='line' />
-                </>
+                  <Divider className="line" />
+                </div>
               );
             }
             return (
-              <>
+              <React.Fragment key={index}>
                 <Item
                   key={l.id}
                   route={l.route}
-                  selected={location.pathname.includes(l.route)}
-                  onClick={() => handleChageTab(l.route)}
+                  selected={location.pathname.includes(l.pageName || l.route)}
+                  onClick={() => {
+                    handleChageTab(l.route);
+                    setOpenSettingsList(false);
+                  }}
                   Icon={l.icon}
-                  text={l.label}></Item>
-              </>
+                  text={l.label}
+                ></Item>
+              </React.Fragment>
             );
           })}
         </List>
 
-        <Row className='mt-auto m-0 flex-column flexCenter text-center  '>
-          <Col className='flexCenter'>
-            <img src='images/metamask.png' style={{ width: "30px" }}></img>{" "}
-            <div className='h6 text-bold mb-0 mx-2'>MetaMask wallet</div>
-          </Col>
-          <Col>
-            <Button className='logout-button my-2  p '>Logout</Button>
-          </Col>
-        </Row>
+        <Grid container className="mt-auto m-0  flexCenter text-center  ">
+          <Grid item xs={12} className="flexCenter">
+            <img src="/images/metamask.png" style={{ width: "30px" }}></img>{" "}
+            <div className="h6 text-bold mb-0 mx-2">MetaMask wallet</div>
+          </Grid>
+          <Grid item xs={12}>
+            <ButtonGradient color="secondary" className="mt-5">
+              Logout
+            </ButtonGradient>
+          </Grid>
+        </Grid>
       </section>
     </React.Fragment>
   );
@@ -112,38 +143,47 @@ export default Sidebar;
 const Item = ({ Icon = DraftsIcon, text, selected, route, ...res }) => {
   return (
     <>
-      <ListItemButton selected={selected} className='sidebar-item' {...res}>
+      <ListItemButton selected={selected} className="sidebar-item" {...res}>
         <ListItemIcon>
-          <Icon width='20px' />
+          <Icon width="20px" />
         </ListItemIcon>
         <ListItemText
-          className='mx-3 '
-          primary={<h5 className='mb-0 '>{text} </h5>}
+          className="mx-3 "
+          primary={<h5 className="mb-0 ">{text} </h5>}
         />
       </ListItemButton>
-      <Divider className=' line' />
+      <Divider className=" line" />
       {/* <div className={"line" + (selected ? " invisible " : "")}></div> */}
     </>
   );
 };
-const SubItem = ({ Icon = DraftsIcon, text, selected, route, ...res }) => {
+const SubItem = ({
+  Icon = DraftsIcon,
+  text,
+  selected,
+  route,
+  isLast,
+  ...res
+}) => {
   return (
     <>
       <ListItemButton
-        className='sidebar-sub-item'
+        className="sidebar-sub-item"
         selected={selected}
         sx={{ pl: 4 }}
-        {...res}>
-        <ListItemIcon>
+        {...res}
+      >
+        <ListItemIcon className="relative">
+          <div className="list-points-line"></div>
           <CircleIcon
+            className="sub-list-icon"
             style={{
-              fill: "white",
               widht: "15px",
               height: "15px",
             }}
           />
         </ListItemIcon>
-        <ListItemText primary={<h6 className='mb-0'>{text}</h6>} />
+        <ListItemText primary={<h6 className="mb-0">{text}</h6>} />
       </ListItemButton>
     </>
   );

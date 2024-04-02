@@ -1,0 +1,22 @@
+.collections-list {
+  position: absolute;
+  overflow: overlay;
+}
+
+.collections-list-container {
+  &::-webkit-scrollbar {
+    width: 0.5em;
+    height: 0.5em;
+  }
+  // &::-webkit-scrollbar-track-piece {
+  //   padding-bottom: 2rem;
+  // }
+  &::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1 !important;
+    border-radius: 5px !important;
+
+    &:hover {
+      background: #adadad !important;
+    }
+  }
+}

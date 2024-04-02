@@ -1,0 +1,249 @@
+{
+  "port_desc": "Port on which the client side of application will be launched",
+  "port": 443,
+
+  "api_url_desc": "Link leading to server side of the application",
+  "api_url": "https://api.meetsmetabuff.io",
+
+  "web3_api_url_desc": "Link leading to server side of web3 part of the application",
+  "web3_api_url": "https://gateway.shisheo.com",
+
+  "whitelist_desc": "A list of addresses that are allowed access to the scholarship system. If empty, it is available to everyone",
+  "whitelist": [
+    "0x8012889022c9accd6fa574909a0ac3e2d7c74f5c",
+    "0x0c056276eeed1d3bac98d9352643c75e25ee3123",
+    "0x03b61b8d17c5bb886abe8ae4724c56536a4277db",
+    "0x7407673f5a9baa13123d1de507cfad21af16148c",
+    "0xf57163b6aac817e9d82991622f53d793b27751b0",
+    "0x1caaa874f602b40fc0c9cb056696f586db434113",
+    "0x7bf26f6decf31c26572aef20aa60096f35d19243"
+  ],
+
+  "landing_menu_desc": "Menu settings of landing part of site",
+  "landing_menu": {
+    "about": {
+      "title": "About project",
+      "description": "What is MeetsMeta?",
+      "icon": "circle-info",
+      "component": "AboutPage"
+    },
+    "whitepaper": {
+      "title": "Whitepaper",
+      "description": "Read the whitepaper!",
+      "icon": "wrench",
+      "component": "WhitepaperPage"
+    },
+    "roadmap": {
+      "title": "Roadmap",
+      "description": "Plans for the near future.",
+      "icon": "car-side",
+      "component": "RoadmapPage"
+    },
+    "statistic": {
+      "title": "Statistic",
+      "description": "Statistics of our players.",
+      "icon": "user",
+      "component": "StatisticPage"
+    },
+    "team": {
+      "title": "Our team",
+      "description": "A team of real professionals.",
+      "icon": "code",
+      "component": "TeamPage"
+    },
+    "world": {
+      "title": "Our world",
+      "description": "What does our city look like?",
+      "icon": "earth-europe",
+      "component": "WorldPage"
+    }
+  },
+
+  "roadmap": [
+    {
+      "progress": "100",
+      "description": "Launch the social media accounts and discord server."
+    },
+    {
+      "progress": "100",
+      "description": "Launch The Meets website."
+    },
+    {
+      "progress": "100",
+      "description": "Launch the first access to the server for the first interaction with the city and the first mini-games."
+    },
+    {
+      "progress": "100",
+      "description": "Launch the private minting whitelist."
+    },
+    {
+      "progress": "100",
+      "description": "Launch The Meets exclusive access key NFT."
+    },
+    {
+      "progress": "100",
+      "description": "Whitelist Private minting."
+    },
+    {
+      "progress": "100",
+      "description": "Public minting."
+    },
+    {
+      "progress": "100",
+      "description": "Launch The Meets Meta server 2.0 with more games, activities integrated, server and games optimization."
+    },
+    {
+      "progress": "30",
+      "description": "The Meets Meta NFT holders first digital car snapshot."
+    },
+    {
+      "progress": "0",
+      "description": "The Meets Meta NFT holders first digital car airdrop."
+    },
+    {
+      "progress": "0",
+      "description": "The Meets residential area launch."
+    },
+    {
+      "progress": "0",
+      "description": "The Meets Meta NFT holders first property snapshot."
+    },
+    {
+      "progress": "0",
+      "description": "The Meets Meta NFT holders first property airdrop."
+    },
+    {
+      "progress": "0",
+      "description": "The Meets Meta server 3.0 optimize."
+    },
+    {
+      "progress": "0",
+      "description": "The Meets Meta Metaverse first exclusive event and airdrop."
+    },
+    {
+      "progress": "0",
+      "description": "The Meets Meta cosmetics and customization system launch."
+    },
+    {
+      "progress": "0",
+      "description": "The first cosmetics and wearables snapshot."
+    },
+    {
+      "progress": "0",
+      "description": "The first cosmetics and wearables airdrop."
+    },
+    {
+      "progress": "0",
+      "description": "The Meets Meta exclusive on-server marketplace launch."
+    },
+    {
+      "progress": "0",
+      "description": "Meets Meta marketplace on Opensea."
+    },
+    {
+      "progress": "0",
+      "description": "Meets Meta exclusive collab with a celebrity (including wearables and collectibles)."
+    }
+  ],
+
+  "staff": [
+    {
+      "name": "Mohammed Khalid",
+      "avatar": "https://i.imgur.com/8od2ZJP.png",
+      "post": "CEO",
+      "description": "MAYC #6831 Founder and CEO of Meets app and Meetsmeta. Unconventional guy with unusual ability to get the job done.",
+      "links": [
+        {
+          "icon": "linkedin",
+          "link": "https://www.linkedin.com/in/muhammad-khalid-38387b198"
+        }
+      ]
+    },
+    {
+      "name": "Icy",
+      "avatar": "https://i.imgur.com/V68gzkb.png",
+      "post": "Lead Developer",
+      "description": "Multidisciplinary designer, Founder and Lead: Icy Studios, icys.io and criator.io. Verified builder of #NFTWorlds.",
+      "links": [
+        {
+          "icon": "twitter",
+          "link": "https://twitter.com/hashtag/icyStudiosGame"
+        }
+      ]
+    },
+    {
+      "name": "Isaac",
+      "avatar": "https://i.imgur.com/aBMZsrX.png",
+      "post": "Project Manager",
+      "description": "Coolcat #8687 Team lead; Meets App & Meetsmeta project. UI/UX designer. Metaverse Enthusiast.",
+      "links": [
+        {
+          "icon": "linkedin",
+          "link": "https://www.linkedin.com/in/isaacborson/"
+        }
+      ]
+    },
+    {
+      "name": "Hamid",
+      "avatar": "https://i.imgur.com/r2nYxS6.png",
+      "post": "CTO",
+      "description": "Seasoned software-cloud architect, CTO Meets App & MeetsMeta Project. Blockchain Enthusiast.",
+      "links": [
+        {
+          "icon": "linkedin",
+          "link": "https://www.linkedin.com/in/hamid-ladan-01064b107"
+        }
+      ]
+    },
+    {
+      "name": "Haligul",
+      "avatar": "https://i.imgur.com/iEX4DGY.png",
+      "post": "Animator",
+      "description": "2D/3D Motion Graphics Designer.",
+      "links": [
+        {
+          "icon": "linkedin",
+          "link": "https://www.linkedin.com/in/haligul-jaman-gani-17911277"
+        }
+      ]
+    }
+  ],
+
+  "socials": [
+    {
+      "icon": "discord",
+      "link": "https://discord.com/invite/meetsmeta"
+    },
+    {
+      "icon": "twitter",
+      "link": "https://twitter.com/Meetsmeta"
+    },
+    {
+      "icon": "sailboat",
+      "iconCategory": "solid",
+      "link": "https://opensea.io/Meetsmeta"
+    },
+    {
+      "icon": "gamepad",
+      "iconCategory": "solid",
+      "link": "https://meetsmetabuff.io"
+    }
+  ],
+
+  "games": [
+    { "value": "total", "label": "All game" },
+    { "value": "coliseum", "label": "Coliseum" },
+    { "value": "bedwars", "label": "BedWars" },
+    { "value": "spleef", "label": "Spleef" },
+    { "value": "skywars", "label": "SkyWars" },
+    { "value": "lasertag", "label": "LaserTag" },
+    { "value": "tntrun", "label": "TNTRun" },
+    { "value": "kartracing", "label": "KartRacing" },
+    { "value": "football", "label": "FootBall" },
+    { "value": "sumo", "label": "Sumo" },
+    { "value": "counterstrike", "label": "CounterStrike" }
+  ],
+
+  "animation_speed_desc": "Animation speed of switching pages and states ( change if you changed _variable.scss/$animationSpeed )",
+  "animation_speed": 400
+}

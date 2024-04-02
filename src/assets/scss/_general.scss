@@ -3,15 +3,19 @@
 //
 
 #root {
-  display: flex;
-  align-items: center;
-  justify-items: center;
-  background: #f4f4f4;
+  // display: flex;
+  // align-items: center;
+  // justify-items: center;
+  background: var(--main-bg-color);
 }
 html {
-  background: #f4f4f4;
+  background: var(--main-bg-color);
 }
 .MuiTypography-root {
+  font-family: $font-primary !important;
+}
+
+.MuiChip-label {
   font-family: $font-primary !important;
 }
 a {
@@ -45,4 +49,18 @@ h6 {
 
 body {
   overflow-y: overlay;
+}
+.flex-culomn {
+  display: flex;
+  flex-direction: column;
+}
+.flex-grow-1 {
+  flex-grow: 1;
+}
+.flex-grow-0 {
+  flex-grow: 0;
+}
+
+.border-1 {
+  border-width: 1px;
 }

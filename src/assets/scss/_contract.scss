@@ -1,0 +1,19 @@
+#contractPage {
+}
+
+.add-corntract-stepper {
+  .MuiStepLabel-label {
+    color: var(--primary-color);
+  }
+  // MuiStepConnector-line MuiStepConnector-lineHorizontal css-z7uhs0-MuiStepConnector-line
+  .MuiStepLabel-label {
+    margin-top: 5px;
+    opacity: 0.5;
+
+    &.Mui-active,
+    &.Mui-completed {
+      font-family: $font-primary;
+      opacity: 1;
+    }
+  }
+}
